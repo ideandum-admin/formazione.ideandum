@@ -24,4 +24,7 @@ Nei testi della scheda si può usare `**grassetto**`.
 
 Ogni landing invia al webhook Zapier, oltre ai dati del form, `event_id` e `consenso_newsletter`.
 
+**Webhook unico** per tutti i nuovi webinar: `https://hooks.zapier.com/hooks/catch/2042357/41itfwa/` (Zap "Webinar – Zap unico").
+Lo Zap cerca `event_id` nel foglio **WEBINAR AUTOMAZIONE** del file "2026 - BDU" e ne prende titolo, data, ora, link Zoom e gruppo MailerLite.
+
 Istruzioni per il primo setup: vedi `ISTRUZIONI-WEBMASTER.md`.
