@@ -1,0 +1,235 @@
+/* ═══════════════════════════════════════════════════════════════
+   style.css — formazione.ideandum.com
+   Stili condivisi: header, navbar, footer, form, componenti
+   Caricato una volta e messo in cache per tutte le pagine
+   ═══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink:       #E42980;
+  --pink-alt:   #FF006E;
+  --dark:       #000000;
+  --nav-dark:   #343737;
+  --text:       #302F2F;
+  --white:      #FFFFFF;
+  --font-inter: 'Inter', sans-serif;
+  --font-epi:   'Epilogue', sans-serif;
+}
+
+body {
+  font-family: var(--font-epi);
+  color: var(--nav-dark);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.5;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── PULSATING DOT ── */
+.pulsating-circle { position:relative; width:20px; height:20px; flex-shrink:0; }
+.pulsating-circle::before {
+  content:''; position:absolute; display:block; width:300%; height:300%;
+  box-sizing:border-box; margin-left:-100%; margin-top:-100%;
+  border-radius:45px; background-color:#e11c47;
+  animation:pulse-ring 1.25s cubic-bezier(0.215,0.61,0.355,1) infinite;
+}
+.pulsating-circle::after {
+  content:''; position:absolute; left:0; top:0; width:100%; height:100%;
+  background-color:#e11c47; border-radius:50%; box-shadow:0 0 8px rgba(0,0,0,.3);
+  animation:pulse-dot 1.25s cubic-bezier(0.455,0.03,0.515,0.955) -.4s infinite;
+}
+@keyframes pulse-ring { 0%{transform:scale(.33)} 80%,100%{opacity:0} }
+@keyframes pulse-dot  { 0%{transform:scale(.8)}  50%{transform:scale(1)} 100%{transform:scale(.8)} }
+
+/* ── TOP BAR ── */
+.topbar {
+  background:#000; color:#fff; font-size:11px;
+  padding:6px 32px; display:flex; align-items:center;
+  justify-content:space-between; font-family:var(--font-inter);
+}
+.topbar-socials { display:flex; align-items:center; gap:2px; }
+.topbar-socials a { color:#fff; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:12px; opacity:.8; }
+.topbar-socials a:hover { opacity:1; }
+.topbar-center  { font-size:12px; font-weight:600; }
+.topbar-actions { display:flex; gap:6px; }
+.topbar-actions a { background:#000; color:#fff; border:1px solid #444; padding:4px 10px; font-size:11px; font-family:var(--font-inter); display:flex; align-items:center; gap:5px; transition:background .2s; }
+.topbar-actions a:hover { background:var(--pink); border-color:var(--pink); }
+
+/* ── NAVBAR ── */
+.navbar {
+  background:var(--white); border-bottom:1px solid #e8e8e8;
+  padding:12px 32px; display:flex; align-items:center;
+  justify-content:space-between; position:sticky; top:0;
+  z-index:500; box-shadow:0 1px 6px rgba(0,0,0,.05);
+}
+.navbar-logo img { height:38px; width:auto; }
+.navbar-menu { display:flex; align-items:center; list-style:none; }
+.navbar-menu a { font-family:var(--font-epi); font-size:13px; font-weight:600; color:#343737; text-transform:uppercase; letter-spacing:.3px; padding:8px 10px; transition:color .2s; display:flex; align-items:center; gap:3px; }
+.navbar-menu a:hover { color:#898989; }
+
+/* ── HERO ── */
+.hero {
+  background-color:#f5f5f5;
+  background-image:url('https://ideandum.com/wp-content/uploads/2025/10/aura-1.png.webp');
+  background-position:top center; background-repeat:no-repeat; background-size:cover;
+  position:relative;
+}
+.hero::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.69); mix-blend-mode:luminosity; pointer-events:none; }
+.hero-inner {
+  position:relative; z-index:1; max-width:1140px; margin:0 auto;
+  padding:40px 40px 50px; display:grid; grid-template-columns:1fr 380px; gap:32px; align-items:start;
+}
+
+/* BADGE */
+.event-badge { display:inline-flex; align-items:center; gap:12px; border:1.5px solid #ccc; border-radius:60px; padding:8px 20px; margin-bottom:30px; }
+.badge-date  { font-family:var(--font-inter); font-size:18px; font-weight:600; color:var(--pink-alt); line-height:1; }
+.badge-label { font-family:var(--font-inter); font-size:13px; font-weight:600; color:#343737; }
+
+/* TITOLI */
+.hero-title    { font-family:var(--font-inter); font-size:56px; font-weight:300; line-height:1.05; color:#000; margin-bottom:8px; }
+.hero-subtitle { font-family:var(--font-inter); font-size:26px; font-weight:400; line-height:1.15em; color:#000; margin-bottom:20px; }
+
+/* SPEAKERS */
+.speakers-row { display:flex; gap:24px; }
+.speaker { display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; }
+.speaker img  { width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #373737; }
+.speaker-name { font-family:var(--font-inter); font-size:13px; font-weight:600; color:#373737; }
+
+/* BODY TEXT BOX */
+.body-text { background:rgba(232,232,232,0.8); border-radius:5px; padding:16px 18px; margin:20px 0; font-family:var(--font-inter); font-size:1em; font-weight:400; color:#000; line-height:1.65; }
+.body-text p+p { margin-top:10px; }
+
+/* TOPICS */
+.topics-heading { font-family:var(--font-inter); font-size:18px; font-weight:600; color:#000; margin-bottom:14px; }
+.icon-boxes     { display:flex; flex-direction:column; gap:12px; margin-bottom:18px; }
+.icon-box       { display:flex; align-items:flex-start; gap:15px; }
+.icon-box-icon  { font-size:22px; color:#000; flex-shrink:0; margin-top:2px; }
+.icon-box-title { font-family:var(--font-inter); font-size:17px; font-weight:600; color:#000; margin-bottom:2px; }
+.icon-box-desc  { font-family:var(--font-inter); font-size:14px; font-weight:400; color:#302F2F; line-height:1.5; }
+
+/* INFO STRIP */
+.info-strip { background:rgba(232,232,232,0.8); border-radius:5px; padding:14px 18px; font-family:var(--font-inter); font-size:1em; color:#000; line-height:1.65; }
+
+/* ── FORM CARD ── */
+.form-card { background:rgba(255,255,255,0.65); border:3px solid #373737; border-radius:3px 8px 3px 3px; padding:28px 28px 32px; box-shadow:0 25px 50px rgba(38,53,65,0.12); position:sticky; top:80px; }
+.form-title    { font-family:var(--font-inter); font-size:40px; font-weight:500; line-height:1.1; color:#373737; margin-bottom:0; }
+.form-subtitle { font-family:var(--font-inter); font-size:17px; font-weight:500; line-height:1.3; color:#373737; margin-bottom:14px; margin-top:4px; }
+.form-badges   { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
+.form-badge    { display:flex; align-items:center; gap:6px; font-family:var(--font-inter); font-size:14px; font-weight:600; color:#C6C6C6; }
+.form-badge i  { font-size:20px; color:#C6C6C6; }
+.form-badge-unavail   { display:flex; align-items:center; gap:6px; margin-top:2px; margin-bottom:12px; }
+.form-badge-unavail i { font-size:20px; color:#C6C6C6; }
+.form-badge-unavail span { font-family:var(--font-inter); font-size:14px; font-weight:600; color:#C6C6C6; }
+
+/* CAMPI FORM */
+.f-group { margin-bottom:10px; }
+.f-group input,
+.f-group select {
+  width:100%; border:1px solid rgba(0,0,0,0.75); border-radius:3px;
+  padding:9px 12px; font-family:var(--font-inter); font-size:0.82em;
+  font-weight:500; color:#000; background:transparent; outline:none;
+  line-height:1.2; transition:border-color .2s, box-shadow .2s;
+}
+.f-group input:focus,
+.f-group select:focus { border-color:var(--pink); box-shadow:0 0 0 2px rgba(228,41,128,0.12); }
+.f-group input.error,
+.f-group select.error { border-color:#e11c47; box-shadow:0 0 0 2px rgba(225,28,71,0.12); }
+.f-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+.privacy-note { font-family:var(--font-inter); font-size:0.77rem; color:#000; margin:10px 0 7px; line-height:1.5; }
+.privacy-note a { color:#000; font-weight:600; text-decoration:underline; }
+.f-check { display:flex; align-items:flex-start; gap:8px; margin-bottom:14px; }
+.f-check input[type="checkbox"] { margin-top:3px; accent-color:var(--pink); flex-shrink:0; width:14px; height:14px; cursor:pointer; }
+.f-check label { font-family:var(--font-inter); font-size:0.77rem; color:#000; line-height:1.4; cursor:pointer; }
+
+/* BOTTONE SUBMIT */
+.btn-submit { width:100%; background:var(--pink); color:#fff; border:1px solid var(--pink); border-radius:3px; padding:16px 20px; font-family:var(--font-inter); font-size:1em; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; transition:background .2s, opacity .2s; }
+.btn-submit:hover:not(:disabled) { background:#000; border-color:#000; }
+.btn-submit:disabled { opacity:.6; cursor:not-allowed; }
+
+/* MESSAGGI FORM */
+.form-msg { display:none; text-align:center; padding:14px 16px; border-radius:4px; font-family:var(--font-inter); font-size:0.9rem; font-weight:600; margin-top:12px; line-height:1.5; }
+.form-msg.loading { background:#fff3cd; color:#856404; border:1px solid #ffeeba; }
+.form-msg.success { background:#d4edda; color:#155724; border:1px solid #c3e6cb; }
+.form-msg.err     { background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; }
+
+/* ── SEZIONE "NON PUOI PERDERLA" ── */
+.s-nope { background-image:url('https://ideandum.com/wp-content/uploads/2025/10/aura-1.png.webp'); background-position:223px 728px; background-color:#fff; padding:40px; }
+.s-nope-inner { max-width:1140px; margin:0 auto; }
+.nope-title { font-family:var(--font-inter); font-size:37px; font-weight:600; color:#000; margin-bottom:24px; }
+.nope-items { display:flex; flex-wrap:wrap; justify-content:center; gap:28px; }
+.nope-item  { width:40%; font-family:var(--font-inter); font-size:18px; font-weight:400; line-height:1.3em; color:#000; text-align:center; }
+
+/* ── ABOUT ── */
+.s-about { padding:48px 40px; background:#fff; }
+.s-about-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
+.about-img-card  { border-radius:12px; background:url('https://ideandum.com/wp-content/uploads/2025/05/ITA-Ideandum-Brand-Guidelines-1.webp') center/cover; box-shadow:0 25px 50px rgba(38,53,65,0.12); padding:35px; min-height:320px; }
+.about-text-card { border-radius:12px; background:#fff; box-shadow:0 25px 50px rgba(38,53,65,0.12); padding:35px 35px 55px; }
+.about-logo img { width:219px; margin-bottom:16px; }
+.about-text { font-family:var(--font-inter); font-size:15px; font-weight:400; color:#000; line-height:1.6; }
+.about-text p+p { margin-top:10px; }
+
+/* ── FOOTER MAIN ── */
+.footer-main { background:#000; padding:48px 40px; }
+.footer-main-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; }
+.f-brand img { width:120px; margin-bottom:14px; }
+.f-brand p { font-family:var(--font-inter); font-size:14px; color:#fff; line-height:1.4; margin-bottom:14px; }
+.f-contacts { list-style:none; margin-bottom:16px; }
+.f-contacts li { display:flex; align-items:flex-start; gap:7px; font-family:var(--font-inter); font-size:0.85em; font-weight:600; color:#fff; margin-bottom:6px; line-height:1.4; }
+.f-contacts li i { margin-top:2px; flex-shrink:0; }
+.f-numverde img { width:180px; margin-bottom:14px; }
+.f-socials { display:flex; gap:8px; }
+.f-socials a { width:32px; height:32px; border-radius:50%; background:#111; border:1px solid #333; display:flex; align-items:center; justify-content:center; color:#fff; font-size:13px; transition:background .2s; }
+.f-socials a:hover { background:var(--pink); border-color:var(--pink); }
+.f-col h4 { font-family:var(--font-inter); font-size:1.1em; font-weight:600; color:#fff; margin-bottom:12px; }
+.f-col h4+h4 { margin-top:20px; }
+.f-col p { font-family:var(--font-inter); font-size:13px; color:#ccc; line-height:1.4; margin-bottom:10px; }
+.f-list { list-style:none; }
+.f-list li { margin-bottom:5px; }
+.f-list a { font-family:var(--font-inter); font-size:0.85em; font-weight:600; color:#ccc; text-decoration:underline; }
+.f-list a:hover { color:#fff; }
+.f-badges { display:flex; gap:10px; align-items:center; margin-top:12px; }
+.f-badges img { width:55px; height:55px; object-fit:contain; }
+.f-small { font-family:var(--font-inter); font-size:0.72em; color:#888; margin-top:10px; line-height:1.5; }
+.f-small a { color:#888; text-decoration:underline; }
+
+/* ── FOOTER BOTTOM ── */
+.footer-bottom { background:#242424; padding:44px 40px; }
+.footer-bottom-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:24px; }
+.fb-col h4 { font-family:var(--font-inter); font-size:0.82em; font-weight:700; letter-spacing:1.5px; color:#fff; margin-bottom:12px; text-transform:uppercase; }
+.fb-col h4+h4 { margin-top:16px; }
+.fb-list { list-style:none; }
+.fb-list li { margin-bottom:6px; }
+.fb-list a { font-family:var(--font-inter); font-size:0.82em; font-weight:600; color:#DADADA; display:flex; align-items:flex-start; gap:5px; }
+.fb-list a:hover { color:#fff; }
+.fb-list a::before { content:'•'; flex-shrink:0; color:#555; }
+
+/* ── STICKY BAR ── */
+.sbar { position:fixed; bottom:0; left:0; right:0; z-index:999; background:#000; background-image:url('https://ideandum.com/wp-content/uploads/2025/07/aura1.png.webp'); background-position:center; background-size:cover; padding:12px 48px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 -4px 20px rgba(0,0,0,.35); }
+.sbar-left    { display:flex; align-items:center; gap:16px; }
+.sbar-icon img { width:30px; height:auto; }
+.sbar-webinar { font-family:var(--font-inter); font-size:1rem; font-weight:400; letter-spacing:0.1em; color:#fff; line-height:0.9em; }
+.sbar-date    { font-family:var(--font-inter); font-size:0.85rem; font-weight:500; text-transform:uppercase; color:#fff; margin-top:4px; }
+.sbar-btn     { background:transparent; color:#fff; border:1px solid #fff; border-radius:3px; padding:10px 22px; font-family:var(--font-inter); font-size:1em; font-weight:500; cursor:pointer; display:flex; align-items:center; gap:7px; transition:background .2s, color .2s; }
+.sbar-btn:hover { background:#fff; color:#000; }
+
+.pb-spacer { height:60px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width:1024px) {
+  .hero-inner         { grid-template-columns:1fr; }
+  .footer-main-inner  { grid-template-columns:1fr 1fr; }
+  .footer-bottom-inner{ grid-template-columns:1fr 1fr; }
+  .s-about-inner      { grid-template-columns:1fr; }
+}
+@media (max-width:767px) {
+  .topbar-center, .topbar-actions { display:none; }
+  .navbar-menu { display:none; }
+  .hero-title    { font-size:32px; }
+  .hero-subtitle { font-size:20px; }
+  .nope-item { width:100%; }
+  .footer-main-inner, .footer-bottom-inner { grid-template-columns:1fr; }
+  .sbar { padding:10px 20px; }
+}

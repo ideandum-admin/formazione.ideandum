@@ -1,0 +1,51 @@
+# Pubblica automaticamente il sito su formazione.ideandum.com via FTP
+# a ogni modifica del branch main (o a mano dalla scheda "Actions" di GitHub).
+#
+# Carica SOLO i file cambiati rispetto all'ultima pubblicazione.
+# NON cancella i file già presenti sul server che non sono nel repository
+# (es. le landing create prima di questo sistema restano dove sono).
+#
+# Segreti da impostare in GitHub → Settings → Secrets and variables → Actions:
+#   FTP_SERVER      es. ftp.ideandum.com
+#   FTP_USERNAME    utente FTP
+#   FTP_PASSWORD    password FTP
+#   FTP_SERVER_DIR  cartella del sottodominio sul server, con "/" finale
+#                   es. /formazione.ideandum.com/  oppure  /public_html/formazione/
+#   FTP_PROTOCOL    (facoltativo) ftps oppure ftp — predefinito: ftps
+
+name: Pubblica sito
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pubblica-sito
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il repository
+        uses: actions/checkout@v4
+
+      - name: Carica via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
+          # File che restano solo nel repository e non vanno online
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            _template/**
+            scripts/**
+            data/**
+            README.md
+            ISTRUZIONI-WEBMASTER.md

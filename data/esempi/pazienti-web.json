@@ -1,0 +1,33 @@
+{
+  "slug": "pazienti-web",
+  "event_id": "Webinar - 2026.10.20 - Pazienti Web 2",
+  "titolo_pagina": "I pazienti dal web ti chiedono solo \"Quanto costa?\". Stai intercettando quelli sbagliati!",
+  "titolo": "Se i Pazienti dal web ti chiedono solo \"Quanto Costa?\", stai intercettando quelli sbagliati!",
+  "sottotitolo": "I pazienti dal web: chi sono davvero, come si comportano e come trasformarli in pazienti fedeli. I dati reali di 13 anni.",
+  "data_breve": "20 Ottobre",
+  "ora": "13",
+  "data_iso": "2026-10-20",
+  "ora_iso": "13:00",
+  "relatori": [
+    {"nome": "Greta Portinari", "foto": "/_assets/img/greta-portinari.jpg"},
+    {"nome": "Franco Valerio", "foto": "/_assets/img/Franco_Valerio.jpg"}
+  ],
+  "testo": [
+    "Il **paziente** che ti trova su Google o sui **social** non è uguale a quello che arriva dal passaparola. Ha un profilo diverso, aspettative diverse, tempi di decisione diversi — e se non lo sai, **rischi di trattarlo nel modo sbagliato** e perderlo.",
+    "In **13 anni di lavoro** con studi dentistici in tutta Italia abbiamo accumulato **dati su questo tipo di paziente**: da dove arriva, cosa cerca, cosa lo fa convertire, quanto vale nel tempo. In questo webinar ti mostriamo tutto, così puoi intercettare i pazienti giusti e sapere come gestirli dal primo click fino alla poltrona."
+  ],
+  "argomenti": [
+    {"titolo": "Il profilo reale del paziente dal web", "descrizione": "Chi è davvero chi ti trova online? Età, comportamento, intenzione di acquisto, sensibilità al prezzo."},
+    {"titolo": "Come decide il paziente digitale", "descrizione": "Il percorso dal primo click alla prenotazione: dove si interrompe, perché succede e cosa puoi fare."},
+    {"titolo": "Il filtro che funziona: intercettare solo i pazienti in target", "descrizione": "Come costruire la presenza online per attirare chi ha già deciso di investire nella propria salute."},
+    {"titolo": "Cosa succede quando il paziente web entra in studio", "descrizione": "I pattern più frequenti, i segnali da riconoscere e come gestire il primo appuntamento."}
+  ],
+  "motivi": [
+    "Vuoi che il **budget di marketing** porti pazienti davvero in target",
+    "Vuoi sapere **cosa rispondere** a un paziente che ti ha trovato sul web",
+    "Vuoi far capire **il valore del tuo lavoro** a chi chiede solo il prezzo"
+  ],
+  "webhook_url": "https://hooks.zapier.com/hooks/catch/2042357/4mmd2jv/",
+  "zoom_link": "",
+  "mailerlite_group": ""
+}
