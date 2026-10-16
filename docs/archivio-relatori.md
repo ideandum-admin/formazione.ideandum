@@ -9,4 +9,6 @@ Regole: per Armida Parigi, Franco Valerio e Chiara mai la stessa foto del webina
 
 | Webinar | Angolo | Modello | Relatori e foto (pagina archivio / descrizione) |
 |---|---|---|---|
-| — | — | — | — |
+| 2026.11.10 Implantologia 2027 | A | Aura | Armida Parigi — archivio p.114 (giacca verde, braccia incrociate), scontornata con remove-background |
+| 2026.11.10 Implantologia 2027 | B | Chiaro | Armida Parigi — archivio p.116 (giacca verde, pollici in su), scontornata con remove-background |
+| 2026.11.10 Implantologia 2027 | C | Rosa | Franco Valerio — foto già nel modello Rosa (bicromia); Franco non ha ancora una sezione nell'archivio |
