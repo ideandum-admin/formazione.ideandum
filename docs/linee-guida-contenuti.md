@@ -62,7 +62,23 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - **Stile chiaro** (il più usato): sfondo bianco con fascia diagonale grigia #E9E9E9, relatore scontornato a destra/in basso, titolo nero corsivo con parole chiave in grassetto, sottotitolo con parole chiave in grassetto, etichetta nera della data "10 NOVEMBRE | 13.00" (testo bianco), simbolo onde + "FREE WEBINAR per dentisti", logo ideandum.
 - **Stile sfumato**: sfondo con aura viola/rosa/blu, relatori in bicromia, testo bianco grande, stessa etichetta nera per la data.
 - Kit del brand in Canva: "Ideandum". Documento di riferimento: "IDEANDUM ITALIA - BRAND GUIDELINES".
-- Le modifiche in Canva si salvano solo dopo che Luigi ha visto l'anteprima.
+- La generazione automatica di design di Canva (con kit del brand) è stata provata e scartata: font fuori brand, immagini stock, dati inventati. Non usarla.
+
+### Modelli per le creatività (Canva "Template Campagne Ideandum", DAHYLLZt2rA)
+Preparati da Luigi. Ogni angolo A/B/C di un webinar usa un modello **diverso**; tra un webinar e il successivo cambia l'abbinamento angolo→modello.
+| Modello | Pagine | Stile |
+|---|---|---|
+| Aura | 1 quadrato, 2 storia | sfondo sfumato viola/rosa/blu, titolo bianco con parole chiave nere su riquadri bianchi, "WEBINAR ONLINE · data", pulsante ISCRIVITI con mano, relatore scontornato |
+| Chiaro | 3 quadrato, 4 storia | bianco con diagonale grigia, titolo nero corsivo, sottotitolo, etichetta nera data, FREE WEBINAR per dentisti |
+| Rosa | 5 quadrato, 6 storia | fondo rosa pieno #E42980, relatore in bicromia, testo bianco allineato a destra, data/ora/online in condensato |
+| Live | 8 quadrato (7 è 4:5, non usato) | fondo scuro con anello luminoso, "•LIVE WEBINAR", titolo maiuscolo, nomi relatori in rosa, data e "su Piattaforma zoom" |
+- Nel modello Aura i riquadri bianchi dietro le parole chiave sono forme separate: quando cambia il titolo vanno spostati e ridimensionati sulle nuove parole chiave (controllare l'anteprima).
+- Le modifiche si fanno sempre su una copia, mai sul file dei modelli.
+
+### Foto dei relatori
+- Archivio: design Canva "Foto team - risorse umane" (DAF_TrHtOgY), foto già scontornate e divise per persona (nomi aggiunti da Luigi). Greta Portinari per ora non c'è.
+- Armida Parigi, Franco Valerio e Chiara sono relatori frequenti: **mai la stessa foto del webinar precedente**, e se possibile foto diverse tra gli angoli A, B, C dello stesso webinar. Preferire mezzo busto, sguardo in camera.
+- Le foto usate per ogni webinar si annotano nel file `docs/archivio-relatori.md` (relatore, foto, webinar).
 
 ## 5. Newsletter (MailerLite)
 
