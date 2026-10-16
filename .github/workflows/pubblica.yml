@@ -48,4 +48,5 @@ jobs:
             scripts/**
             data/**
             README.md
+            docs/**
             ISTRUZIONI-WEBMASTER.md
