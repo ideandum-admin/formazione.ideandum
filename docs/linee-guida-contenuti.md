@@ -67,6 +67,7 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 ## 5. Newsletter (MailerLite)
 
 - Due invii per webinar: **Newsletter 1** (presentazione) e **Newsletter 2** (promemoria a 2 giorni), ciascuna con titolo, sottotitolo e testo.
+- Impaginazione: in testa alla mail l'etichetta con data e ora e, sotto, il titolo tra virgolette sono entrambi **centrati** (modello `_template/newsletter.html`).
 - Da quando l'efficacia è calata: meno vendita, più contenuto utile già nella mail, tono da collega a collega, seconda mail molto più corta, niente elenchi di situazioni.
 - Per i temi di marketing e investimento parlare al **titolare** (soldi investiti, valore del paziente nel tempo), non alla segreteria.
 - Chiusura tipo: "È gratuito e il link arriva su WhatsApp. 👉 Iscriviti qui".
