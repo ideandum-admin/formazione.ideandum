@@ -45,6 +45,16 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - Il riferimento ai dentisti si vede subito, ma il testo non inizia con "Dentista".
 - Per campagne in calo: proporre 2 angoli diversi da testare in parallelo.
 
+### Impostazione annunci per ogni webinar
+- **3 angoli diversi** per webinar (es. problema concreto, beneficio, curiosità/dato), sempre.
+- **Testi diversi per gruppo**: Freddo più introduttivo (chi non ci conosce: contesto, chi siamo in mezza riga), Caldo più diretto (chi ci conosce già: data, tema, iscriviti).
+- Totale: 3 annunci nel Freddo + 3 nel Caldo, tutti in bozza.
+- **Formati**: ogni annuncio ha la grafica 4:5 (feed) e la 9:16 (storie e Reel). Il titolo in grafica cambia con l'angolo.
+- **Campi**: testo principale, titolo "Webinar gratuito · 10 Novembre ore 13", descrizione breve (es. "Online · Gratuito · Posti limitati"), CTA Iscriviti.
+- **Nome annuncio**: "Webinar AAAA.MM.GG – <Nome breve> – Freddo|Caldo – A|B|C" (es. "Webinar 2026.11.10 – Implantologia – Freddo – A").
+- Link alla landing senza parametri UTM.
+- Niente video per ora: solo immagini.
+
 ## 5. Newsletter (MailerLite)
 
 - Due invii per webinar: **Newsletter 1** (presentazione) e **Newsletter 2** (promemoria a 2 giorni), ciascuna con titolo, sottotitolo e testo.
