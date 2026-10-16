@@ -49,11 +49,20 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - **3 angoli diversi** per webinar (es. problema concreto, beneficio, curiosità/dato), sempre.
 - **Testi diversi per gruppo**: Freddo più introduttivo (chi non ci conosce: contesto, chi siamo in mezza riga), Caldo più diretto (chi ci conosce già: data, tema, iscriviti).
 - Totale: 3 annunci nel Freddo + 3 nel Caldo, tutti in bozza.
-- **Formati**: ogni annuncio ha la grafica 4:5 (feed) e la 9:16 (storie e Reel). Il titolo in grafica cambia con l'angolo.
+- **Formati**: ogni annuncio ha la grafica quadrata 1080×1080 (feed) e la 9:16 1080×1920 (storie e Reel). Niente 4:5. Il titolo in grafica cambia con l'angolo.
 - **Campi**: testo principale, titolo "Webinar gratuito · 10 Novembre ore 13", descrizione breve (es. "Online · Gratuito · Posti limitati"), CTA Iscriviti.
 - **Nome annuncio**: "Webinar AAAA.MM.GG – <Nome breve> – Freddo|Caldo – A|B|C" (es. "Webinar 2026.11.10 – Implantologia – Freddo – A").
 - Link alla landing senza parametri UTM.
 - Niente video per ora: solo immagini.
+
+### Grafiche (Canva)
+- Le grafiche si fanno **in Canva**, partendo dai design esistenti: mai ricrearle da zero fuori da Canva.
+- Ogni webinar ha un design "Webinar - AAAA.MM.GG - <Nome>" (anteprima sito, post, storia, copertina YouTube, creatività). Per gli annunci si crea una copia "Webinar - AAAA.MM.GG - <Nome> - ADS" con le pagine quadrato + storia, una coppia per angolo.
+- Se il design del webinar non esiste, si duplica quello del webinar precedente più simile (stesso stile, relatori simili) e si aggiornano testi, data e foto.
+- **Stile chiaro** (il più usato): sfondo bianco con fascia diagonale grigia #E9E9E9, relatore scontornato a destra/in basso, titolo nero corsivo con parole chiave in grassetto, sottotitolo con parole chiave in grassetto, etichetta nera della data "10 NOVEMBRE | 13.00" (testo bianco), simbolo onde + "FREE WEBINAR per dentisti", logo ideandum.
+- **Stile sfumato**: sfondo con aura viola/rosa/blu, relatori in bicromia, testo bianco grande, stessa etichetta nera per la data.
+- Kit del brand in Canva: "Ideandum". Documento di riferimento: "IDEANDUM ITALIA - BRAND GUIDELINES".
+- Le modifiche in Canva si salvano solo dopo che Luigi ha visto l'anteprima.
 
 ## 5. Newsletter (MailerLite)
 
