@@ -49,6 +49,20 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - **3 angoli diversi** per webinar (es. problema concreto, beneficio, curiosità/dato), sempre.
 - **Testi diversi per gruppo**: Freddo più introduttivo (chi non ci conosce: contesto, chi siamo in mezza riga), Caldo più diretto (chi ci conosce già: data, tema, iscriviti).
 - Totale: 3 annunci nel Freddo + 3 nel Caldo, tutti in bozza.
+
+### Struttura della campagna e budget (dal 19/10/2026)
+- Campagna CBO "Webinar - 2026 - Budget per webinar (CBO)" (ID 52600961859122), 70 €/giorno, sempre spesi tutti.
+- **Un gruppo Freddo per ogni webinar** ("Webinar AAAA.MM.GG – <Nome breve> – Freddo", targeting Freddo standard) con i 3 annunci Freddo; **un gruppo Caldo condiviso** ("Webinar – Caldo (condiviso)") dove vanno gli annunci Caldo di tutti i webinar.
+- Spesa minima giornaliera per gruppo, così ogni webinar riceve budget (Meta tende a mettere tutto sull'annuncio che rende di più):
+
+| Webinar attivi | Più vicino | Secondo | Terzo | Caldo condiviso | Margine libero |
+|---|---|---|---|---|---|
+| 1 | nessun minimo (100%) | – | – | min 10% | – |
+| 2 | min 50% | min 25% | – | min 10% | 15% |
+| 3 | min 40% | min 20% | min 15% | min 10% | 15% |
+
+- Il giorno prima di ogni webinar (12:30) si mette in pausa il suo gruppo Freddo e i suoi annunci nel Caldo, e si ricalcolano i minimi degli altri gruppi.
+- Niente massimi di spesa: nelle settimane senza webinar il budget deve comunque andare speso.
 - **Formati**: ogni annuncio ha la grafica quadrata 1080×1080 (feed) e la 9:16 1080×1920 (storie e Reel). Niente 4:5. Il titolo in grafica cambia con l'angolo.
 - **Campi**: testo principale, titolo "Webinar gratuito · 10 Novembre ore 13", descrizione breve (es. "Online · Gratuito · Posti limitati"), CTA Iscriviti.
 - **Nome annuncio**: "Webinar AAAA.MM.GG – <Nome breve> – Freddo|Caldo – A|B|C" (es. "Webinar 2026.11.10 – Implantologia – Freddo – A").
