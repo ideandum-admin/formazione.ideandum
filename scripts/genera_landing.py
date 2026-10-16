@@ -64,8 +64,36 @@ def motivi(lista):
     return "\n".join(f'      <div class="nope-item">{testo(m)}</div>' for m in lista)
 
 
+WEBHOOK_UNICO = "https://hooks.zapier.com/hooks/catch/2042357/41itfwa/"
+MESI = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio",
+        "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]
+
+
+def normalizza(d: dict) -> dict:
+    """Accetta anche il formato della pagina "Schede Webinar"
+    (data AAAA-MM-GG, ora HH:MM, testo come stringa con paragrafi separati da riga vuota)."""
+    d = dict(d)
+    if isinstance(d.get("testo"), str):
+        d["testo"] = [p.strip().replace("\n", " ") for p in re.split(r"\n\s*\n", d["testo"]) if p.strip()]
+    if not d.get("data_breve") and d.get("data"):
+        a, m, g = (int(x) for x in d["data"].split("-"))
+        d["data_breve"] = f"{g} {MESI[m - 1]}"
+    ora = d.get("ora", "")
+    if re.fullmatch(r"\d{1,2}:\d{2}", ora):
+        h, mi = ora.split(":")
+        d["ora"] = str(int(h)) if mi == "00" else f"{int(h)}:{mi}"
+    d.setdefault("webhook_url", WEBHOOK_UNICO)
+    if not d.get("webhook_url"):
+        d["webhook_url"] = WEBHOOK_UNICO
+    for r in d.get("relatori", []):
+        if str(r.get("foto", "")).startswith("asset:"):
+            sys.exit(f"La foto di {r.get('nome')} è ancora un file caricato nella scheda: "
+                     "va prima salvata in _assets/img/ e il percorso aggiornato.")
+    return d
+
+
 def genera(scheda_path: Path) -> Path:
-    d = json.loads(scheda_path.read_text(encoding="utf-8"))
+    d = normalizza(json.loads(scheda_path.read_text(encoding="utf-8")))
     mancanti = [c for c in CAMPI_OBBLIGATORI if not d.get(c)]
     if mancanti:
         sys.exit(f"Campi mancanti nella scheda: {', '.join(mancanti)}")
