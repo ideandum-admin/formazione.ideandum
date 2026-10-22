@@ -9,6 +9,9 @@ Regole: per Armida Parigi, Franco Valerio e Chiara mai la stessa foto del webina
 
 | Webinar | Angolo | Modello | Relatori e foto (pagina archivio / descrizione) |
 |---|---|---|---|
+| 2026.11.17 Riunioni di team | A | Rosa | Chiara Tessarotto — foto della scheda (giacca blu), scontornata e in bicromia rosa (`_assets/img/chiara-tessarotto-rosa.png`); Chiara non ha ancora una sezione nell'archivio |
+| 2026.11.17 Riunioni di team | B | Aura | Armida Parigi — archivio p.115 (giacca verde, gesto OK), scontornata con remove-background |
+| 2026.11.17 Riunioni di team | C | Chiaro | Armida Parigi — archivio p.118 (giacca verde, indica in alto), scontornata con remove-background e specchiata |
 | 2026.11.10 Implantologia 2027 | A | Aura | Armida Parigi — archivio p.114 (giacca verde, braccia incrociate), scontornata con remove-background |
 | 2026.11.10 Implantologia 2027 | B | Chiaro | Armida Parigi — archivio p.116 (giacca verde, pollici in su), scontornata con remove-background |
 | 2026.11.10 Implantologia 2027 | C | Rosa | Franco Valerio — foto già nel modello Rosa (bicromia); Franco non ha ancora una sezione nell'archivio |
