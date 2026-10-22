@@ -1,0 +1,43 @@
+{
+  "slug": "riunioni-di-team",
+  "event_id": "Webinar - 2026.11.17 - Riunioni di team",
+  "event_name_extended": "Riunioni di team",
+  "titolo": "Tanto le riunioni non servono a niente.",
+  "sottotitolo": "Perché le riunioni in studio sembrano tempo perso (e cosa cambia quando si fanno con metodo).",
+  "data": "2026-11-17",
+  "ora": "13:00",
+  "relatori": [
+    {
+      "foto": "/_assets/img/Armida-Parigi.webp",
+      "nome": "Armida Parigi"
+    },
+    {
+      "foto": "/_assets/img/chiara-tessarotto.jpg",
+      "nome": "Chiara Tessarotto"
+    }
+  ],
+  "testo": "Nel tuo studio le decisioni importanti si prendono al volo, tra un paziente e l'altro?\n\nSuccede in tanti studi. Le riunioni non si fanno perché \"non c'è tempo\": le informazioni passano a voce o in chat, ognuno capisce una cosa diversa e i piccoli attriti nel team restano lì finché non esplodono.\n\nPoi c'è chi le riunioni le fa, ma esce con la sensazione di aver perso un'ora: si parla di tutto, non si decide niente e la settimana dopo si ricomincia da capo.\n\nIn entrambi i casi la conclusione è la stessa: \"tanto le riunioni non servono a niente\". In realtà fermarsi con il team è uno degli strumenti più utili per far crescere lo studio, a una condizione: che la riunione sia **preparata e guidata con metodo**. Altrimenti sì, è tempo perso.\n\nIn questo webinar Armida e Chiara ti mostrano come fare riunioni **brevi**, con **obiettivi chiari**, che si chiudono con **decisioni concrete** e un team che sa cosa fare.",
+  "argomenti": [
+    {
+      "descrizione": "Gli errori più comuni che trasformano una riunione in tempo perso, e cosa cambiare già dalla prossima.",
+      "titolo": "Perché le tue riunioni non funzionano (o non le fai)"
+    },
+    {
+      "descrizione": "Come fare in modo che tutti arrivino sapendo di cosa si parla e cosa si deve decidere, così non si gira a vuoto.",
+      "titolo": "Prima: cosa preparare"
+    },
+    {
+      "descrizione": "Come ascoltare il team, gestire i disaccordi e affrontare le tensioni prima che diventino conflitti.",
+      "titolo": "Durante: dare spazio a tutti senza perdere il filo"
+    },
+    {
+      "descrizione": "Come chiudere ogni riunione con decisioni e compiti chiari, così la volta dopo non si riparte da zero.",
+      "titolo": "Dopo: chi fa cosa, entro quando"
+    }
+  ],
+  "motivi": [
+    "Vuoi un team che lavori allineato sugli stessi obiettivi",
+    "Vuoi riunioni brevi che si chiudono con decisioni concrete",
+    "Vuoi sciogliere le tensioni nel team prima che diventino problemi"
+  ]
+}
