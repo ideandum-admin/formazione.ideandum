@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-THCFGR');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '774485682652320');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=774485682652320&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ogni chiamata ha una risposta, anche quando lo studio è chiuso – Ideandum</title>
+<meta name="description" content="GAIA risponde quando la segreteria è occupata, in pausa o a casa: così nessun paziente resta senza risposta">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Epilogue:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --pink: #E42980; --pink-alt: #FF006E;
+  --nav-dark: #343737; --text: #302F2F;
+  --white: #FFFFFF;
+  --font-inter: 'Inter', sans-serif;
+  --font-epilogue: 'Epilogue', sans-serif;
+}
+body { font-family: var(--font-epilogue); color: var(--nav-dark); background: var(--white); font-size: 16px; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── PULSATING DOT ── */
+.pulsating-circle { position:relative; width:20px; height:20px; flex-shrink:0; }
+.pulsating-circle::before {
+  content:''; position:absolute; display:block; width:300%; height:300%;
+  box-sizing:border-box; margin-left:-100%; margin-top:-100%;
+  border-radius:45px; background-color:#e11c47;
+  animation:pulse-ring 1.25s cubic-bezier(0.215,0.61,0.355,1) infinite;
+}
+.pulsating-circle::after {
+  content:''; position:absolute; left:0; top:0; width:100%; height:100%;
+  background-color:#e11c47; border-radius:50%; box-shadow:0 0 8px rgba(0,0,0,.3);
+  animation:pulse-dot 1.25s cubic-bezier(0.455,0.03,0.515,0.955) -.4s infinite;
+}
+@keyframes pulse-ring { 0%{transform:scale(.33)} 80%,100%{opacity:0} }
+@keyframes pulse-dot { 0%{transform:scale(.8)} 50%{transform:scale(1)} 100%{transform:scale(.8)} }
+
+/* ── TOP BAR ── */
+.topbar { background:#000; color:#fff; font-size:11px; padding:6px 32px; display:flex; align-items:center; justify-content:space-between; font-family:var(--font-inter); }
+.topbar-socials { display:flex; align-items:center; gap:2px; }
+.topbar-socials a { color:#fff; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:12px; opacity:.8; }
+.topbar-socials a:hover { opacity:1; }
+.topbar-center { font-size:12px; font-weight:600; }
+.topbar-actions { display:flex; gap:6px; }
+.topbar-actions a { background:#000; color:#fff; border:1px solid #444; padding:4px 10px; font-size:11px; font-family:var(--font-inter); display:flex; align-items:center; gap:5px; transition:background .2s; }
+.topbar-actions a:hover { background:var(--pink); border-color:var(--pink); }
+
+/* ── NAVBAR ── */
+.navbar { background:var(--white); border-bottom:1px solid #e8e8e8; padding:12px 32px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:500; box-shadow:0 1px 6px rgba(0,0,0,.05); }
+.navbar-logo img { height:38px; width:auto; }
+.navbar-menu { display:flex; align-items:center; list-style:none; }
+.navbar-menu a { font-family:var(--font-epilogue); font-size:13px; font-weight:600; color:#343737; text-transform:uppercase; letter-spacing:.3px; padding:8px 10px; transition:color .2s; display:flex; align-items:center; gap:3px; }
+.navbar-menu a:hover { color:#898989; }
+
+/* ── HERO ── */
+.hero { background-color:#f5f5f5; background-image:url('/_assets/img/bg-aura.webp'); background-position:top center; background-repeat:no-repeat; background-size:cover; position:relative; }
+.hero::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.69); mix-blend-mode:luminosity; pointer-events:none; }
+.hero-inner { position:relative; z-index:1; max-width:1140px; margin:0 auto; padding:40px 40px 50px; display:grid; grid-template-columns:1fr 380px; gap:32px; align-items:start; }
+
+.event-badge { display:inline-flex; align-items:center; gap:12px; border:1.5px solid #ccc; border-radius:60px; padding:8px 20px; margin-bottom:30px; }
+.badge-date { font-family:var(--font-inter); font-size:18px; font-weight:600; color:var(--pink-alt); line-height:1; }
+.badge-label { font-family:var(--font-inter); font-size:13px; font-weight:600; color:#343737; }
+
+.hero-title { font-family:var(--font-inter); font-size:58px; font-weight:300; line-height:1.05; color:#000; margin-bottom:8px; }
+.hero-subtitle { font-family:var(--font-inter); font-size:26px; font-weight:400; line-height:1.15em; color:#000; margin-bottom:20px; }
+
+.speakers-row { display:flex; gap:24px; margin-bottom:0; }
+.speaker { display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; }
+.speaker img { width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #373737; }
+.speaker-name { font-family:var(--font-inter); font-size:13px; font-weight:600; color:#373737; }
+
+.body-text { background:rgba(232,232,232,0.8); border-radius:5px; padding:16px 18px; margin:20px 0; font-family:var(--font-inter); font-size:1em; font-weight:400; color:#000; line-height:1.65; }
+.body-text p+p { margin-top:10px; }
+
+.topics-heading { font-family:var(--font-inter); font-size:18px; font-weight:600; color:#000; margin-bottom:14px; }
+.icon-boxes { display:flex; flex-direction:column; gap:12px; margin-bottom:18px; }
+.icon-box { display:flex; align-items:flex-start; gap:15px; }
+.icon-box-icon { font-size:22px; color:#000; flex-shrink:0; margin-top:2px; }
+.icon-box-title { font-family:var(--font-inter); font-size:17px; font-weight:600; color:#000; margin-bottom:2px; }
+.icon-box-desc { font-family:var(--font-inter); font-size:14px; font-weight:400; color:#302F2F; line-height:1.5; }
+
+.info-strip { background:rgba(232,232,232,0.8); border-radius:5px; padding:14px 18px; font-family:var(--font-inter); font-size:1em; color:#000; line-height:1.65; }
+
+/* ── FORM CARD ── */
+.form-card { background:rgba(255,255,255,0.65); border:3px solid #373737; border-radius:3px 8px 3px 3px; padding:28px 28px 32px; box-shadow:0 25px 50px rgba(38,53,65,0.12); position:sticky; top:80px; }
+.form-title { font-family:var(--font-inter); font-size:42px; font-weight:500; line-height:1.1; color:#373737; margin-bottom:0; }
+.form-subtitle { font-family:var(--font-inter); font-size:18px; font-weight:500; line-height:1.3; color:#373737; margin-bottom:14px; margin-top:4px; }
+
+.form-badges { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
+.form-badge { display:flex; align-items:center; gap:6px; font-family:var(--font-inter); font-size:14px; font-weight:600; color:#C6C6C6; }
+.form-badge i { font-size:20px; color:#C6C6C6; }
+.form-badge-unavail { display:flex; align-items:center; gap:6px; margin-top:2px; margin-bottom:12px; }
+.form-badge-unavail i { font-size:20px; color:#C6C6C6; }
+.form-badge-unavail span { font-family:var(--font-inter); font-size:14px; font-weight:600; color:#C6C6C6; }
+
+/* CAMPI */
+.f-group { margin-bottom:10px; }
+.f-group input,
+.f-group select {
+  width:100%; border:1px solid rgba(0,0,0,0.75); border-radius:3px;
+  padding:9px 12px; font-family:var(--font-inter); font-size:0.82em;
+  font-weight:500; color:#000; background:transparent; outline:none;
+  line-height:1.2; transition:border-color .2s, box-shadow .2s;
+}
+.f-group input:focus,
+.f-group select:focus { border-color:var(--pink); box-shadow:0 0 0 2px rgba(228,41,128,0.12); }
+.f-group input.error,
+.f-group select.error { border-color:#e11c47; box-shadow:0 0 0 2px rgba(225,28,71,0.12); }
+.f-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+.privacy-note { font-family:var(--font-inter); font-size:0.77rem; color:#000; margin:10px 0 7px; line-height:1.5; }
+.privacy-note a { color:#000; font-weight:600; text-decoration:underline; }
+.f-check { display:flex; align-items:flex-start; gap:8px; margin-bottom:14px; }
+.f-check input[type="checkbox"] { margin-top:3px; accent-color:var(--pink); flex-shrink:0; width:14px; height:14px; cursor:pointer; }
+.f-check label { font-family:var(--font-inter); font-size:0.77rem; color:#000; line-height:1.4; cursor:pointer; }
+
+/* BOTTONE */
+.btn-submit {
+  width:100%; background:var(--pink); color:#fff;
+  border:1px solid var(--pink); border-radius:3px;
+  padding:16px 20px; font-family:var(--font-inter);
+  font-size:1em; font-weight:700; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  transition:background .2s, opacity .2s;
+}
+.btn-submit:hover:not(:disabled) { background:#000; border-color:#000; }
+.btn-submit:disabled { opacity:.6; cursor:not-allowed; }
+
+/* MESSAGGI */
+.form-msg {
+  display:none; text-align:center; padding:14px 16px; border-radius:4px;
+  font-family:var(--font-inter); font-size:0.9rem; font-weight:600; margin-top:12px;
+  line-height:1.5;
+}
+.form-msg.loading  { background:#fff3cd; color:#856404; border:1px solid #ffeeba; }
+.form-msg.success  { background:#d4edda; color:#155724; border:1px solid #c3e6cb; }
+.form-msg.err      { background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; }
+
+/* ── NON PUOI PERDERLA ── */
+.s-nope { background-image:url('/_assets/img/bg-aura.webp'); background-position:223px 728px; background-color:#fff; padding:40px; }
+.nope-inner { max-width:1140px; margin:0 auto; }
+.nope-title { font-family:var(--font-inter); font-size:37px; font-weight:600; color:#000; margin-bottom:24px; }
+.nope-items { display:flex; flex-wrap:wrap; justify-content:center; gap:28px; }
+.nope-item { width:40%; font-family:var(--font-inter); font-size:18px; font-weight:400; line-height:1.3em; color:#000; text-align:center; }
+
+/* ── ABOUT ── */
+.s-about { padding:48px 40px; background:#fff; }
+.s-about-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
+.about-img-card { border-radius:12px; background:url('/_assets/img/foto-evento.webp') center/cover; box-shadow:0 25px 50px rgba(38,53,65,0.12); padding:35px; min-height:320px; }
+.about-text-card { border-radius:12px; background:#fff; box-shadow:0 25px 50px rgba(38,53,65,0.12); padding:35px 35px 55px; }
+.about-logo img { width:219px; margin-bottom:16px; }
+.about-text { font-family:var(--font-inter); font-size:15px; font-weight:400; color:#000; line-height:1.6; }
+.about-text p+p { margin-top:10px; }
+
+/* ── PARLANO DI NOI ── */
+.s-parlano { background:#fff; padding:24px 40px; border-top:1px solid #eee; }
+.s-parlano-inner { max-width:1140px; margin:0 auto; display:flex; align-items:center; gap:24px; }
+.parlano-label { font-family:var(--font-inter); font-size:1.4rem; font-weight:600; text-transform:uppercase; color:#000; white-space:nowrap; }
+.parlano-logos { display:flex; align-items:center; gap:28px; overflow:hidden; flex:1; }
+.parlano-logos img { height:34px; width:auto; filter:brightness(0); opacity:.5; object-fit:contain; }
+
+/* ── FOOTER MAIN ── */
+.footer-main { background:#000; padding:48px 40px; }
+.footer-main-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; }
+.f-brand img { width:120px; margin-bottom:14px; }
+.f-brand p { font-family:var(--font-inter); font-size:14px; color:#fff; line-height:1.4; margin-bottom:14px; }
+.f-contacts { list-style:none; margin-bottom:16px; }
+.f-contacts li { display:flex; align-items:flex-start; gap:7px; font-family:var(--font-inter); font-size:0.85em; font-weight:600; color:#fff; margin-bottom:6px; line-height:1.4; }
+.f-contacts li i { margin-top:2px; flex-shrink:0; }
+.f-numverde img { width:180px; margin-bottom:14px; }
+.f-socials { display:flex; gap:8px; }
+.f-socials a { width:32px; height:32px; border-radius:50%; background:#111; border:1px solid #333; display:flex; align-items:center; justify-content:center; color:#fff; font-size:13px; transition:background .2s; }
+.f-socials a:hover { background:var(--pink); border-color:var(--pink); }
+.f-col h4 { font-family:var(--font-inter); font-size:1.1em; font-weight:600; color:#fff; margin-bottom:12px; }
+.f-col h4+h4 { margin-top:20px; }
+.f-col p { font-family:var(--font-inter); font-size:13px; color:#ccc; line-height:1.4; margin-bottom:10px; }
+.f-list { list-style:none; }
+.f-list li { margin-bottom:5px; }
+.f-list a { font-family:var(--font-inter); font-size:0.85em; font-weight:600; color:#ccc; text-decoration:underline; }
+.f-list a:hover { color:#fff; }
+.f-badges { display:flex; gap:10px; align-items:center; margin-top:12px; }
+.f-badges img { width:55px; height:55px; object-fit:contain; }
+.f-small { font-family:var(--font-inter); font-size:0.72em; color:#888; margin-top:10px; line-height:1.5; }
+.f-small a { color:#888; text-decoration:underline; }
+
+/* ── FOOTER BOTTOM ── */
+.footer-bottom { background:#242424; padding:44px 40px; }
+.footer-bottom-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:24px; }
+.fb-col h4 { font-family:var(--font-inter); font-size:0.82em; font-weight:700; letter-spacing:1.5px; color:#fff; margin-bottom:12px; text-transform:uppercase; }
+.fb-col h4+h4 { margin-top:16px; }
+.fb-list { list-style:none; }
+.fb-list li { margin-bottom:6px; }
+.fb-list a { font-family:var(--font-inter); font-size:0.82em; font-weight:600; color:#DADADA; display:flex; align-items:flex-start; gap:5px; }
+.fb-list a:hover { color:#fff; }
+.fb-list a::before { content:'•'; flex-shrink:0; color:#555; }
+
+/* ── STICKY BAR ── */
+.sbar { position:fixed; bottom:0; left:0; right:0; z-index:999; background:#000; background-image:url('/_assets/img/bg-aura.webp'); background-position:center; background-size:cover; padding:12px 48px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 -4px 20px rgba(0,0,0,.35); }
+.sbar-left { display:flex; align-items:center; gap:16px; }
+.sbar-icon img { width:30px; height:auto; }
+.sbar-webinar { font-family:var(--font-inter); font-size:1rem; font-weight:400; letter-spacing:0.1em; color:#fff; line-height:0.9em; }
+.sbar-date { font-family:var(--font-inter); font-size:0.85rem; font-weight:500; text-transform:uppercase; color:#fff; margin-top:4px; }
+.sbar-btn { background:transparent; color:#fff; border:1px solid #fff; border-radius:3px; padding:10px 22px; font-family:var(--font-inter); font-size:1em; font-weight:500; cursor:pointer; display:flex; align-items:center; gap:7px; transition:background .2s, color .2s; }
+.sbar-btn:hover { background:#fff; color:#000; }
+
+.pb-spacer { height:60px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px) {
+  .hero-inner { grid-template-columns:1fr; }
+  .footer-main-inner { grid-template-columns:1fr 1fr; }
+  .footer-bottom-inner { grid-template-columns:1fr 1fr; }
+  .s-about-inner { grid-template-columns:1fr; }
+}
+@media(max-width:767px) {
+  .topbar-center,.topbar-actions { display:none; }
+  .navbar-menu { display:none; }
+  .hero-title { font-size:34px; }
+  .hero-subtitle { font-size:20px; }
+  .nope-item { width:100%; }
+  .footer-main-inner,.footer-bottom-inner { grid-template-columns:1fr; }
+  .sbar { padding:10px 20px; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THCFGR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-socials">
+    <a href="https://www.facebook.com/ideandum.marketingstudiodentistico/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/ideandum_/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/channel/UCcsvh8eVQ8e12p4S9nkuHGg" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/company/ideandum-s-r-l-/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://wa.me/393402952082" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <span class="topbar-center">Marketing Odontoiatrico per Studi Dentistici</span>
+  <div class="topbar-actions">
+    <a href="tel:+390444351203"><i class="fas fa-phone-alt"></i> Chiamaci</a>
+    <a href="#"><i class="fas fa-comment-dots"></i> Scrivici</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="https://ideandum.com" class="navbar-logo">
+    <img src="/_assets/img/logo-ideandum.webp" alt="Ideandum">
+  </a>
+  <ul class="navbar-menu">
+    <li><a href="https://ideandum.com/marketing-per-dentisti/">CHI SIAMO</a></li>
+    <li><a href="https://ideandum.com/corso-marketing-odontoiatrico/">METODO</a></li>
+    <li><a href="https://ideandum.com/generare-valore-2026/">GENERARE VALORE</a></li>
+    <li><a href="https://ideandum.com/marketing-studio-dentistico/">SERVIZI</a></li>
+    <li><a href="https://ideandum.com/marketing-dentale/">PORTFOLIO</a></li>
+    <li><a href="https://ideandum.com/marketing-odontoiatria/">RISORSE</a></li>
+    <li><a href="https://ideandum.com/ideandum-contatti/">CONTATTI</a></li>
+    <li><a href="https://ideandum.com/miglior-agenzia-di-marketing-odontoiatrico/#recensioni">RECENSIONI ⭐</a></li>
+  </ul>
+  <a href="https://ideandum.com/eng/" target="_blank">
+    <img src="https://ideandum.com/wp-content/uploads/2024/03/uk.webp" alt="English" style="width:33px;height:33px;border-radius:50%;">
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- COLONNA SINISTRA -->
+    <div>
+      <div class="event-badge">
+        <div class="pulsating-circle"></div>
+        <span class="badge-date"><b>24 Novembre</b> ore 13</span>
+        <span class="badge-label">- In diretta ONLINE</span>
+      </div>
+
+      <h2 class="hero-title">Ogni chiamata ha una risposta, anche quando lo studio è chiuso</h2>
+      <h5 class="hero-subtitle">GAIA risponde quando la segreteria è occupata, in pausa o a casa: così nessun paziente resta senza risposta</h5>
+
+      <div class="speakers-row">
+        <div class="speaker">
+          <img src="/_assets/img/Armida-Parigi.webp" alt="Armida Parigi">
+          <span class="speaker-name">Armida Parigi</span>
+        </div>
+        <div class="speaker">
+          <img src="/_assets/img/michele-laurino.webp" alt="Michele Laurino">
+          <span class="speaker-name">Michele Laurino</span>
+        </div>
+      </div>
+
+      <div class="body-text">
+        <p>Il telefono squilla mentre la segretaria sta già parlando con un altro paziente. Oppure sono le otto di sera e lo studio è chiuso. Dall'altra parte c'è una persona che voleva prendere un appuntamento: se nessuno risponde, spesso chiama il dentista successivo.</p>
+        <p>Succede più di quanto si pensi: in una ricerca su oltre 4.000 telefonate a studi dentistici, <b>il 38% è rimasto senza risposta</b>. E circa un paziente su tre chiama per un appuntamento tra le 19 e le 7. Non dipende dalla tua segretaria: una persona può rispondere a una telefonata alla volta, e lo studio ha un orario.</p>
+        <p>In questo webinar vediamo come GAIA, la segretaria AI, entra in gioco proprio in quei momenti, al telefono e ora anche su WhatsApp. Esci con un'idea chiara di <b>come inserirla nella giornata del tuo studio, accanto al tuo team</b>.</p>
+      </div>
+
+      <p class="topics-heading">Di cosa parleremo nel webinar:</p>
+
+      <div class="icon-boxes">
+        <div class="icon-box">
+          <i class="fas fa-check icon-box-icon"></i>
+          <div>
+            <div class="icon-box-title">Dove sta entrando l'AI negli studi dentistici</div>
+            <div class="icon-box-desc">Cosa sta cambiando davvero, cosa è già utile oggi e cosa no, senza promesse esagerate.</div>
+          </div>
+        </div>
+        <div class="icon-box">
+          <i class="fas fa-check icon-box-icon"></i>
+          <div>
+            <div class="icon-box-title">Le chiamate che oggi restano senza risposta</div>
+            <div class="icon-box-desc">In quali momenti della giornata succede (segreteria al telefono, pausa pranzo, sera, weekend) e come capire quante ne perde il tuo studio.</div>
+          </div>
+        </div>
+        <div class="icon-box">
+          <i class="fas fa-check icon-box-icon"></i>
+          <div>
+            <div class="icon-box-title">GAIA al telefono, accanto alla segreteria</div>
+            <div class="icon-box-desc">Come risponde ai pazienti quando la segreteria non può e come si inserisce nel lavoro quotidiano del team.</div>
+          </div>
+        </div>
+        <div class="icon-box">
+          <i class="fas fa-check icon-box-icon"></i>
+          <div>
+            <div class="icon-box-title">Ora GAIA anche su WhatsApp</div>
+            <div class="icon-box-desc">Una risposta anche ai pazienti che preferiscono scrivere invece di chiamare, senza caricare la segreteria di nuovi messaggi.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-strip">
+        <p><b>Durata</b>: circa 60 minuti</p>
+        <p><b>Dove</b>: online, in diretta (ti invieremo il link dopo l'iscrizione)</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card" id="form">
+      <div class="form-title">ISCRIVITI</div>
+      <div class="form-subtitle">e ricevi il link per partecipare<br>direttamente su Whatsapp</div>
+
+      <div class="form-badges">
+        <div class="form-badge"><i class="fas fa-child"></i> Posti limitati</div>
+        <div class="form-badge"><i class="fas fa-desktop"></i> Livello Principiante/Medio</div>
+      </div>
+      <div class="form-badge-unavail">
+        <i class="fab fa-youtube"></i>
+        <span>Registrazione non disponibile</span>
+      </div>
+
+      <form id="webinarForm" novalidate>
+        <div class="f-group"><input type="text"  id="nome"      placeholder="Nome *"              required></div>
+        <div class="f-group"><input type="text"  id="cognome"   placeholder="Cognome *"           required></div>
+        <div class="f-group">
+          <select id="ruolo" required>
+            <option value="">Seleziona Ruolo *</option>
+            <option>Odontoiatra</option>
+            <option>Odontoiatra Titolare di Studio</option>
+            <option>Igienista</option>
+            <option>Segreteria</option>
+            <option>Assistente</option>
+            <option>Studente</option>
+            <option>Odontotecnico</option>
+            <option>Imprenditore</option>
+            <option>CEO/Presidente (Azienda)</option>
+            <option>Reparto Marketing (Azienda)</option>
+            <option>Altro</option>
+          </select>
+        </div>
+        <div class="f-group"><input type="tel"   id="whatsapp"  placeholder="Nr. Whatsapp *"      required></div>
+        <div class="f-group"><input type="email" id="email"     placeholder="Email *"             required></div>
+        <div class="f-group"><input type="text"  id="studio"    placeholder="Nome dello Studio *" required></div>
+        <div class="f-row">
+          <div class="f-group"><input type="text" id="citta" placeholder="Città *" required></div>
+          <div class="f-group">
+            <select id="provincia" required>
+              <option value="">Provincia *</option>
+              <option>AG</option><option>AL</option><option>AN</option><option>AO</option>
+              <option>AP</option><option>AQ</option><option>AR</option><option>AT</option>
+              <option>AV</option><option>BA</option><option>BG</option><option>BI</option>
+              <option>BL</option><option>BN</option><option>BO</option><option>BR</option>
+              <option>BS</option><option>BT</option><option>BZ</option><option>CA</option>
+              <option>CB</option><option>CE</option><option>CH</option><option>CL</option>
+              <option>CN</option><option>CO</option><option>CR</option><option>CS</option>
+              <option>CT</option><option>CZ</option><option>EN</option><option>FC</option>
+              <option>FE</option><option>FG</option><option>FI</option><option>FM</option>
+              <option>FR</option><option>GE</option><option>GO</option><option>GR</option>
+              <option>IM</option><option>IS</option><option>KR</option><option>LC</option>
+              <option>LE</option><option>LI</option><option>LO</option><option>LT</option>
+              <option>LU</option><option>MB</option><option>MC</option><option>ME</option>
+              <option>MI</option><option>MN</option><option>MO</option><option>MS</option>
+              <option>MT</option><option>NA</option><option>NO</option><option>NU</option>
+              <option>OR</option><option>PA</option><option>PC</option><option>PD</option>
+              <option>PE</option><option>PG</option><option>PI</option><option>PN</option>
+              <option>PO</option><option>PR</option><option>PT</option><option>PU</option>
+              <option>PV</option><option>PZ</option><option>RA</option><option>RC</option>
+              <option>RE</option><option>RG</option><option>RI</option><option>RM</option>
+              <option>RN</option><option>RO</option><option>SA</option><option>SI</option>
+              <option>SO</option><option>SP</option><option>SR</option><option>SS</option>
+              <option>SV</option><option>TA</option><option>TE</option><option>TN</option>
+              <option>TO</option><option>TP</option><option>TR</option><option>TS</option>
+              <option>TV</option><option>UD</option><option>VA</option><option>VB</option>
+              <option>VC</option><option>VE</option><option>VI</option><option>VR</option>
+              <option>VS</option><option>VT</option><option>VV</option>
+              <option>Not in Italy</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-group">
+          <select id="paese">
+            <option value="Italy">Italy</option>
+            <option>Switzerland</option><option>Austria</option>
+            <option>France</option><option>Germany</option>
+            <option>Spain</option><option>Other</option>
+          </select>
+        </div>
+
+        <p class="privacy-note">Tratteremo i tuoi dati in conformità all'informativa privacy presente al seguente <a href="https://ideandum.com/privacy-cookie-policy/" target="_blank">link</a>.</p>
+        <div class="f-check">
+          <input type="checkbox" id="consenso" required>
+          <label for="consenso">Acconsento a ricevere comunicazioni promozionali e aggiornamenti sui servizi di Ideandum, anche con modalità automatizzate. <b>(Questo consenso è fondamentale per permetterci di inviarti le comunicazioni automatizzate che ti manterranno aggiornato sull'evento).</b></label>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <i class="far fa-bookmark"></i> Iscriviti
+        </button>
+
+        <div class="form-msg loading" id="msgLoading">⏳ Invio in corso, attendi…</div>
+        <div class="form-msg success" id="msgSuccess">✅ Iscrizione completata! Ti invieremo il link su WhatsApp a breve.</div>
+        <div class="form-msg err"     id="msgError">❌ Qualcosa non ha funzionato. Riprova o scrivici a info@ideandum.com</div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- NON PUOI PERDERLA -->
+<section class="s-nope">
+  <div class="nope-inner">
+    <div class="nope-title">Non puoi perderla se:</div>
+    <div class="nope-items">
+      <div class="nope-item">Vuoi che ogni paziente che chiama trovi una risposta, anche la sera e nel weekend</div>
+      <div class="nope-item">Vuoi alleggerire la segreteria nei momenti più pieni della giornata</div>
+      <div class="nope-item">Vuoi capire in modo concreto cosa può fare l'AI nel tuo studio, già oggi</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT IDEANDUM -->
+<section class="s-about">
+  <div class="s-about-inner">
+    <div class="about-img-card"></div>
+    <div class="about-text-card">
+      <div class="about-logo">
+        <img src="https://ideandum.com/wp-content/uploads/2024/06/Ideandum-logo.png.webp" alt="Ideandum">
+      </div>
+      <div class="about-text">
+        <p>Questo webinar nasce dall'esperienza di Ideandum, il team di marketing e strategia che da oltre 13 anni lavora solo con studi dentistici in tutta Italia.</p>
+        <p>In questi anni abbiamo:</p>
+        <p>Analizzato e lavorato su centinaia di siti e strategie di Studio</p>
+        <p>Aiutato titolari a passare da piccoli studi "familiari" a realtà strutturate con 6–8 riuniti</p>
+        <p>Visto da vicino cosa funziona davvero sul campo… e cosa è solo teoria venduta bene</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARLANO DI NOI -->
+<section class="s-parlano">
+  <div class="s-parlano-inner">
+    <span class="parlano-label">Parlano di noi</span>
+    <div class="parlano-logos">
+      <img src="https://ideandum.com/wp-content/uploads/2025/03/Progetto-senza-titolo-61.png.webp" alt="">
+      <img src="https://ideandum.com/wp-content/uploads/2025/07/La_Repubblica_logo.png.webp" alt="La Repubblica">
+      <img src="https://ideandum.com/wp-content/uploads/2025/07/corriere-della-sera.webp" alt="Corriere della Sera">
+      <img src="https://ideandum.com/wp-content/uploads/2025/07/sole-24-ore.webp" alt="Il Sole 24 Ore">
+      <img src="https://ideandum.com/wp-content/uploads/2025/07/Milano-Finanza.webp" alt="Milano Finanza">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER MAIN -->
+<footer class="footer-main">
+  <div class="footer-main-inner">
+    <div class="f-brand">
+      <img src="https://ideandum.com/wp-content/uploads/2024/06/logo-bianco-2.png.webp" alt="Ideandum">
+      <p>Agenzia specializzata in <strong>Marketing Odontoiatrico</strong> e <strong>Management</strong> per lo studio dentistico e l'azienda dentale.</p>
+      <ul class="f-contacts">
+        <li><i class="fas fa-map-marker-alt"></i> Via Vecchia Ferriera, 5 - 36100 Vicenza (VI)</li>
+        <li><i class="fas fa-phone-alt"></i> +39 0444 351203</li>
+        <li><i class="fas fa-envelope"></i> info@ideandum.com</li>
+      </ul>
+      <div class="f-numverde">
+        <a href="tel:800684485"><img src="https://ideandum.com/wp-content/uploads/2021/07/Ideandum-numero-verde.png.webp" alt="Numero Verde"></a>
+      </div>
+      <div class="f-socials">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Mission</h4>
+      <p>Esperti nel Settore Dentale e Medicale per creare un innovativo ponte di comunicazione tra il paziente, il professionista e l'azienda.</p>
+      <h4>Sede Legale</h4>
+      <p>Via Vecchia Ferriera, 5 – 36100 Vicenza (VI) / CF: 03906300243</p>
+      <p>Ideandum srl Socio Unico Direzione e Coordinamento Indivia HC srl</p>
+    </div>
+    <div class="f-col">
+      <h4>Risorse Utili</h4>
+      <ul class="f-list">
+        <li><a href="#">Il Metodo "Generare Valore"</a></li>
+        <li><a href="#">Risorse Gratuite per il tuo Studio</a></li>
+        <li><a href="#">Calcola il Tuo Budget Pubblicitario</a></li>
+      </ul>
+      <div class="f-badges">
+        <img src="https://www.gstatic.com/partners/badge/images/2022/PartnerBadgeClickable.svg" alt="Google Partner">
+        <img src="https://ideandum.com/wp-content/uploads/2021/07/partner-badge-color.png.webp" alt="HubSpot">
+        <img src="https://ideandum.com/wp-content/uploads/2022/05/91_ISO9001_rgb_180.gif.webp" alt="ISO 9001">
+      </div>
+      <div class="f-small">
+        <a href="#">Politica per la Qualità</a> · <a href="#">Privacy &amp; Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FOOTER BOTTOM -->
+<div class="footer-bottom">
+  <div class="footer-bottom-inner">
+    <div class="fb-col">
+      <h4>Mission</h4>
+      <ul class="fb-list">
+        <li><a href="#">Chi Siamo</a></li>
+        <li><a href="#">Ideandum International</a></li>
+      </ul>
+      <h4>Risorse</h4>
+      <ul class="fb-list">
+        <li><a href="#">Libro Generare Valore</a></li>
+        <li><a href="#">Metodo</a></li>
+        <li><a href="#">Risorse</a></li>
+        <li><a href="#">Portfolio</a></li>
+      </ul>
+    </div>
+    <div class="fb-col">
+      <h4>Approccio al Marketing Odontoiatrico</h4>
+      <ul class="fb-list">
+        <li><a href="#">Graphic Design</a></li>
+        <li><a href="#">Web Design</a></li>
+        <li><a href="#">Web Marketing per lo Studio Dentistico</a></li>
+        <li><a href="#">Web Marketing per le Aziende</a></li>
+      </ul>
+    </div>
+    <div class="fb-col">
+      <h4>Approccio al Management Odontoiatrico</h4>
+      <ul class="fb-list">
+        <li><a href="#">Aprire uno Studio Dentistico</a></li>
+        <li><a href="#">Vendita e Customer Experience</a></li>
+        <li><a href="#">Gestione Risorse Umane Studio Dentistico</a></li>
+        <li><a href="#">Controllo di Gestione</a></li>
+        <li><a href="#">Corsi Ideandum Academy</a></li>
+      </ul>
+    </div>
+    <div class="fb-col">
+      <h4>Servizi Correlati</h4>
+      <ul class="fb-list">
+        <li><a href="https://ideandumtalent.com/" target="_blank">Ideandum Talent</a></li>
+        <li><a href="https://ideandumgaia.com/" target="_blank">Ideandum Gaia</a></li>
+        <li><a href="https://avvocatodentista.it/" target="_blank">Avvocato Dentista</a></li>
+        <li><a href="https://dentalvillage.it/" target="_blank">Dental Village</a></li>
+        <li><a href="https://www.trovadentisti.it" target="_blank">Trova Dentisti</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="pb-spacer"></div>
+
+<!-- STICKY BAR -->
+<div class="sbar">
+  <div class="sbar-left">
+    <div class="sbar-icon">
+      <img src="https://ideandum.com/wp-content/uploads/2025/08/webinar-icon-ideandum-icone-white-1024x761.png.webp" alt="webinar">
+    </div>
+    <div>
+      <div class="sbar-webinar">WEBINAR</div>
+      <div class="sbar-date">24 Novembre · Dalle 13</div>
+    </div>
+  </div>
+  <a href="#form">
+    <button class="sbar-btn"><i class="far fa-arrow-alt-circle-up"></i> Iscriviti</button>
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT — FORM CON ZAPIER WEBHOOK
+     ═══════════════════════════════════════════════════════════
+
+  ╔═══════════════════════════════════════════════════════════╗
+  ║  ISTRUZIONI: sostituisci il testo qui sotto              ║
+  ║  "INCOLLA_QUI_IL_TUO_URL_ZAPIER_WEBHOOK"                 ║
+  ║  con l'URL che Zapier ti fornisce nel trigger            ║
+  ║  "Webhooks by Zapier → Catch Hook"                       ║
+  ║                                                           ║
+  ║  Esempio reale:                                           ║
+  ║  https://hooks.zapier.com/hooks/catch/1234567/abcdefg/   ║
+  ╚═══════════════════════════════════════════════════════════╝
+-->
+<script>
+  const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/2042357/41itfwa/';
+  const EVENT_ID = 'Webinar - 2026.11.24 - Segretaria AI GAIA';
+  const GRAZIE_URL = 'https://formazione.ideandum.com/grazie-webinar/';
+
+  // ── Helpers ──────────────────────────────────────────────
+  function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function isValidPhone(v) { return /^[\d\s\+\-\(\)]{6,}$/.test(v); }
+
+  function setError(id)   { document.getElementById(id).classList.add('error'); }
+  function clearError(id) { document.getElementById(id).classList.remove('error'); }
+
+  // Rimuovi errore visivo mentre l'utente scrive
+  ['nome','cognome','ruolo','whatsapp','email','studio','citta','provincia'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input',  function() { clearError(id); });
+    el.addEventListener('change', function() { clearError(id); });
+  });
+
+  // ── Gestione submit ───────────────────────────────────────
+  document.getElementById('webinarForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Nascondi messaggi precedenti
+    ['msgLoading','msgSuccess','msgError'].forEach(function(id) {
+      document.getElementById(id).style.display = 'none';
+    });
+
+    // Leggi valori
+    var nome      = document.getElementById('nome').value.trim();
+    var cognome   = document.getElementById('cognome').value.trim();
+    var ruolo     = document.getElementById('ruolo').value;
+    var whatsapp  = document.getElementById('whatsapp').value.trim();
+    var email     = document.getElementById('email').value.trim();
+    var studio    = document.getElementById('studio').value.trim();
+    var citta     = document.getElementById('citta').value.trim();
+    var provincia = document.getElementById('provincia').value;
+    var paese     = document.getElementById('paese').value;
+    var consenso  = document.getElementById('consenso').checked;
+
+    // Validazione campi
+    var ok = true;
+    if (!nome)               { setError('nome');      ok = false; }
+    if (!cognome)            { setError('cognome');   ok = false; }
+    if (!ruolo)              { setError('ruolo');     ok = false; }
+    if (!isValidPhone(whatsapp)) { setError('whatsapp'); ok = false; }
+    if (!isValidEmail(email))    { setError('email');    ok = false; }
+    if (!studio)             { setError('studio');   ok = false; }
+    if (!citta)              { setError('citta');    ok = false; }
+    if (!provincia)          { setError('provincia');ok = false; }
+
+    if (!consenso) {
+      alert('Per procedere devi accettare il consenso alle comunicazioni.');
+      return;
+    }
+    if (!ok) {
+      // Porta in vista il primo campo errato
+      var primo = document.querySelector('#webinarForm .error');
+      if (primo) primo.scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+
+    // Disabilita pulsante e mostra loading
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Invio in corso…';
+    document.getElementById('msgLoading').style.display = 'block';
+
+    // ── Invio dati al webhook Zapier ──────────────────────
+    var now       = new Date();
+    var data      = now.toLocaleDateString('it-IT');          // es. 20/05/2026
+    var ora       = now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }); // es. 14:32
+
+    fetch(ZAPIER_WEBHOOK_URL, {
+      method:  'POST',
+      mode:    'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nome:      nome,
+        cognome:   cognome,
+        ruolo:     ruolo,
+        whatsapp:  whatsapp,
+        email:     email,
+        studio:    studio,
+        citta:     citta,
+        provincia: provincia,
+        paese:     paese,
+        pagina:    window.location.href,
+        data:      data,
+        ora:       ora,
+        consenso_newsletter: consenso ? 'SI' : 'NO',
+        event_id:  EVENT_ID
+      })
+    })
+    .then(function() {
+      // Con no-cors non leggiamo la risposta, ma i dati sono arrivati a Zapier.
+      // Redirect alla pagina di ringraziamento per tracking conversioni.
+      window.location.href = GRAZIE_URL;
+    })
+    .catch(function(error) {
+      document.getElementById('msgLoading').style.display = 'none';
+      document.getElementById('msgError').style.display = 'block';
+      console.error('Errore di rete:', error);
+      btn.disabled = false;
+      btn.innerHTML = '<i class="far fa-bookmark"></i> Iscriviti';
+    });
+  });
+</script>
+
+</body>
+</html>

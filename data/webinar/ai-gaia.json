@@ -1,0 +1,43 @@
+{
+  "slug": "ai-gaia",
+  "event_id": "Webinar - 2026.11.24 - Segretaria AI GAIA",
+  "event_name_extended": "Segretaria AI GAIA",
+  "titolo": "Ogni chiamata ha una risposta, anche quando lo studio è chiuso",
+  "sottotitolo": "GAIA risponde quando la segreteria è occupata, in pausa o a casa: così nessun paziente resta senza risposta",
+  "data": "2026-11-24",
+  "ora": "13:00",
+  "relatori": [
+    {
+      "foto": "/_assets/img/Armida-Parigi.webp",
+      "nome": "Armida Parigi"
+    },
+    {
+      "foto": "/_assets/img/michele-laurino.webp",
+      "nome": "Michele Laurino"
+    }
+  ],
+  "testo": "Il telefono squilla mentre la segretaria sta già parlando con un altro paziente. Oppure sono le otto di sera e lo studio è chiuso. Dall'altra parte c'è una persona che voleva prendere un appuntamento: se nessuno risponde, spesso chiama il dentista successivo.\n\nSuccede più di quanto si pensi: in una ricerca su oltre 4.000 telefonate a studi dentistici, **il 38% è rimasto senza risposta**. E circa un paziente su tre chiama per un appuntamento tra le 19 e le 7. Non dipende dalla tua segretaria: una persona può rispondere a una telefonata alla volta, e lo studio ha un orario.\n\nIn questo webinar vediamo come GAIA, la segretaria AI, entra in gioco proprio in quei momenti, al telefono e ora anche su WhatsApp. Esci con un'idea chiara di **come inserirla nella giornata del tuo studio, accanto al tuo team**.",
+  "argomenti": [
+    {
+      "descrizione": "Cosa sta cambiando davvero, cosa è già utile oggi e cosa no, senza promesse esagerate.",
+      "titolo": "Dove sta entrando l'AI negli studi dentistici"
+    },
+    {
+      "descrizione": "In quali momenti della giornata succede (segreteria al telefono, pausa pranzo, sera, weekend) e come capire quante ne perde il tuo studio.",
+      "titolo": "Le chiamate che oggi restano senza risposta"
+    },
+    {
+      "descrizione": "Come risponde ai pazienti quando la segreteria non può e come si inserisce nel lavoro quotidiano del team.",
+      "titolo": "GAIA al telefono, accanto alla segreteria"
+    },
+    {
+      "descrizione": "Una risposta anche ai pazienti che preferiscono scrivere invece di chiamare, senza caricare la segreteria di nuovi messaggi.",
+      "titolo": "Ora GAIA anche su WhatsApp"
+    }
+  ],
+  "motivi": [
+    "Vuoi che ogni paziente che chiama trovi una risposta, anche la sera e nel weekend",
+    "Vuoi alleggerire la segreteria nei momenti più pieni della giornata",
+    "Vuoi capire in modo concreto cosa può fare l'AI nel tuo studio, già oggi"
+  ]
+}
