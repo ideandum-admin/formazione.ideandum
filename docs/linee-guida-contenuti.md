@@ -51,9 +51,9 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - Totale: 3 annunci nel Freddo + 3 nel Caldo, tutti in bozza.
 
 ### Struttura della campagna e budget (dal 21/10/2026)
-- Campagna CBO "Webinar - 2026 - Budget per webinar (CBO)" (ID 52600961859122), 100 €/giorno (alzato da 70 € il 21/10), sempre spesi tutti.
+- Campagna CBO "Webinar - 2026 - Budget per webinar (CBO)" (ID 52600961859122), 80 €/giorno (70 € fino al 21/10, 100 € fino al 26/10), sempre spesi tutti.
 - **Un gruppo per ogni webinar** ("Webinar AAAA.MM.GG – <Nome breve>"): pubblico = interessi dentisti **+ chi ci conosce** (interazioni pagina FB e IG, visualizzazioni video), nessuna esclusione salvo gli iscritti degli ultimi 7 giorni. Obiettivo: iscritti a basso costo (riferimento 5–10 €).
-- **Un gruppo "Webinar – Nuovo pubblico"** unico: solo persone che non ci conoscono (lookalike + interessi dentisti, esclude chi ci conosce), con gli annunci migliori del momento. Quota fissa ~30% (minimo 27%, tetto 30% del budget: con 100 € minimo 27 €, tetto 30 €; Meta richiede minimo ≤ 90% del tetto). Si valuta su persone nuove raggiunte, CTR e costo per click, non sul costo per iscritto.
+- **Un gruppo "Webinar – Nuovo pubblico"** unico: solo persone che non ci conoscono (lookalike + interessi dentisti, esclude chi ci conosce), con gli annunci migliori del momento. Quota fissa ~30% (minimo 27%, tetto 30% del budget: con 80 € minimo 21,60 €, tetto 24 €; Meta richiede minimo ≤ 90% del tetto). Si valuta su persone nuove raggiunte, CTR e costo per click, non sul costo per iscritto.
 - Spese minime dei gruppi per webinar (in % del budget della campagna):
 
 | Webinar attivi | Più vicino | Secondo | Terzo |
