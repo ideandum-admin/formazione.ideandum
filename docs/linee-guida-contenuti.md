@@ -65,6 +65,20 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - Il giorno prima di ogni webinar (12:30) si mette in pausa il suo gruppo (e i suoi annunci nel Nuovo pubblico) e si ricalcolano i minimi.
 - Perché: con il pubblico "freddo" che escludeva chi ci conosce (15–21/10) il costo per iscritto era salito a 19–28 €, contro i 5–7 € dei gruppi per webinar con pubblico misto.
 
+### Parametri UTM degli annunci (dal 26/10/2026)
+Ogni annuncio Meta porta i parametri UTM (campo "Parametri URL" della creatività, `url_tags`), per capire in GA4 da dove arrivano le conversioni. Il link resta la landing pulita; i parametri si aggiungono a parte.
+
+| Parametro | Valore | Esempio |
+|---|---|---|
+| utm_source | piattaforma, compilata da Meta: `{{site_source_name}}` | fb, ig, msg, an |
+| utm_medium | pubblico del gruppo di inserzioni | `remarketing` (gruppi per webinar) · `freddo` (Webinar – Nuovo pubblico) |
+| utm_campaign | formato dell'annuncio | `immagine`, `video`, `carosello`, `post` |
+| utm_content | formato + descrizione breve, minuscole e trattini | `immagine-angolo-a`, `video-franco-pensieroso`, `carosello-percorso-paziente`, `post-carico-fiscale` |
+
+- Stringa tipo: `utm_source={{site_source_name}}&utm_medium=remarketing&utm_campaign=video&utm_content=video-franco-pensieroso`
+- Lo stesso contenuto nei due gruppi cambia solo `utm_medium`.
+- Il webinar si riconosce dalla pagina della landing (cartella), quindi non serve nell'UTM.
+
 ### Grafiche (Canva)
 - Le grafiche si fanno **in Canva**, partendo dai design esistenti: mai ricrearle da zero fuori da Canva.
 - Ogni webinar ha un design "Webinar - AAAA.MM.GG - <Nome>" (anteprima sito, post, storia, copertina YouTube, creatività). Per gli annunci si crea una copia "Webinar - AAAA.MM.GG - <Nome> - ADS" con le pagine quadrato + storia, una coppia per angolo.
