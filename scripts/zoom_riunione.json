@@ -1,5 +1,5 @@
 {
-  "_nota": "Impostazioni standard delle riunioni Zoom dei webinar (account conference@ideandum.com), ricavate dalla riunione del 27/10/2026. Usate con POST https://api.zoom.us/v2/users/me/meetings. Sostituire topic e start_time (ora locale, formato AAAA-MM-GGTHH:MM:SS). Il link da salvare in tabella è 'registration_url' della risposta.",
+  "_nota": "Impostazioni standard delle riunioni Zoom dei webinar (account conference@ideandum.com), ricavate dalla riunione del 27/10/2026. Usate con POST https://api.zoom.us/v2/users/me/meetings. Sostituire topic e start_time (ora locale, formato AAAA-MM-GGTHH:MM:SS). Il link da salvare in tabella è 'registration_url' della risposta. Registrazione automatica nel cloud Zoom (dal 27/10/2026) per il flusso post webinar.",
   "topic": "TITOLO DEL WEBINAR",
   "type": 2,
   "start_time": "2026-01-01T13:00:00",
@@ -13,7 +13,7 @@
     "approval_type": 0,
     "registration_type": 1,
     "audio": "both",
-    "auto_recording": "none",
+    "auto_recording": "cloud",
     "waiting_room": true,
     "registrants_confirmation_email": true,
     "registrants_email_notification": true,
@@ -21,6 +21,8 @@
     "allow_multiple_devices": true,
     "show_share_button": true,
     "close_registration": false,
-    "language_interpretation": {"enable": false}
+    "language_interpretation": {
+      "enable": false
+    }
   }
 }

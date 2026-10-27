@@ -24,13 +24,16 @@ BASE = "https://formazione.ideandum.com"
 #  campaign = formato, content = formato + descrizione).
 UTM = ("utm_source=sito-ideandum&utm_medium=sito"
        "&utm_campaign=carosello&utm_content=carosello-prossimi-eventi")
+# Click dagli "Eventi Passati": portano alla piattaforma
+UTM_PASSATI = ("utm_source=sito-ideandum&utm_medium=sito"
+               "&utm_campaign=carosello&utm_content=carosello-eventi-passati")
 
 
 def main():
     dati = json.loads(SORGENTE.read_text(encoding="utf-8"))
     eventi = []
     for e in dati["eventi"]:
-        for campo in ("slug", "titolo", "data", "immagine"):
+        for campo in ("titolo", "data", "immagine"):
             if not e.get(campo):
                 sys.exit(f"Evento senza '{campo}': {e}")
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", e["data"]):
@@ -45,7 +48,8 @@ def main():
             "data": e["data"],
             "ora": e.get("ora", ""),
             "immagine": img,
-            "link": f"{BASE}/{e['slug']}/?{UTM}",
+            "link": f"{BASE}/{e['slug']}/?{UTM}" if e.get("slug") else "",
+            "link_passato": f"{BASE}/piattaforma/?{UTM_PASSATI}",
         })
     eventi.sort(key=lambda x: x["data"])
     DEST.parent.mkdir(parents=True, exist_ok=True)
@@ -54,20 +58,24 @@ def main():
         "window.IDEANDUM_PROSSIMI_WEBINAR = "
         + json.dumps(eventi, ensure_ascii=False, indent=2)
         + ";\n"
-        "if (window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO) window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO();\n",
+        "if (window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO) window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO();\n"
+        "try { document.dispatchEvent(new Event('idm-eventi-pronti')); } catch (e) {}\n",
         encoding="utf-8",
     )
     print(f"Scritto {DEST.relative_to(ROOT)} con {len(eventi)} eventi")
 
     # Pagina di anteprima del widget (stesso codice da incollare in Elementor)
     widget = (ROOT / "eventi-sito" / "widget-elementor.html").read_text(encoding="utf-8")
+    widget_passati = (ROOT / "eventi-sito" / "widget-eventi-passati.html").read_text(encoding="utf-8")
     anteprima = (
         "<!doctype html>\n<html lang=\"it\"><head><meta charset=\"utf-8\">"
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
         "<meta name=\"robots\" content=\"noindex\"><title>Anteprima carosello eventi</title>"
         "<style>body{margin:0;background:#e9e9e9;font-family:Inter,Arial,sans-serif;padding:40px 16px}"
         "h2{text-align:center;font-size:44px;line-height:1;margin:0 0 30px}</style></head><body>"
-        "<h2>Prossimi<br>Eventi Gratuiti</h2>\n" + widget + "\n</body></html>\n"
+        "<h2>Prossimi<br>Eventi Gratuiti</h2>\n" + widget +
+        "\n<div style=\"max-width:1000px;margin:40px auto 0;background:#f7f7f7;padding:30px 20px\">"
+        "<h2 style=\"font-size:32px\">Eventi Passati</h2>\n" + widget_passati + "</div>\n</body></html>\n"
     )
     (ROOT / "eventi-sito" / "anteprima.html").write_text(anteprima, encoding="utf-8")
     print("Scritto eventi-sito/anteprima.html")

@@ -49,17 +49,20 @@
     });
     var n=pagine();
     for(var k=0;k<n;k++){(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Vai al gruppo '+(k+1));b.onclick=function(){vai(k);};dots.appendChild(b);})(k);}
-    var mostra=lista.length>perVista();prev.style.display=next.style.display=mostra?'':'none';dots.style.visibility=mostra?'':'hidden';
+    var mostra=lista.length>perVista();prev.style.display=next.style.display=mostra?'':'none';dots.style.visibility=mostra?'':'hidden';track.style.justifyContent=mostra?'flex-start':'center';
     aggiorna();
   }
   prev.onclick=function(){var s=track.children[0].getBoundingClientRect().width+27;track.scrollBy({left:-s,behavior:'smooth'});};
   next.onclick=function(){var s=track.children[0].getBoundingClientRect().width+27;track.scrollBy({left:s,behavior:'smooth'});};
   track.addEventListener('scroll',function(){window.requestAnimationFrame(aggiorna);});
   window.addEventListener('resize',costruisci);
-  window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO=costruisci;
-  var s=document.createElement('script');
-  s.src='https://formazione.ideandum.com/eventi-sito/prossimi-webinar.js?v='+Math.floor(Date.now()/3600000);
-  s.onerror=function(){track.innerHTML='<div class="idm-ev-vuoto">Nuove date in arrivo.</div>';prev.style.display=next.style.display='none';};
-  document.head.appendChild(s);
+  document.addEventListener('idm-eventi-pronti',costruisci);
+  if(window.IDEANDUM_PROSSIMI_WEBINAR){costruisci();}
+  else if(!window.IDEANDUM_EVENTI_IN_CARICAMENTO){
+    window.IDEANDUM_EVENTI_IN_CARICAMENTO=true;
+    var s=document.createElement('script');
+    s.src='https://formazione.ideandum.com/eventi-sito/prossimi-webinar.js?v='+Math.floor(Date.now()/3600000);
+    document.head.appendChild(s);
+  }
 })();
 </script>
