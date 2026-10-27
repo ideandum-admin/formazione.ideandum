@@ -107,6 +107,7 @@ def genera(scheda_path: Path) -> Path:
         "META_DESCRIPTION": html.escape(d.get("meta_description") or d["sottotitolo"][:155]),
         "DATA_BREVE": html.escape(d["data_breve"]),
         "ORA": html.escape(d["ora"]),
+        "LOGO": (f'      <img class="hero-logo" src="{html.escape(d["logo"])}" alt="{html.escape(d.get("logo_alt", ""))}">\n' if d.get("logo") else ""),
         "TITOLO": testo(d["titolo"]),
         "SOTTOTITOLO": testo(d["sottotitolo"]),
         "RELATORI": relatori(d["relatori"]),
