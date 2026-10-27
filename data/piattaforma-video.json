@@ -1,0 +1,96 @@
+{
+  "_nota": "Video della piattaforma formazione.ideandum.com/piattaforma/ (in ordine di visualizzazione; i nuovi webinar vanno in cima). categoria = uno dei filtri: 'Segreteria & Gestione', 'Marketing', 'Paziente', 'Management', 'Digitale & AI'. Dopo una modifica: python3 scripts/genera_piattaforma.py, poi commit e push.",
+  "video": [
+    {
+      "youtube_id": "h6R072m_gZk",
+      "categoria": "Segreteria & Gestione",
+      "etichetta": "Segreteria",
+      "titolo": "📅 Gestione degli Appuntamenti e Segreteria efficiente: il cuore di uno studio che funziona",
+      "descrizione": "Scopri come organizzare agenda e front-desk per eliminare i buchi in agenda, ridurre i no-show e migliorare l'esperienza del paziente fin dal primo contatto telefonico."
+    },
+    {
+      "youtube_id": "z_HiosbxSgk",
+      "categoria": "Paziente",
+      "etichetta": "Paziente",
+      "titolo": "🗺️ Il Percorso del Paziente: 3 Strategie per Migliorare la Customer Journey nel Tuo Studio",
+      "descrizione": "Analizza ogni touchpoint del paziente — dalla prima ricerca online alla visita di controllo — e impara le 3 strategie concrete per aumentare soddisfazione, passaparola e fedeltà."
+    },
+    {
+      "youtube_id": "0D2x_Dr0z4Q",
+      "categoria": "Marketing",
+      "etichetta": "Marketing",
+      "titolo": "💤 Meglio acquisire un nuovo paziente o recuperare un dormiente? La verità dopo 13 anni",
+      "descrizione": "Dopo 13 anni di dati reali, la risposta sorprende. Scopri qual è la strategia più redditizia tra acquisizione e riattivazione, e come implementarla senza sprecare budget."
+    },
+    {
+      "youtube_id": "CylC2Tnq-30",
+      "categoria": "Marketing",
+      "etichetta": "Marketing",
+      "titolo": "🦷 Nessun dentista è nato per fare marketing: 3 strumenti per avere più pazienti",
+      "descrizione": "Non serve diventare un esperto di marketing. Trovi 3 strumenti pratici, facili da delegare, che portano nuovi pazienti senza sottrarre tempo alla clinica."
+    },
+    {
+      "youtube_id": "ysNh_C57ezs",
+      "categoria": "Management",
+      "etichetta": "Management",
+      "titolo": "📋 Perché i tuoi pazienti non accettano il preventivo",
+      "descrizione": "Il problema spesso non è il prezzo. Scopri le vere ragioni psicologiche e comunicative dietro il 'ci penso' e impara un metodo in 4 step per aumentare il tasso di accettazione."
+    },
+    {
+      "youtube_id": "09ZY1SSWF3k",
+      "categoria": "Management",
+      "etichetta": "Management",
+      "titolo": "🏛️ Vendita dello Studio Dentistico con Avv. Sgarallino",
+      "descrizione": "Tutto quello che devi sapere prima di cedere o acquistare uno studio: aspetti legali, fiscali e valutativi spiegati con casi pratici e domande dal vivo."
+    },
+    {
+      "youtube_id": "WElfBRBMeUo",
+      "categoria": "Digitale & AI",
+      "etichetta": "AI Marketing",
+      "titolo": "🤖 Farsi trovare dall'Intelligenza Artificiale",
+      "descrizione": "ChatGPT e Google AI stanno cambiando il modo in cui i pazienti trovano il dentista. Scopri come ottimizzare la tua presenza online per essere suggerito dall'AI."
+    },
+    {
+      "youtube_id": "8vK2imdzYfc",
+      "categoria": "Digitale & AI",
+      "etichetta": "Sito Web",
+      "titolo": "🔍 90 giorni per farsi trovare su Google",
+      "descrizione": "Un piano SEO locale in 90 giorni: Google Business, contenuti strategici, recensioni e link building per scalare le ricerche locali senza dipendere solo dalla pubblicità a pagamento."
+    },
+    {
+      "youtube_id": "wy7FubqmFOg",
+      "categoria": "Marketing",
+      "etichetta": "Brand",
+      "titolo": "🧠 Come essere nella mente dei tuoi pazienti — Brand con Armida e Monica",
+      "descrizione": "Il brand non è solo il logo. Armida e Monica svelano come costruire un'identità di studio memorabile che genera fiducia ancora prima della prima visita."
+    },
+    {
+      "youtube_id": "PJE7PMsUak0",
+      "categoria": "Management",
+      "etichetta": "Architettura",
+      "titolo": "🏗️ Vuoi ampliare o costruire un nuovo studio dentistico?",
+      "descrizione": "Progettare o ristrutturare uno studio è una delle decisioni più importanti della carriera. Evita gli errori più costosi: dalla scelta degli spazi al layout funzionale, con l'aiuto di un esperto."
+    },
+    {
+      "youtube_id": "98O8yiWt3Ao",
+      "categoria": "Marketing",
+      "etichetta": "Marketing",
+      "titolo": "📱 Social Media per Dentisti: cosa pubblicare (e come farlo senza stress)",
+      "descrizione": "Scopri una strategia concreta per i social del tuo studio: quali contenuti funzionano davvero, come organizzare il piano editoriale e come produrre post efficaci senza perdere ore ogni settimana."
+    },
+    {
+      "youtube_id": "nnQ4Alg_BUQ",
+      "categoria": "Marketing",
+      "etichetta": "Marketing",
+      "titolo": "🗣️ Passaparola 2.0: come il Brand fa trovare nuovi pazienti online",
+      "descrizione": "Il passaparola tradizionale si è evoluto: oggi i pazienti cercano e condividono online. Scopri come costruire un brand forte che lavora per te 24 ore su 24, trasformando la reputazione digitale in nuovi appuntamenti."
+    },
+    {
+      "youtube_id": "N7FtU5DaWz8",
+      "categoria": "Management",
+      "etichetta": "Management",
+      "titolo": "📊 Studio Pieno, Margini Bassi? Scopri i Numeri che Fanno Davvero la Differenza",
+      "descrizione": "Avere l'agenda piena non basta: scopri quali indicatori economici monitorare davvero, come leggere i margini del tuo studio e quali leve agire subito per trasformare un'agenda intensa in un business solido e sostenibile."
+    }
+  ]
+}
