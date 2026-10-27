@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ideandum Formazione — Webinar Estate 2025</title>
+  <!--
+    NOTA FONT — Nimbus Sans:
+    Non disponibile su Google Fonts. Aggiungere @font-face con i file .woff2
+    nella cartella del sito per attivarlo. Esempio:
+      @font-face {
+        font-family: 'Nimbus Sans';
+        src: url('/fonts/NimbusSans-Regular.woff2') format('woff2');
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: 'Nimbus Sans';
+        src: url('/fonts/NimbusSans-Bold.woff2') format('woff2');
+        font-weight: 700;
+      }
+    Inter (corpo) è già caricato da Google Fonts.
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:      #E42980;
+      --accent-dark: #C01F6A;
+      --accent-pale: #FDE8F2;
+      --black:       #1D1D1B;
+      --white:       #FFFFFF;
+      --off-white:   #F8F8F6;
+      --gray-light:  #EAEAE8;
+      --gray-mid:    #C4C4BE;
+      --gray-dark:   #6B6B65;
+      --text-mid:    #4A4A44;
+      --shadow-sm:   0 1px 4px rgba(0,0,0,0.07);
+      --shadow-md:   0 4px 20px rgba(0,0,0,0.10);
+      --shadow-lg:   0 16px 48px rgba(0,0,0,0.15);
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 16px;
+      /* Nimbus Sans stack — sostituire con @font-face una volta caricati i file */
+      --f-title: 'Nimbus Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --f-body:  'Inter', system-ui, sans-serif;
+    }
+
+    html, body { overflow-x: hidden; max-width: 100%; }
+
+    body {
+      font-family: var(--f-body);
+      background: var(--off-white);
+      color: var(--black);
+      min-height: 100vh;
+    }
+
+    /* ══════════════════════════════════════
+       AUTH SCREEN
+    ══════════════════════════════════════ */
+    #auth-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+    }
+
+    /* LEFT — white + aura image */
+    .auth-left {
+      flex: 1;
+      min-width: 0;
+      background: var(--white) url('https://ideandum.com/wp-content/uploads/2025/07/aura3.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px 64px 48px 80px;
+      gap: 0;
+    }
+
+    /* inner wrapper pushes content toward the center dividing line */
+    .auth-left-inner {
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .auth-logo img { height: 38px; display: block; }
+
+    .auth-logo-fallback {
+      font-family: var(--f-title);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+      display: none;
+    }
+
+    .auth-logo-fallback span { color: var(--accent); }
+
+    .auth-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(228,41,128,0.08);
+      border: 1px solid rgba(228,41,128,0.22);
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+    }
+
+    .auth-badge::before { content:'●'; font-size:8px; animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .auth-left h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 48px;
+      line-height: 1.1;
+      color: #000000;
+      margin-bottom: 18px;
+      font-weight: 500;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .auth-left p {
+      font-size: 15px;
+      color: #000000;
+      line-height: 1.7;
+      max-width: 400px;
+      margin-bottom: 40px;
+    }
+
+    .auth-stats { display: flex; gap: 36px; }
+
+    .auth-stat-n {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .auth-stat-l { font-size: 12px; color: #000000; margin-top: 4px; }
+    .auth-footer { font-size: 12px; color: #000000; opacity: 0.45; }
+
+    /* RIGHT — white form */
+    .auth-right {
+      flex: 1;
+      min-width: 0;
+      background: var(--white);
+      border-left: 1px solid var(--gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 48px 80px 48px 64px;
+      overflow-y: auto;
+      max-height: 100vh;
+    }
+
+    .auth-form-wrap { width: 100%; max-width: 420px; margin-left: 0; margin-right: auto; }
+
+    .auth-tabs {
+      display: flex;
+      background: var(--off-white);
+      border-radius: var(--r-sm);
+      padding: 4px;
+      margin-bottom: 28px;
+      gap: 0;
+    }
+
+    .auth-tab {
+      flex: 1;
+      padding: 9px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--f-body);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--gray-dark);
+      transition: all 0.2s;
+      border: none;
+      background: transparent;
+    }
+
+    .auth-tab.active { background: var(--white); color: var(--black); box-shadow: var(--shadow-sm); }
+
+    .form-title {
+      font-family: var(--f-title);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+      letter-spacing: -0.3px;
+    }
+
+    .form-sub { font-size: 13px; color: var(--gray-dark); margin-bottom: 22px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-g { margin-bottom: 13px; }
+
+    .form-g label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-mid);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-g input, .form-g select {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1.5px solid var(--gray-light);
+      border-radius: var(--r-sm);
+      font-size: 14px;
+      font-family: var(--f-body);
+      color: var(--black);
+      background: var(--white);
+      transition: border-color 0.15s;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-g select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B65' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 34px;
+    }
+
+    .form-g input:focus, .form-g select:focus { border-color: var(--accent); }
+
+    .form-divider {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 18px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-divider::before, .form-divider::after { content:''; flex:1; height:1px; background:var(--gray-light); }
+
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .form-check input[type=checkbox] {
+      width: 16px; height: 16px; min-width: 16px;
+      margin-top: 2px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .form-check label {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      cursor: pointer;
+      font-weight: 400;
+    }
+
+    .form-check label a { color: var(--accent); }
+
+    .auth-btn {
+      width: 100%;
+      padding: 13px;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: var(--r-sm);
+      font-size: 15px;
+      font-weight: 700;
+      font-family: var(--f-body);
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+
+    .auth-btn:hover { background: var(--accent-dark); }
+
+    .auth-error {
+      background: #FEE2E2;
+      color: #991B1B;
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: var(--r-sm);
+      margin-bottom: 14px;
+      display: none;
+    }
+
+    .auth-error.show { display: block; }
+
+    /* ══════════════════════════════════════
+       PLATFORM
+    ══════════════════════════════════════ */
+    #platform-screen { display: none; }
+
+    .plat-topbar {
+      background: var(--black);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .plat-logo { display: flex; align-items: center; gap: 14px; }
+
+    .plat-logo img { height: 28px; filter: brightness(0) invert(1); }
+
+    .plat-logo-lf {
+      font-family: var(--f-title);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      display: none;
+    }
+
+    .plat-logo-lf span { color: var(--accent); }
+
+    .plat-topbar-r { display: flex; align-items: center; gap: 20px; }
+
+    .plat-avatar {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: var(--white);
+    }
+
+    .plat-uname { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+    .plat-logout {
+      font-size: 12px; color: rgba(255,255,255,0.35);
+      cursor: pointer; background: none; border: none; font-family: inherit;
+    }
+
+    .plat-logout:hover { color: rgba(255,255,255,0.6); }
+
+    /* Hero */
+    .plat-hero {
+      background: var(--white) url('https://ideandum.com/wp-content/uploads/2025/07/aura3.png') center/cover no-repeat;
+      padding: 56px 40px 52px;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .plat-hero-inner { max-width: 1200px; margin: 0 auto; }
+
+    .plat-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(228,41,128,0.08);
+      border: 1px solid rgba(228,41,128,0.22);
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .plat-hero-badge::before { content:'●'; font-size:8px; animation:pulse 2s infinite; }
+
+    .plat-hero h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #000000;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      letter-spacing: -1px;
+    }
+
+    .plat-hero-sub {
+      font-size: 15px;
+      color: #000000;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 36px;
+    }
+
+    .plat-stats { display: flex; gap: 40px; }
+
+    .plat-stat-n {
+      font-family: 'Inter', sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .plat-stat-l { font-size: 12px; color: #000000; margin-top: 4px; }
+
+    /* Body */
+    .plat-body { max-width: 1200px; margin: 0 auto; padding: 40px 40px 80px; }
+
+    .filter-bar { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; align-items: center; }
+
+    .filter-lbl { font-size: 13px; font-weight: 600; color: #000000; margin-right: 4px; }
+
+    .chip {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1.5px solid var(--gray-light);
+      background: var(--white);
+      font-size: 13px;
+      font-weight: 500;
+      color: #000000;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: var(--f-body);
+    }
+
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+    .chip.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
+
+    .sec-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 24px; }
+
+    .sec-head h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #000000;
+      letter-spacing: -0.3px;
+    }
+
+    .sec-head span { font-size: 13px; color: #000000; opacity: 0.45; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .card-thumb {
+      height: 176px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .thumb-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+    .thumb-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 100%); }
+
+
+
+
+
+
+
+
+
+
+    .thumb-dots {
+      position: absolute; inset: 0;
+      opacity: 0.04;
+      background-image: radial-gradient(circle,white 1px,transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .thumb-cat {
+      position: absolute; top: 14px; left: 14px; z-index: 2;
+      background: rgba(29,29,27,0.6);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.9);
+      font-size: 11px; font-weight: 600;
+      padding: 4px 10px; border-radius: 4px;
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    .play-btn {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.4);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 2;
+      transition: all 0.2s;
+    }
+
+    .card:hover .play-btn { background: var(--accent); border-color: var(--accent); }
+
+    .play-arr {
+      width:0; height:0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 16px solid white;
+      margin-left: 3px;
+    }
+
+    .card-cat-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--accent);
+      margin-bottom: 7px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .card-body { padding: 16px 18px 18px; }
+
+    .card-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px; font-weight: 600;
+      color: #000000; line-height: 1.4;
+      margin-bottom: 14px; letter-spacing: -0.2px;
+    }
+
+    .watch-btn {
+      width: 100%;
+      padding: 10px;
+      background: var(--off-white);
+      border: 1.5px solid var(--gray-light);
+      border-radius: var(--r-sm);
+      font-size: 13px; font-weight: 600;
+      color: #000000;
+      cursor: pointer;
+      font-family: var(--f-body);
+      transition: all 0.15s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+
+    .watch-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--white); }
+
+    /* Modal */
+    #modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(29,29,27,0.82);
+      z-index: 1000;
+      align-items: center; justify-content: center;
+      padding: 24px;
+    }
+
+    #modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--black);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      width: 100%; max-width: 860px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal-hd {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      padding: 20px 24px 16px;
+    }
+
+    .modal-cat { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+    .modal-ttl { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: var(--white); line-height: 1.4; max-width: 640px; }
+
+    .modal-close {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: none;
+      color: white; font-size: 18px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px; font-family: inherit;
+    }
+
+    .modal-close:hover { background: rgba(255,255,255,0.2); }
+
+    .modal-vid { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .modal-vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+    .modal-ft { padding: 14px 24px; }
+    .modal-yt { font-size: 12px; color: rgba(255,255,255,0.35); text-decoration: none; }
+    .modal-yt:hover { color: var(--accent); }
+
+    /* Footer */
+    .plat-footer {
+      background: #1D1D1B;
+      padding: 56px 40px 32px;
+    }
+
+    .plat-footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 32px;
+    }
+
+    .plat-footer-brand img { height: 32px; filter: brightness(0) invert(1); margin-bottom: 16px; }
+    .plat-footer-brand p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 280px; }
+    .plat-footer-brand-fallback { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: #fff; display: none; margin-bottom: 16px; }
+    .plat-footer-brand-fallback span { color: var(--accent); }
+
+    .plat-footer-col h4 { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 16px; }
+    .plat-footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 10px; transition: color 0.15s; }
+    .plat-footer-col a:hover { color: var(--white); }
+
+    .plat-footer-socials { display: flex; gap: 12px; margin-top: 20px; }
+    .plat-footer-social {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.15s;
+    }
+    .plat-footer-social:hover { border-color: var(--accent); color: var(--accent); }
+
+    .plat-footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .plat-footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .plat-footer-legal { display: flex; gap: 20px; }
+    .plat-footer-legal a { font-size: 12px; color: rgba(255,255,255,0.25); text-decoration: none; }
+    .plat-footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+    /* Nav */
+    .plat-nav { display: flex; align-items: center; gap: 4px; }
+    .plat-nav a {
+      font-size: 13px; font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.15s;
+    }
+    .plat-nav a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+    .plat-nav a.active { color: var(--white); background: rgba(255,255,255,0.1); }
+
+    /* Featured */
+    .featured-section { margin-bottom: 48px; }
+
+    .featured-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .featured-card:hover { box-shadow: var(--shadow-md); }
+
+    .featured-thumb {
+      width: 340px;
+      min-width: 340px;
+      background: linear-gradient(135deg, #2A0018, #E42980);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .featured-thumb .thumb-dots { opacity: 0.05; }
+
+    .featured-play {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.5);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 2;
+      transition: all 0.2s;
+    }
+
+    .featured-card:hover .featured-play { background: var(--accent); border-color: var(--accent); }
+
+    .featured-play-arr {
+      width: 0; height: 0;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-left: 20px solid white;
+      margin-left: 4px;
+    }
+
+    .featured-body { padding: 28px 32px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+    .featured-eyebrow {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+    }
+
+    .featured-cat-tag {
+      font-size: 11px; font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .featured-badge-in-evidenza {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(228,41,128,0.08);
+      border: 1px solid rgba(228,41,128,0.22);
+      color: var(--accent-dark);
+      font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: 20px;
+    }
+
+    .featured-badge-in-evidenza::before { content: '★'; font-size: 9px; }
+
+    .featured-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px; font-weight: 600;
+      color: #000000; line-height: 1.35;
+      margin-bottom: 12px; letter-spacing: -0.3px;
+    }
+
+    .featured-desc {
+      font-size: 14px; color: #000000;
+      line-height: 1.7; margin-bottom: 20px;
+      opacity: 0.6;
+    }
+
+    .featured-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px;
+      background: var(--accent);
+      color: var(--white);
+      border: none; border-radius: var(--r-sm);
+      font-size: 14px; font-weight: 700;
+      font-family: var(--f-body);
+      cursor: pointer;
+      transition: background 0.15s;
+      align-self: flex-start;
+    }
+
+    .featured-btn:hover { background: var(--accent-dark); }
+
+    /* Coming soon card */
+    .card-coming {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      border: 2px dashed var(--gray-light);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 32px 20px;
+      min-height: 260px;
+      cursor: default;
+    }
+
+    .card-coming-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--off-white);
+      border: 1.5px solid var(--gray-light);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+      font-size: 20px;
+      color: var(--gray-dark);
+    }
+
+    .card-coming h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px; font-weight: 600;
+      color: #000000; margin-bottom: 6px;
+    }
+
+    .card-coming p { font-size: 13px; color: var(--gray-dark); }
+
+    /* ── NAV LINK (topbar — kept for backward compat) ── */
+    .plat-nav-link {
+      font-size: 13px; font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .plat-nav-link:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+    .plat-nav-link.active { color: var(--white); background: rgba(255,255,255,0.12); }
+
+    /* ── SUBNAV (sotto hero, sfondo bianco) ── */
+    .plat-subnav {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+    .plat-subnav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .plat-subnav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: #000;
+      text-decoration: none;
+      padding: 14px 16px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .plat-subnav-link:hover { color: var(--accent); }
+    .plat-subnav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .plat-wa-cta {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      border-radius: var(--r-sm);
+      border: 0.5px solid #25D366;
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .plat-wa-cta:hover { background: #f0fdf4; }
+    .plat-wa-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #000;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .plat-wa-sub {
+      font-size: 11px;
+      color: var(--gray-dark);
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
+
+    .pwd-wrap { position: relative; }
+    .pwd-wrap input { padding-right: 42px; }
+    .pwd-toggle {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; cursor: pointer; padding: 4px;
+      color: var(--gray-dark); line-height: 1;
+    }
+    .pwd-toggle:hover { color: var(--black); }
+    .pwd-toggle svg { width: 18px; height: 18px; display: block; }
+
+    .forgot-link {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+      color: var(--accent);
+      margin-top: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-family: var(--f-body);
+      width: 100%;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+
+    .auth-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--gray-dark);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--f-body);
+      margin-bottom: 20px;
+      padding: 0;
+    }
+    .auth-back-link:hover { color: var(--black); }
+
+    .auth-success {
+      background: #E8F8F0;
+      color: #1A6B40;
+      font-size: 13px;
+      padding: 12px 16px;
+      border-radius: var(--r-sm);
+      margin-bottom: 14px;
+      display: none;
+      line-height: 1.5;
+    }
+    .auth-success.show { display: block; } */
+    .footer-main { background: #000; padding: 52px 48px; }
+    .footer-main-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 36px; }
+    .f-brand .logo-footer { width: 120px; margin-bottom: 16px; display: block; }
+    .f-brand p { font-size: 14px; color: #ccc; line-height: 1.5; margin-bottom: 14px; }
+    .f-contacts { list-style: none; margin-bottom: 18px; }
+    .f-contacts li { display: flex; align-items: flex-start; gap: 8px; font-size: .85em; font-weight: 600; color: #ccc; margin-bottom: 7px; line-height: 1.4; font-family: var(--f-body); }
+    .f-icon { width: 14px; height: 14px; margin-top: 2px; flex-shrink: 0; color: #ccc; }
+    .f-numverde { margin-bottom: 18px; }
+    .f-numverde img { width: 175px; }
+    .f-socials { display: flex; gap: 8px; }
+    .f-socials a { width: 32px; height: 32px; border-radius: 50%; background: #1a1a1a; border: 1px solid #333; display: flex; align-items: center; justify-content: center; color: #ccc; transition: background .2s; }
+    .f-socials a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .f-col h4 { font-size: 1.1em; font-weight: 700; color: #fff; margin-bottom: 14px; font-family: var(--f-body); }
+    .f-col h4 + h4 { margin-top: 22px; }
+    .f-col p { font-size: 13px; color: #aaa; line-height: 1.5; margin-bottom: 10px; }
+    .f-list { list-style: none; }
+    .f-list li { margin-bottom: 6px; }
+    .f-list a { font-size: .85em; font-weight: 600; color: #aaa; text-decoration: underline; transition: color .2s; font-family: var(--f-body); }
+    .f-list a:hover { color: #fff; }
+    .f-badges { display: flex; gap: 10px; align-items: center; margin-top: 14px; }
+    .f-badges img { width: 54px; height: 54px; object-fit: contain; }
+    .f-small { font-size: .72em; color: #666; margin-top: 12px; line-height: 1.5; }
+    .f-small a { color: #666; text-decoration: underline; }
+
+    /* ── FOOTER BOTTOM ── */
+    .footer-bottom { background: #141414; padding: 44px 48px; }
+    .footer-bottom-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; }
+    .fb-col h4 { font-size: .8em; font-weight: 700; letter-spacing: 1.5px; color: #ccc; margin-bottom: 12px; text-transform: uppercase; font-family: var(--f-body); }
+    .fb-col h4 + h4 { margin-top: 18px; }
+    .fb-list { list-style: none; }
+    .fb-list li { margin-bottom: 6px; }
+    .fb-list a { font-size: .82em; font-weight: 600; color: #888; display: flex; align-items: flex-start; gap: 5px; text-decoration: none; font-family: var(--f-body); }
+    .fb-list a:hover { color: #fff; }
+    .fb-list a::before { content: '›'; color: #555; font-size: 15px; flex-shrink: 0; line-height: 1.2; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      #auth-screen { flex-direction: column; }
+      .auth-left { padding: 36px 20px; flex: none; justify-content: flex-start; }
+      .auth-left-inner { max-width: 100%; margin: 0; flex: none; justify-content: flex-start; }
+      .auth-left h1 { font-size: 28px; white-space: normal; }
+      .auth-right { flex: none; width: 100%; padding: 36px 20px; max-height: none; }
+      .auth-form-wrap { max-width: 100%; margin: 0; }
+      .auth-stats { gap: 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .plat-topbar { padding: 0 16px; gap: 12px; }
+      .plat-hero { padding: 32px 16px; }
+      .plat-hero h2 { font-size: 28px; }
+      .plat-subnav-inner { padding: 0 16px; gap: 0; overflow-x: auto; }
+      .plat-subnav-link { font-size: 13px; padding: 12px 10px; }
+      .plat-wa-sub { display: none; }
+      .plat-wa-cta { padding: 6px 10px; }
+      .plat-body { padding: 24px 16px 60px; }
+      .grid { grid-template-columns: 1fr; }
+      .featured-card { flex-direction: column; }
+      .featured-thumb { width: 100%; height: 200px; }
+      .footer-main { padding: 36px 16px; }
+      .footer-main-inner { grid-template-columns: 1fr; }
+      .footer-bottom { padding: 36px 16px; }
+      .footer-bottom-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-bottom-inner { grid-template-columns: 1fr; }
+      .auth-stats { gap: 16px; }
+      .plat-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ AUTH ════════════════ -->
+<div id="auth-screen">
+
+  <div class="auth-left">
+
+    <div class="auth-left-inner">
+      <div class="auth-logo" style="margin-bottom:32px;">
+        <img src="https://ideandum.com/wp-content/uploads/2024/05/Logo-Ideandum_Tavola-disegno-1-2048x374-1.png.webp"
+             alt="Ideandum"
+             onerror="this.style.display='none';document.getElementById('al1').style.display='block'">
+        <div id="al1" class="auth-logo-fallback">idea<span>ndum</span></div>
+      </div>
+      <div class="auth-badge">Edizione Estate 2026</div>
+      <h1>Aggiornati quando<br>vuoi, dove vuoi.</h1>
+      <p>I webinar live della prima parte dell'anno ora disponibili on demand. Rivivi le sessioni più importanti per la tua crescita professionale.</p>
+      <div class="auth-stats">
+        <div><div class="auth-stat-n">12</div><div class="auth-stat-l">Webinar disponibili</div></div>
+        <div><div class="auth-stat-n">8</div><div class="auth-stat-l">Relatori esperti</div></div>
+        <div><div class="auth-stat-n">18h</div><div class="auth-stat-l">Di contenuti</div></div>
+      </div>
+    </div>
+
+    <div class="auth-footer">© 2025 Ideandum S.r.l. — Via Vecchia Ferriera 5, Vicenza</div>
+  </div>
+
+  <div class="auth-right">
+    <div class="auth-form-wrap">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="showTab('login')">Accedi</button>
+        <button class="auth-tab" onclick="showTab('register')">Registrati</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="login-form">
+        <div class="form-title">Bentornato</div>
+        <div class="form-sub">Accedi per vedere tutti i webinar</div>
+        <div id="login-err" class="auth-error"></div>
+        <div class="form-g"><label>Email</label><input type="email" id="l-email" placeholder="la-tua@email.it"></div>
+        <div class="form-g"><label>Password</label><div class="pwd-wrap"><input type="password" id="l-pwd" placeholder="••••••••"><button type="button" class="pwd-toggle" onclick="togglePwd('l-pwd',this)" title="Mostra/nascondi password"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+        <button class="auth-btn" onclick="doLogin()">Entra nella piattaforma →</button>
+        <button class="forgot-link" onclick="showTab('reset')">Hai dimenticato la password?</button>
+      </div>
+
+      <!-- RESET PASSWORD -->
+      <div id="reset-form" style="display:none">
+        <button class="auth-back-link" onclick="showTab('login')">← Torna al login</button>
+        <div class="form-title">Recupera la password</div>
+        <div class="form-sub">Inserisci la tua email e ti invieremo le istruzioni per reimpostare la password.</div>
+        <div id="reset-err" class="auth-error"></div>
+        <div id="reset-ok" class="auth-success"></div>
+        <div class="form-g"><label>Email</label><input type="email" id="reset-email" placeholder="la-tua@email.it"></div>
+        <button class="auth-btn" onclick="doReset()">Invia istruzioni →</button>
+      </div>
+
+      <!-- REGISTER -->
+      <div id="register-form" style="display:none">
+        <div class="form-title">Crea il tuo accesso</div>
+        <div class="form-sub">Registrazione gratuita — accesso immediato a tutti i webinar</div>
+        <div id="reg-err" class="auth-error"></div>
+
+        <div class="form-row">
+          <div class="form-g"><label>Nome *</label><input type="text" id="r-fname" placeholder="Mario"></div>
+          <div class="form-g"><label>Cognome *</label><input type="text" id="r-lname" placeholder="Rossi"></div>
+        </div>
+
+        <div class="form-g">
+          <label>Ruolo *</label>
+          <select id="r-role">
+            <option value="">Seleziona Ruolo</option>
+            <option>Odontoiatra</option>
+            <option>Odontoiatra Titolare di Studio</option>
+            <option>Igienista</option>
+            <option>Segreteria</option>
+            <option>Assistente</option>
+            <option>Studente</option>
+            <option>Odontotecnico</option>
+            <option>Imprenditore</option>
+            <option>CEO/Presidente (Azienda)</option>
+            <option>Reparto Marketing (Azienda)</option>
+            <option>Reparto Sales (Azienda)</option>
+            <option>Reparto Direzione (Azienda)</option>
+            <option>Manager (Azienda)</option>
+            <option>Altro</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-g"><label>Telefono *</label><input type="tel" id="r-phone" placeholder="+39 000 000 0000"></div>
+          <div class="form-g"><label>Email *</label><input type="email" id="r-email" placeholder="la-tua@email.it"></div>
+        </div>
+
+        <div class="form-g"><label>Nome Studio / Azienda</label><input type="text" id="r-company" placeholder="Studio Dentistico Rossi"></div>
+
+        <div class="form-row">
+          <div class="form-g"><label>Città</label><input type="text" id="r-city" placeholder="Milano"></div>
+          <div class="form-g">
+            <label>Provincia</label>
+            <select id="r-prov">
+              <option value="">Seleziona</option>
+              <option>Not in Italy</option>
+              <option>AG</option><option>AL</option><option>AN</option><option>AO</option><option>AP</option>
+              <option>AQ</option><option>AR</option><option>AT</option><option>AV</option><option>BA</option>
+              <option>BG</option><option>BI</option><option>BL</option><option>BN</option><option>BO</option>
+              <option>BR</option><option>BS</option><option>BT</option><option>BZ</option><option>CA</option>
+              <option>CB</option><option>CE</option><option>CH</option><option>CL</option><option>CN</option>
+              <option>CO</option><option>CR</option><option>CS</option><option>CT</option><option>CZ</option>
+              <option>EN</option><option>FC</option><option>FE</option><option>FG</option><option>FI</option>
+              <option>FM</option><option>FR</option><option>GE</option><option>GO</option><option>GR</option>
+              <option>IM</option><option>IS</option><option>KR</option><option>LC</option><option>LE</option>
+              <option>LI</option><option>LO</option><option>LT</option><option>LU</option><option>MB</option>
+              <option>MC</option><option>ME</option><option>MI</option><option>MN</option><option>MO</option>
+              <option>MS</option><option>MT</option><option>NA</option><option>NO</option><option>NU</option>
+              <option>OG</option><option>OR</option><option>OT</option><option>PA</option><option>PC</option>
+              <option>PD</option><option>PE</option><option>PG</option><option>PI</option><option>PN</option>
+              <option>PO</option><option>PR</option><option>PT</option><option>PU</option><option>PV</option>
+              <option>PZ</option><option>RA</option><option>RC</option><option>RE</option><option>RG</option>
+              <option>RI</option><option>RM</option><option>RN</option><option>RO</option><option>SA</option>
+              <option>SI</option><option>SO</option><option>SP</option><option>SR</option><option>SS</option>
+              <option>SV</option><option>TA</option><option>TE</option><option>TN</option><option>TO</option>
+              <option>TP</option><option>TR</option><option>TS</option><option>TV</option><option>UD</option>
+              <option>VA</option><option>VB</option><option>VC</option><option>VE</option><option>VI</option>
+              <option>VR</option><option>VS</option><option>VT</option><option>VV</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-g">
+          <label>Paese</label>
+          <select id="r-country">
+            <option selected>Italy</option>
+            <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Andorra</option>
+            <option>Angola</option><option>Argentina</option><option>Armenia</option><option>Australia</option>
+            <option>Austria</option><option>Azerbaijan</option><option>Belgium</option><option>Brazil</option>
+            <option>Bulgaria</option><option>Canada</option><option>Chile</option><option>China</option>
+            <option>Colombia</option><option>Croatia</option><option>Cyprus</option><option>Czech Republic</option>
+            <option>Denmark</option><option>Egypt</option><option>Estonia</option><option>Finland</option>
+            <option>France</option><option>Georgia</option><option>Germany</option><option>Greece</option>
+            <option>Hungary</option><option>India</option><option>Indonesia</option><option>Iran</option>
+            <option>Iraq</option><option>Ireland</option><option>Israel</option><option>Japan</option>
+            <option>Jordan</option><option>Kazakhstan</option><option>Kosovo</option><option>Kuwait</option>
+            <option>Latvia</option><option>Lebanon</option><option>Libya</option><option>Lithuania</option>
+            <option>Luxembourg</option><option>Malta</option><option>Mexico</option><option>Moldova</option>
+            <option>Monaco</option><option>Montenegro</option><option>Morocco</option><option>Netherlands</option>
+            <option>New Zealand</option><option>Nigeria</option><option>Norway</option><option>Oman</option>
+            <option>Pakistan</option><option>Panama</option><option>Peru</option><option>Philippines</option>
+            <option>Poland</option><option>Portugal</option><option>Qatar</option><option>Romania</option>
+            <option>Russia</option><option>San Marino</option><option>Saudi Arabia</option><option>Serbia</option>
+            <option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>South Africa</option>
+            <option>Spain</option><option>Sweden</option><option>Switzerland</option><option>Tunisia</option>
+            <option>Turkey</option><option>Ukraine</option><option>United Arab Emirates</option>
+            <option>United Kingdom</option><option>United States</option><option>Uruguay</option>
+            <option>Vatican City</option><option>Venezuela</option>
+          </select>
+        </div>
+
+        <div class="form-divider">Accesso alla piattaforma</div>
+
+        <div class="form-g">
+          <label>Password * &nbsp;<span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px;color:var(--gray-dark)">minimo 6 caratteri</span></label>
+          <div class="pwd-wrap"><input type="password" id="r-pwd" placeholder="••••••••"><button type="button" class="pwd-toggle" onclick="togglePwd('r-pwd',this)" title="Mostra/nascondi password"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+        </div>
+
+        <div class="form-divider">Privacy e consensi</div>
+
+        <div class="form-check">
+          <input type="checkbox" id="r-nl">
+          <label for="r-nl">Acconsento a ricevere comunicazioni promozionali e aggiornamenti sui servizi di Ideandum, anche con modalità automatizzate. <strong>(Questo consenso è fondamentale per permetterci di inviarti le comunicazioni automatizzate che ti manterranno aggiornato sull'evento)</strong></label>
+        </div>
+
+        <button class="auth-btn" onclick="doRegister()">Crea il mio account →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ PLATFORM ════════════════ -->
+<div id="platform-screen">
+
+  <div class="plat-topbar">
+    <div class="plat-logo">
+      <img src="https://ideandum.com/wp-content/uploads/2024/05/Logo-Ideandum_Tavola-disegno-1-2048x374-1.png.webp"
+           alt="Ideandum"
+           onerror="this.style.display='none';document.getElementById('pl2').style.display='block'">
+      <div id="pl2" class="plat-logo-lf">idea<span>ndum</span></div>
+    </div>
+    <div class="plat-topbar-r">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="plat-avatar" id="user-avatar">?</div>
+        <span class="plat-uname" id="user-name-display">Utente</span>
+      </div>
+      <button class="plat-logout" onclick="doLogout()">Esci</button>
+    </div>
+  </div>
+
+  <div class="plat-hero">
+    <div class="plat-hero-inner">
+      <h2>Aggiornati quando<br>vuoi, dove vuoi.</h2>
+      <p class="plat-hero-sub">I webinar live della prima parte dell'anno ora disponibili on demand. Rivivi le sessioni più importanti per la tua crescita professionale.</p>
+      <div class="plat-stats">
+        <div><div class="plat-stat-n">12</div><div class="plat-stat-l">Webinar disponibili</div></div>
+        <div><div class="plat-stat-n">8</div><div class="plat-stat-l">Relatori esperti</div></div>
+        <div><div class="plat-stat-n">18h</div><div class="plat-stat-l">Di contenuti</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NAV BAR (sotto hero, sfondo bianco) ── -->
+  <nav class="plat-subnav">
+    <div class="plat-subnav-inner">
+      <div style="display:flex;align-items:center;">
+        <a href="#webinar" class="plat-subnav-link active">Webinar</a>
+        <a href="https://ideandum.com/marketing-studio-dentistico/" class="plat-subnav-link" target="_blank">Percorsi</a>
+        <a href="https://ideandum.com/miglior-agenzia-di-marketing-odontoiatrico/#recensioni" class="plat-subnav-link" target="_blank">Dicono di noi</a>
+        <a href="https://ideandum.com/marketing-odontoiatria/" class="plat-subnav-link" target="_blank">Risorse Gratuite</a>
+      </div>
+      <a href="https://chat.whatsapp.com/D0TZ07n0Zsf6VSVlbgRFRp" target="_blank" class="plat-wa-cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <div>
+          <div class="plat-wa-title">Community WhatsApp</div>
+          <div class="plat-wa-sub">Resta aggiornato sui nuovi webinar</div>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <div class="plat-body">
+
+    <!-- ── IN EVIDENZA ── -->
+    <div class="featured-section" id="webinar">
+      <div class="sec-head" style="margin-bottom:18px;">
+        <h3>In evidenza</h3>
+        <span>Consigliato per te</span>
+      </div>
+      <div class="featured-card" onclick="openVid(event,'h6R072m_gZk','Segreteria & Gestione','Gestione degli Appuntamenti e Segreteria efficiente')">
+        <div class="featured-thumb">
+          <div class="thumb-bg" style="position:absolute;inset:0;background-image:url('https://img.youtube.com/vi/h6R072m_gZk/hqdefault.jpg');background-size:cover;background-position:center;"></div>
+          <div class="thumb-overlay"></div>
+          <div class="featured-play"><div class="featured-play-arr"></div></div>
+        </div>
+        <div class="featured-body">
+          <div class="featured-eyebrow">
+            <span class="featured-cat-tag">Segreteria & Gestione</span>
+            <span class="featured-badge-in-evidenza">In evidenza</span>
+          </div>
+          <div class="featured-title">Gestione degli Appuntamenti e Segreteria efficiente: il cuore di uno studio che funziona</div>
+          <div class="featured-desc">Come strutturare la segreteria per far funzionare tutto alla perfezione: gestione degli appuntamenti, comunicazione con i pazienti e protocolli operativi che fanno la differenza.</div>
+          <button class="featured-btn" onclick="openVid(event,'h6R072m_gZk','Segreteria & Gestione','Gestione degli Appuntamenti e Segreteria efficiente')">▶ Guarda ora</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <span class="filter-lbl">Filtra:</span>
+      <button class="chip active" onclick="filterCards('Tutti',this)">Tutti</button>
+      <button class="chip" onclick="filterCards('Segreteria & Gestione',this)">Segreteria & Gestione</button>
+      <button class="chip" onclick="filterCards('Marketing',this)">Marketing</button>
+      <button class="chip" onclick="filterCards('Paziente',this)">Esperienza Paziente</button>
+      <button class="chip" onclick="filterCards('Management',this)">Management</button>
+      <button class="chip" onclick="filterCards('Digitale & AI',this)">Digitale & AI</button>
+    </div>
+
+    <div class="sec-head">
+      <h3>Tutti i webinar</h3>
+      <span id="count-label">13 contenuti disponibili</span>
+    </div>
+
+    <div class="grid" id="cards-grid">
+      <div class="card" data-cat="Segreteria &amp; Gestione" data-id="h6R072m_gZk" data-title="📅 Gestione degli Appuntamenti e Segreteria efficiente: il cuore di uno studio che funziona">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/h6R072m_gZk/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Segreteria</div>
+          <div class="card-title">📅 Gestione degli Appuntamenti e Segreteria efficiente: il cuore di uno studio che funziona</div>
+          <div class="card-desc">Scopri come organizzare agenda e front-desk per eliminare i buchi in agenda, ridurre i no-show e migliorare l&#x27;esperienza del paziente fin dal primo contatto telefonico.</div>
+          <button class="watch-btn" onclick="openVid(event,'h6R072m_gZk','Segreteria &amp; Gestione','📅 Gestione degli Appuntamenti e Segreteria efficiente: il cuore di uno studio che funziona')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Paziente" data-id="z_HiosbxSgk" data-title="🗺️ Il Percorso del Paziente: 3 Strategie per Migliorare la Customer Journey nel Tuo Studio">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/z_HiosbxSgk/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Paziente</div>
+          <div class="card-title">🗺️ Il Percorso del Paziente: 3 Strategie per Migliorare la Customer Journey nel Tuo Studio</div>
+          <div class="card-desc">Analizza ogni touchpoint del paziente — dalla prima ricerca online alla visita di controllo — e impara le 3 strategie concrete per aumentare soddisfazione, passaparola e fedeltà.</div>
+          <button class="watch-btn" onclick="openVid(event,'z_HiosbxSgk','Paziente','🗺️ Il Percorso del Paziente: 3 Strategie per Migliorare la Customer Journey nel Tuo Studio')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Marketing" data-id="0D2x_Dr0z4Q" data-title="💤 Meglio acquisire un nuovo paziente o recuperare un dormiente? La verità dopo 13 anni">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/0D2x_Dr0z4Q/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Marketing</div>
+          <div class="card-title">💤 Meglio acquisire un nuovo paziente o recuperare un dormiente? La verità dopo 13 anni</div>
+          <div class="card-desc">Dopo 13 anni di dati reali, la risposta sorprende. Scopri qual è la strategia più redditizia tra acquisizione e riattivazione, e come implementarla senza sprecare budget.</div>
+          <button class="watch-btn" onclick="openVid(event,'0D2x_Dr0z4Q','Marketing','💤 Meglio acquisire un nuovo paziente o recuperare un dormiente? La verità dopo 13 anni')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Marketing" data-id="CylC2Tnq-30" data-title="🦷 Nessun dentista è nato per fare marketing: 3 strumenti per avere più pazienti">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/CylC2Tnq-30/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Marketing</div>
+          <div class="card-title">🦷 Nessun dentista è nato per fare marketing: 3 strumenti per avere più pazienti</div>
+          <div class="card-desc">Non serve diventare un esperto di marketing. Trovi 3 strumenti pratici, facili da delegare, che portano nuovi pazienti senza sottrarre tempo alla clinica.</div>
+          <button class="watch-btn" onclick="openVid(event,'CylC2Tnq-30','Marketing','🦷 Nessun dentista è nato per fare marketing: 3 strumenti per avere più pazienti')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Management" data-id="ysNh_C57ezs" data-title="📋 Perché i tuoi pazienti non accettano il preventivo">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/ysNh_C57ezs/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Management</div>
+          <div class="card-title">📋 Perché i tuoi pazienti non accettano il preventivo</div>
+          <div class="card-desc">Il problema spesso non è il prezzo. Scopri le vere ragioni psicologiche e comunicative dietro il &#x27;ci penso&#x27; e impara un metodo in 4 step per aumentare il tasso di accettazione.</div>
+          <button class="watch-btn" onclick="openVid(event,'ysNh_C57ezs','Management','📋 Perché i tuoi pazienti non accettano il preventivo')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Management" data-id="09ZY1SSWF3k" data-title="🏛️ Vendita dello Studio Dentistico con Avv. Sgarallino">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/09ZY1SSWF3k/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Management</div>
+          <div class="card-title">🏛️ Vendita dello Studio Dentistico con Avv. Sgarallino</div>
+          <div class="card-desc">Tutto quello che devi sapere prima di cedere o acquistare uno studio: aspetti legali, fiscali e valutativi spiegati con casi pratici e domande dal vivo.</div>
+          <button class="watch-btn" onclick="openVid(event,'09ZY1SSWF3k','Management','🏛️ Vendita dello Studio Dentistico con Avv. Sgarallino')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Digitale &amp; AI" data-id="WElfBRBMeUo" data-title="🤖 Farsi trovare dall&#x27;Intelligenza Artificiale">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/WElfBRBMeUo/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">AI Marketing</div>
+          <div class="card-title">🤖 Farsi trovare dall&#x27;Intelligenza Artificiale</div>
+          <div class="card-desc">ChatGPT e Google AI stanno cambiando il modo in cui i pazienti trovano il dentista. Scopri come ottimizzare la tua presenza online per essere suggerito dall&#x27;AI.</div>
+          <button class="watch-btn" onclick="openVid(event,'WElfBRBMeUo','Digitale &amp; AI','🤖 Farsi trovare dall\&#x27;Intelligenza Artificiale')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Digitale &amp; AI" data-id="8vK2imdzYfc" data-title="🔍 90 giorni per farsi trovare su Google">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/8vK2imdzYfc/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Sito Web</div>
+          <div class="card-title">🔍 90 giorni per farsi trovare su Google</div>
+          <div class="card-desc">Un piano SEO locale in 90 giorni: Google Business, contenuti strategici, recensioni e link building per scalare le ricerche locali senza dipendere solo dalla pubblicità a pagamento.</div>
+          <button class="watch-btn" onclick="openVid(event,'8vK2imdzYfc','Digitale &amp; AI','🔍 90 giorni per farsi trovare su Google')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Marketing" data-id="wy7FubqmFOg" data-title="🧠 Come essere nella mente dei tuoi pazienti — Brand con Armida e Monica">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/wy7FubqmFOg/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Brand</div>
+          <div class="card-title">🧠 Come essere nella mente dei tuoi pazienti — Brand con Armida e Monica</div>
+          <div class="card-desc">Il brand non è solo il logo. Armida e Monica svelano come costruire un&#x27;identità di studio memorabile che genera fiducia ancora prima della prima visita.</div>
+          <button class="watch-btn" onclick="openVid(event,'wy7FubqmFOg','Marketing','🧠 Come essere nella mente dei tuoi pazienti — Brand con Armida e Monica')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Management" data-id="PJE7PMsUak0" data-title="🏗️ Vuoi ampliare o costruire un nuovo studio dentistico?">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/PJE7PMsUak0/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Architettura</div>
+          <div class="card-title">🏗️ Vuoi ampliare o costruire un nuovo studio dentistico?</div>
+          <div class="card-desc">Progettare o ristrutturare uno studio è una delle decisioni più importanti della carriera. Evita gli errori più costosi: dalla scelta degli spazi al layout funzionale, con l&#x27;aiuto di un esperto.</div>
+          <button class="watch-btn" onclick="openVid(event,'PJE7PMsUak0','Management','🏗️ Vuoi ampliare o costruire un nuovo studio dentistico?')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Marketing" data-id="98O8yiWt3Ao" data-title="📱 Social Media per Dentisti: cosa pubblicare (e come farlo senza stress)">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/98O8yiWt3Ao/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Marketing</div>
+          <div class="card-title">📱 Social Media per Dentisti: cosa pubblicare (e come farlo senza stress)</div>
+          <div class="card-desc">Scopri una strategia concreta per i social del tuo studio: quali contenuti funzionano davvero, come organizzare il piano editoriale e come produrre post efficaci senza perdere ore ogni settimana.</div>
+          <button class="watch-btn" onclick="openVid(event,'98O8yiWt3Ao','Marketing','📱 Social Media per Dentisti: cosa pubblicare (e come farlo senza stress)')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Marketing" data-id="nnQ4Alg_BUQ" data-title="🗣️ Passaparola 2.0: come il Brand fa trovare nuovi pazienti online">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/nnQ4Alg_BUQ/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Marketing</div>
+          <div class="card-title">🗣️ Passaparola 2.0: come il Brand fa trovare nuovi pazienti online</div>
+          <div class="card-desc">Il passaparola tradizionale si è evoluto: oggi i pazienti cercano e condividono online. Scopri come costruire un brand forte che lavora per te 24 ore su 24, trasformando la reputazione digitale in nuovi appuntamenti.</div>
+          <button class="watch-btn" onclick="openVid(event,'nnQ4Alg_BUQ','Marketing','🗣️ Passaparola 2.0: come il Brand fa trovare nuovi pazienti online')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+      <div class="card" data-cat="Management" data-id="N7FtU5DaWz8" data-title="📊 Studio Pieno, Margini Bassi? Scopri i Numeri che Fanno Davvero la Differenza">
+        <div class="card-thumb"><div class="thumb-bg" style="background-image:url('https://img.youtube.com/vi/N7FtU5DaWz8/hqdefault.jpg');"></div><div class="thumb-overlay"></div><div class="play-btn"><div class="play-arr"></div></div></div>
+        <div class="card-body">
+          <div class="card-cat-label">Management</div>
+          <div class="card-title">📊 Studio Pieno, Margini Bassi? Scopri i Numeri che Fanno Davvero la Differenza</div>
+          <div class="card-desc">Avere l&#x27;agenda piena non basta: scopri quali indicatori economici monitorare davvero, come leggere i margini del tuo studio e quali leve agire subito per trasformare un&#x27;agenda intensa in un business solido e sostenibile.</div>
+          <button class="watch-btn" onclick="openVid(event,'N7FtU5DaWz8','Management','📊 Studio Pieno, Margini Bassi? Scopri i Numeri che Fanno Davvero la Differenza')">▶ Guarda ora</button>
+        </div>
+      </div>
+
+
+		
+      <div class="card-coming">
+        <div class="card-coming-icon">+</div>
+        <h4>Altri webinar presto disponibili</h4>
+        <p>Nuovi contenuti in arrivo.<br>Continua a seguirci!</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SVG sprite icone footer -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="ico-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="ico-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+    <symbol id="ico-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="ico-youtube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.97A16 16 0 0 0 15 16.04l1.77-1.76a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="ico-envelope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+    <symbol id="ico-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  </svg>
+
+  <footer class="footer-main">
+    <div class="footer-main-inner">
+      <div class="f-brand">
+        <img class="logo-footer" src="https://ideandum.com/wp-content/uploads/2024/06/logo-bianco-2.png.webp" alt="Ideandum" width="120" loading="lazy">
+        <p>Agenzia specializzata in <strong>Marketing Odontoiatrico</strong> e <strong>Management</strong> per lo studio dentistico e l'azienda dentale.</p>
+        <ul class="f-contacts">
+          <li><svg class="f-icon" viewBox="0 0 24 24"><use href="#ico-pin"/></svg> Via Vecchia Ferriera, 5 — 36100 Vicenza (VI)</li>
+          <li><svg class="f-icon" viewBox="0 0 24 24"><use href="#ico-phone"/></svg> +39 0444 351203</li>
+          <li><svg class="f-icon" viewBox="0 0 24 24"><use href="#ico-envelope"/></svg> info@ideandum.com</li>
+        </ul>
+        <div class="f-numverde">
+          <a href="tel:800684485"><img src="https://ideandum.com/wp-content/uploads/2021/07/Ideandum-numero-verde.png.webp" alt="Numero Verde Ideandum" width="175" loading="lazy"></a>
+        </div>
+        <div class="f-socials">
+          <a href="https://www.facebook.com/ideandum.marketingstudiodentistico/" target="_blank" aria-label="Facebook"><svg class="f-icon" viewBox="0 0 24 24"><use href="#ico-facebook"/></svg></a>
+          <a href="https://www.instagram.com/ideandum_/" target="_blank" aria-label="Instagram"><svg class="f-icon" viewBox="0 0 24 24"><use href="#ico-instagram"/></svg></a>
+          <a href="https://www.linkedin.com/company/ideandum-s-r-l-/" target="_blank" aria-label="LinkedIn"><svg class="f-icon" viewBox="0 0 24 24"><use href="#ico-linkedin"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCcsvh8eVQ8e12p4S9nkuHGg" target="_blank" aria-label="YouTube"><svg class="f-icon" viewBox="0 0 24 24"><use href="#ico-youtube"/></svg></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Mission</h4>
+        <p>Esperti nel Settore Dentale e Medicale per creare un innovativo ponte di comunicazione tra il paziente, il professionista e l'azienda.</p>
+        <h4>Sede Legale</h4>
+        <p>Via Vecchia Ferriera, 5 – 36100 Vicenza (VI) / CF: 03906300243</p>
+      </div>
+      <div class="f-col">
+        <h4>Risorse Utili</h4>
+        <ul class="f-list">
+          <li><a href="https://ideandum.com/corso-marketing-odontoiatrico/">Il Metodo "Generare Valore"</a></li>
+          <li><a href="https://ideandum.com/marketing-odontoiatria/">Risorse Gratuite per il tuo Studio</a></li>
+          <li><a href="https://ideandum.com/marketing-odontoiatria/marketing-dentista-calcola-il-budget/">Calcola il Tuo Budget Pubblicitario</a></li>
+        </ul>
+        <div class="f-badges">
+          <a href="https://www.google.com/partners/agency?id=5672942615" target="_blank"><img src="https://www.gstatic.com/partners/badge/images/2022/PartnerBadgeClickable.svg" alt="Google Partner" width="54" height="54" loading="lazy"></a>
+          <img src="https://ideandum.com/wp-content/uploads/2021/07/partner-badge-color.png.webp" alt="HubSpot Partner" width="54" height="54" loading="lazy">
+          <img src="https://ideandum.com/wp-content/uploads/2022/05/91_ISO9001_rgb_180.gif.webp" alt="ISO 9001" width="54" height="54" loading="lazy">
+        </div>
+        <div class="f-small"><a href="https://ideandum.com/privacy-cookie-policy/">Privacy &amp; Cookie Policy</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div class="fb-col">
+        <h4>Mission</h4>
+        <ul class="fb-list"><li><a href="https://ideandum.com/marketing-per-dentisti/">Chi Siamo</a></li><li><a href="https://ideandum.com/eng/">Ideandum International</a></li></ul>
+        <h4>Risorse</h4>
+        <ul class="fb-list"><li><a href="#">Libro Generare Valore</a></li><li><a href="https://ideandum.com/corso-marketing-odontoiatrico/">Metodo</a></li><li><a href="https://ideandum.com/marketing-odontoiatria/">Risorse</a></li><li><a href="https://ideandum.com/marketing-dentale/">Portfolio</a></li></ul>
+      </div>
+      <div class="fb-col">
+        <h4>Approccio al Marketing Odontoiatrico</h4>
+        <ul class="fb-list"><li><a href="https://ideandum.com/marketing-studio-dentistico/pubblicita-dentista/logo-dentista/">Graphic Design</a></li><li><a href="https://ideandum.com/marketing-studio-dentistico/pubblicita-dentista/siti-per-dentisti/">Web Design</a></li><li><a href="https://ideandum.com/marketing-studio-dentistico/pubblicita-dentista/digital-marketing-studio-dentistico/">Web Marketing Studio Dentistico</a></li><li><a href="https://ideandum.com/marketing-studio-dentistico/pubblicita-dentista/web-marketing-per-aziende/">Web Marketing Aziende</a></li></ul>
+      </div>
+      <div class="fb-col">
+        <h4>Approccio al Management Odontoiatrico</h4>
+        <ul class="fb-list"><li><a href="https://ideandum.com/marketing-studio-dentistico/management-odontoiatrico/aprire-uno-studio-dentistico/">Aprire uno Studio Dentistico</a></li><li><a href="https://ideandum.com/marketing-studio-dentistico/management-odontoiatrico/preventivi-dentista/">Vendita e Customer Experience</a></li><li><a href="https://ideandum.com/marketing-studio-dentistico/management-odontoiatrico/gestione-studio-dentistico/">Gestione Risorse Umane</a></li><li><a href="https://ideandum.com/marketing-studio-dentistico/management-odontoiatrico/dentista-manager/">Controllo di Gestione</a></li><li><a href="https://ideandum.com/marketing-studio-dentistico/management-odontoiatrico/corso-dentista/">Corsi Ideandum Academy</a></li></ul>
+      </div>
+      <div class="fb-col">
+        <h4>Servizi Correlati</h4>
+        <ul class="fb-list"><li><a href="https://ideandumtalent.com/" target="_blank">Ideandum Talent</a></li><li><a href="https://ideandumgaia.com/" target="_blank">Ideandum Gaia</a></li><li><a href="https://avvocatodentista.it/" target="_blank">Avvocato Dentista</a></li><li><a href="https://dentalvillage.it/" target="_blank">Dental Village</a></li><li><a href="https://www.trovadentisti.it" target="_blank">Trova Dentisti</a></li></ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════ WHATSAPP POPUP ════════════════ -->
+<div id="wa-popup-overlay" onclick="closeWaPopupBg(event)" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1100;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:420px;overflow:hidden;position:relative;">
+
+    <div style="background:#000;padding:28px 28px 24px;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:#1a1a1a;border:0.5px solid #333;border-radius:20px;padding:4px 12px;margin-bottom:14px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#25D366;letter-spacing:0.5px;text-transform:uppercase;">Community WhatsApp</span>
+          </div>
+          <h2 style="font-family:'Inter',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.2;margin:0;letter-spacing:-0.5px;">Vuoi essere il primo<br>a saperlo?</h2>
+        </div>
+        <button onclick="closeWaPopup()" style="background:rgba(255,255,255,0.1);border:none;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;color:#fff;font-size:14px;font-family:inherit;" aria-label="Chiudi">✕</button>
+      </div>
+    </div>
+
+    <div style="padding:24px 28px 28px;">
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#4a4a44;line-height:1.65;margin:0 0 20px;">
+        Entra nella nostra community WhatsApp e ricevi in anteprima gli inviti ai prossimi eventi di <strong style="color:#1d1d1b;font-weight:500;">formazione odontoiatrica gratuita</strong> — webinar, live e molto altro.
+      </p>
+
+      <div style="background:#f8f8f6;border-radius:8px;padding:14px 16px;margin-bottom:20px;display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span style="font-family:'Inter',sans-serif;font-size:13px;color:#1d1d1b;">Accesso prioritario ai nuovi webinar</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span style="font-family:'Inter',sans-serif;font-size:13px;color:#1d1d1b;">Aggiornamenti su eventi gratuiti</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span style="font-family:'Inter',sans-serif;font-size:13px;color:#1d1d1b;">Contenuti esclusivi per la community</span>
+        </div>
+      </div>
+
+      <a href="https://chat.whatsapp.com/D0TZ07n0Zsf6VSVlbgRFRp" target="_blank" onclick="closeWaPopup()" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:13px;border-radius:6px;text-decoration:none;margin-bottom:12px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Unisciti alla community
+      </a>
+
+      <p style="font-family:'Inter',sans-serif;font-size:12px;color:#6b6b65;text-align:center;margin:0;">
+        Completamente gratuito · Niente spam · Puoi uscire in qualsiasi momento.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════ MODAL ════════════════ -->
+<div id="modal-overlay" onclick="closeModalBg(event)">
+  <div class="modal-box">
+    <div class="modal-hd">
+      <div>
+        <div class="modal-cat" id="m-cat"></div>
+        <div class="modal-ttl" id="m-ttl"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-vid">
+      <iframe id="m-iframe" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    <div class="modal-ft">
+      <a class="modal-yt" id="m-yt" href="#" target="_blank">↗ Apri su YouTube</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script>
+  // ════════════════════════════════════════════════
+  //  FIREBASE CONFIG
+  // ════════════════════════════════════════════════
+  const firebaseConfig = {
+    apiKey: "AIzaSyA4VrKoAUjIND0aM4Yn36K0uoN1winGWvc",
+    authDomain: "ideandum-formazione.firebaseapp.com",
+    projectId: "ideandum-formazione",
+    storageBucket: "ideandum-formazione.firebasestorage.app",
+    messagingSenderId: "637169370028",
+    appId: "1:637169370028:web:4994af7be6169403b3f009"
+  };
+  let auth;
+  try {
+    firebase.initializeApp(firebaseConfig);
+    auth = firebase.auth();
+  } catch(e) {
+    console.error('Firebase init error:', e);
+    // Mostra la schermata di login anche se Firebase fallisce
+    document.getElementById('auth-screen').style.display = 'flex';
+  }
+
+  // ════════════════════════════════════════════════
+  //  MAILERLITE CONFIG
+  // ════════════════════════════════════════════════
+  // MailerLite: l'iscrizione al gruppo la fa lo Zap del webhook (nessuna chiave API nella pagina)
+
+  // ════════════════════════════════════════════════
+  //  SESSION STATE — Firebase gestisce tutto
+  // ════════════════════════════════════════════════
+  if (auth) {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        const parts = (user.displayName || 'Utente').split(' ');
+        const fn = parts[0] || 'Utente';
+        const ln = parts.slice(1).join(' ') || '';
+        showPlatform(fn, ln, user.email);
+      } else {
+        id('platform-screen').style.display = 'none';
+        id('auth-screen').style.display = 'flex';
+      }
+    });
+  }
+
+  function showPlatform(fn, ln, email) {
+    id('auth-screen').style.display = 'none';
+    id('platform-screen').style.display = 'block';
+    id('user-avatar').textContent = ((fn[0]||'') + (ln[0]||'')).toUpperCase() || '?';
+    id('user-name-display').textContent = fn + (ln ? ' ' + ln : '');
+    if (!localStorage.getItem('idnd_wa_popup_shown')) {
+      setTimeout(openWaPopup, 10000);
+    }
+  }
+
+  // ════════════════════════════════════════════════
+  //  AUTH UI
+  // ════════════════════════════════════════════════
+  function togglePwd(inputId, btn) {
+    const inp = id(inputId);
+    const isText = inp.type === 'text';
+    inp.type = isText ? 'password' : 'text';
+    const eyeOpen  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+    const eyeClose = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+    btn.innerHTML = isText ? eyeOpen : eyeClose;
+  }
+
+  function showTab(t) {
+    id('login-form').style.display    = t === 'login'    ? 'block' : 'none';
+    id('register-form').style.display = t === 'register' ? 'block' : 'none';
+    id('reset-form').style.display    = t === 'reset'    ? 'block' : 'none';
+    document.querySelector('.auth-tabs').style.display = t === 'reset' ? 'none' : 'flex';
+    document.querySelectorAll('.auth-tab').forEach((el, i) => {
+      el.classList.toggle('active', (i===0 && t==='login') || (i===1 && t==='register'));
+    });
+    // Clear errors on tab switch
+    ['login-err','reg-err','reset-err'].forEach(e => { const el=id(e); if(el){el.classList.remove('show');} });
+    const ok = id('reset-ok'); if(ok) ok.classList.remove('show');
+  }
+
+  // ── Register
+  async function doRegister() {
+    const fn      = id('r-fname').value.trim();
+    const ln      = id('r-lname').value.trim();
+    const role    = id('r-role').value;
+    const phone   = id('r-phone').value.trim();
+    const email   = id('r-email').value.trim().toLowerCase();
+    const company = id('r-company').value.trim();
+    const city    = id('r-city').value.trim();
+    const prov    = id('r-prov').value;
+    const country = id('r-country').value;
+    const pwd     = id('r-pwd').value;
+    const privacy = id('r-nl').checked;
+    const nl      = id('r-nl').checked;
+    const err     = id('reg-err');
+    err.classList.remove('show');
+
+    if (!fn || !ln)             return errMsg(err, 'Inserisci nome e cognome.');
+    if (!role)                  return errMsg(err, 'Seleziona il tuo ruolo.');
+    if (!phone)                 return errMsg(err, 'Inserisci il numero di telefono.');
+    if (!email.includes('@'))   return errMsg(err, 'Inserisci una email valida.');
+    if (!company)               return errMsg(err, 'Inserisci il nome del tuo studio o azienda.');
+    if (!city)                  return errMsg(err, 'Inserisci la tua città.');
+    if (!prov)                  return errMsg(err, 'Seleziona la provincia.');
+    if (!country)               return errMsg(err, 'Seleziona il paese.');
+    if (pwd.length < 6)         return errMsg(err, 'La password deve avere almeno 6 caratteri.');
+    if (!privacy)               return errMsg(err, "Accetta il consenso per procedere.");
+
+    try {
+      const cred = await auth.createUserWithEmailAndPassword(email, pwd);
+      await cred.user.updateProfile({ displayName: fn + ' ' + ln });
+      // Background tasks — non bloccano l'accesso
+      sendToZapier(fn, ln, email, role, phone, company, city, prov, country, nl, privacy);
+    } catch(e) {
+      const msgs = {
+        'auth/email-already-in-use': 'Email già registrata. Accedi con le tue credenziali.',
+        'auth/invalid-email':        'Inserisci una email valida.',
+        'auth/weak-password':        'La password è troppo debole. Usa almeno 6 caratteri.'
+      };
+      errMsg(err, msgs[e.code] || 'Errore durante la registrazione. Riprova.');
+    }
+  }
+
+  // ── Login
+  async function doLogin() {
+    const email = id('l-email').value.trim().toLowerCase();
+    const pwd   = id('l-pwd').value;
+    const err   = id('login-err');
+    err.classList.remove('show');
+
+    if (!email.includes('@')) return errMsg(err, 'Inserisci una email valida.');
+    if (!pwd)                  return errMsg(err, 'Inserisci la password.');
+
+    try {
+      await auth.signInWithEmailAndPassword(email, pwd);
+      // onAuthStateChanged gestisce il redirect alla piattaforma
+    } catch(e) {
+      const msgs = {
+        'auth/user-not-found':   'Nessun account trovato con questa email.',
+        'auth/wrong-password':   'Password non corretta. Riprova.',
+        'auth/invalid-email':    'Inserisci una email valida.',
+        'auth/too-many-requests':'Troppi tentativi. Attendi qualche minuto e riprova.',
+        'auth/invalid-credential': 'Email o password non corretti. Controlla e riprova.'
+      };
+      errMsg(err, msgs[e.code] || 'Errore durante il login. Riprova.');
+    }
+  }
+
+  // ── Logout
+  function doLogout() { if (auth) auth.signOut(); }
+
+  // ── Reset password — Firebase invia l'email automaticamente
+  async function doReset() {
+    const email = id('reset-email').value.trim().toLowerCase();
+    const err   = id('reset-err');
+    const ok    = id('reset-ok');
+    err.classList.remove('show');
+    ok.classList.remove('show');
+
+    if (!email.includes('@')) return errMsg(err, 'Inserisci una email valida.');
+
+    try {
+      await auth.sendPasswordResetEmail(email);
+    } catch(e) {
+      // Non mostrare errori specifici (sicurezza: non rivelare se email esiste)
+    }
+    // Messaggio sempre positivo indipendentemente dall'esito
+    ok.textContent = '✅ Se questa email è registrata, riceverai a breve le istruzioni per reimpostare la password.';
+    ok.classList.add('show');
+    id('reset-email').value = '';
+  }
+
+  function errMsg(el, msg) { el.textContent = msg; el.classList.add('show'); }
+  function id(x) { return document.getElementById(x); }
+
+  // ════════════════════════════════════════════════
+  //  ZAPIER WEBHOOK
+  // ════════════════════════════════════════════════
+  async function sendToZapier(fn, ln, email, role, phone, company, city, prov, country, newsletter, privacy) {
+    const now  = new Date();
+    const date = now.toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit', year:'numeric' });
+    const time = now.toLocaleTimeString('it-IT', { hour:'2-digit', minute:'2-digit' });
+    try {
+      await fetch('https://hooks.zapier.com/hooks/catch/2042357/4b63br5/', {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome: fn, cognome: ln, email, ruolo: role, telefono: phone,
+          studio_azienda: company||'', citta: city||'', provincia: prov||'', paese: country||'',
+          consenso_privacy: privacy ? 'Sì':'No', consenso_newsletter: newsletter ? 'Sì':'No',
+          data: date, ora: time })
+      });
+      console.log('✅ Zapier: dati inviati.');
+    } catch(e) { console.warn('⚠️ Zapier error:', e); }
+  }
+
+  // ════════════════════════════════════════════════
+  //  POPUP WHATSAPP
+  // ════════════════════════════════════════════════
+  function openWaPopup() {
+    const overlay = id('wa-popup-overlay');
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    localStorage.setItem('idnd_wa_popup_shown', '1');
+  }
+
+  function closeWaPopup() {
+    id('wa-popup-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function closeWaPopupBg(e) { if (e.target === id('wa-popup-overlay')) closeWaPopup(); }
+
+  // ════════════════════════════════════════════════
+  //  PLATFORM — filtri, video, modal
+  // ════════════════════════════════════════════════
+  function filterCards(cat, btn) {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    let v = 0;
+    document.querySelectorAll('.card').forEach(card => {
+      const show = cat === 'Tutti' || card.dataset.cat === cat;
+      card.style.display = show ? 'block' : 'none';
+      if (show) v++;
+    });
+    id('count-label').textContent = v + (v === 1 ? ' contenuto disponibile' : ' contenuti disponibili');
+  }
+
+  function openVid(e, vid, cat, title) {
+    e.stopPropagation();
+    id('m-cat').textContent = cat;
+    id('m-ttl').textContent = title;
+    id('m-iframe').src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0&modestbranding=1';
+    id('m-yt').href = 'https://www.youtube.com/watch?v=' + vid;
+    id('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    id('modal-overlay').classList.remove('open');
+    id('m-iframe').src = '';
+    document.body.style.overflow = '';
+  }
+
+  function closeModalBg(e) { if (e.target === id('modal-overlay')) closeModal(); }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeWaPopup(); } });
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (!e.target.closest('.watch-btn'))
+        openVid(e, this.dataset.id, this.dataset.cat, this.dataset.title);
+    });
+  });
+</script>
+</body>
+</html>
