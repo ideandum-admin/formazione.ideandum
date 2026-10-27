@@ -1,0 +1,65 @@
+<!-- Carosello "Prossimi Eventi Gratuiti" – da incollare UNA VOLTA in un widget HTML di Elementor
+     (ideandum.com/marketing-odontoiatria/#eventi). I webinar arrivano da
+     https://formazione.ideandum.com/eventi-sito/prossimi-webinar.js e spariscono da soli il giorno dopo la data. -->
+<div class="idm-ev" id="idm-ev">
+  <button class="idm-ev-nav idm-ev-prev" type="button" aria-label="Precedente">&#8249;</button>
+  <div class="idm-ev-track" id="idm-ev-track"></div>
+  <button class="idm-ev-nav idm-ev-next" type="button" aria-label="Successivo">&#8250;</button>
+  <div class="idm-ev-dots" id="idm-ev-dots"></div>
+</div>
+<style>
+.idm-ev{position:relative;max-width:1000px;margin:0 auto;padding:0 34px}
+.idm-ev-track{display:flex;gap:27px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+.idm-ev-track::-webkit-scrollbar{display:none}
+.idm-ev-item{flex:0 0 calc((100% - 54px)/3);scroll-snap-align:start;display:block;line-height:0}
+.idm-ev-item img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .2s ease}
+.idm-ev-item:hover img{transform:scale(1.02)}
+.idm-ev-nav{position:absolute;top:50%;transform:translateY(-50%);margin-top:-14px;background:none;border:0;font-size:46px;line-height:1;color:#000;cursor:pointer;padding:0 6px}
+.idm-ev-prev{left:0}.idm-ev-next{right:0}
+.idm-ev-nav[disabled]{opacity:.2;cursor:default}
+.idm-ev-dots{display:flex;justify-content:center;gap:10px;margin-top:20px;min-height:8px}
+.idm-ev-dots button{width:7px;height:7px;border-radius:50%;border:0;padding:0;background:#c4c4c4;cursor:pointer}
+.idm-ev-dots button.on{background:#000}
+.idm-ev-vuoto{width:100%;text-align:center;font-size:16px;line-height:1.5;padding:30px 0}
+@media (max-width:1024px){.idm-ev-item{flex-basis:calc((100% - 27px)/2)}}
+@media (max-width:640px){.idm-ev{padding:0 26px}.idm-ev-item{flex-basis:100%}.idm-ev-nav{font-size:38px}}
+</style>
+<script>
+(function(){
+  var track=document.getElementById('idm-ev-track'),dots=document.getElementById('idm-ev-dots'),box=document.getElementById('idm-ev');
+  var prev=box.querySelector('.idm-ev-prev'),next=box.querySelector('.idm-ev-next');
+  function oggiRoma(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}
+  function perVista(){var w=window.innerWidth;return w<=640?1:(w<=1024?2:3);}
+  function pagine(){return Math.max(1,track.children.length-perVista()+1);}
+  function aggiorna(){
+    var step=track.children[0]?track.children[0].getBoundingClientRect().width+27:1;
+    var i=Math.round(track.scrollLeft/step),n=pagine();
+    prev.disabled=i<=0;next.disabled=i>=n-1;
+    for(var k=0;k<dots.children.length;k++)dots.children[k].className=k===i?'on':'';
+  }
+  function vai(i){var el=track.children[i];if(el)track.scrollTo({left:el.offsetLeft-track.offsetLeft,behavior:'smooth'});}
+  function costruisci(){
+    var oggi=oggiRoma(),lista=(window.IDEANDUM_PROSSIMI_WEBINAR||[]).filter(function(e){return e.data>=oggi;});
+    track.innerHTML='';dots.innerHTML='';
+    if(!lista.length){track.innerHTML='<div class="idm-ev-vuoto">Nuove date in arrivo: entra nella Community su WhatsApp per non perderle.</div>';prev.style.display=next.style.display='none';return;}
+    lista.forEach(function(e){
+      var a=document.createElement('a');a.className='idm-ev-item';a.href=e.link;a.target='_blank';a.rel='noopener';
+      var img=document.createElement('img');img.src=e.immagine;img.alt=e.titolo;img.loading='lazy';img.width=800;img.height=800;
+      a.appendChild(img);track.appendChild(a);
+    });
+    var n=pagine();
+    for(var k=0;k<n;k++){(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Vai al gruppo '+(k+1));b.onclick=function(){vai(k);};dots.appendChild(b);})(k);}
+    var mostra=lista.length>perVista();prev.style.display=next.style.display=mostra?'':'none';dots.style.visibility=mostra?'':'hidden';
+    aggiorna();
+  }
+  prev.onclick=function(){var s=track.children[0].getBoundingClientRect().width+27;track.scrollBy({left:-s,behavior:'smooth'});};
+  next.onclick=function(){var s=track.children[0].getBoundingClientRect().width+27;track.scrollBy({left:s,behavior:'smooth'});};
+  track.addEventListener('scroll',function(){window.requestAnimationFrame(aggiorna);});
+  window.addEventListener('resize',costruisci);
+  window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO=costruisci;
+  var s=document.createElement('script');
+  s.src='https://formazione.ideandum.com/eventi-sito/prossimi-webinar.js?v='+Math.floor(Date.now()/3600000);
+  s.onerror=function(){track.innerHTML='<div class="idm-ev-vuoto">Nuove date in arrivo.</div>';prev.style.display=next.style.display='none';};
+  document.head.appendChild(s);
+})();
+</script>

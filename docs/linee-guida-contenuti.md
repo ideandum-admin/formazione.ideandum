@@ -65,6 +65,12 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - Il giorno prima di ogni webinar (12:30) si mette in pausa il suo gruppo (e i suoi annunci nel Nuovo pubblico) e si ricalcolano i minimi.
 - Perché: con il pubblico "freddo" che escludeva chi ci conosce (15–21/10) il costo per iscritto era salito a 19–28 €, contro i 5–7 € dei gruppi per webinar con pubblico misto.
 
+### Carosello "Prossimi Eventi Gratuiti" sul sito (ideandum.com/marketing-odontoiatria/#eventi)
+- Il carosello è un widget HTML di Elementor (codice in `eventi-sito/widget-elementor.html`, incollato una volta da Luigi) che legge `https://formazione.ideandum.com/eventi-sito/prossimi-webinar.js`. Non si modifica più Elementor a ogni webinar.
+- A ogni nuovo webinar: esportare da Canva la grafica quadrata **a sfondo bianco (modello Chiaro)** del webinar, salvarla 800×800 webp in `_assets/img/eventi/<slug>.webp`, aggiungere l'evento in `data/eventi-sito.json`, lanciare `python3 scripts/genera_eventi_sito.py`, commit e push. Per il sito si usa sempre la grafica con sfondo bianco.
+- Ogni immagine porta alla landing con UTM `utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-prossimi-eventi` (aggiunti dallo script).
+- Gli eventi spariscono da soli dal carosello il giorno dopo la data. Anteprima: https://formazione.ideandum.com/eventi-sito/anteprima.html
+
 ### Parametri UTM degli annunci (dal 26/10/2026)
 Ogni annuncio Meta porta i parametri UTM (campo "Parametri URL" della creatività, `url_tags`), per capire in GA4 da dove arrivano le conversioni. Il link resta la landing pulita; i parametri si aggiungono a parte.
 

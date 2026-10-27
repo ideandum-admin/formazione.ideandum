@@ -1,0 +1,33 @@
+{
+  "_nota": "Webinar mostrati nel carosello 'Prossimi Eventi Gratuiti' di ideandum.com/marketing-odontoiatria/#eventi. Dopo ogni modifica: python3 scripts/genera_eventi_sito.py, poi commit e push. Ogni evento sparisce da solo dal carosello il giorno dopo la data. Immagine: grafica quadrata 'Chiaro' del webinar, 800x800 webp in _assets/img/eventi/<slug>.webp.",
+  "eventi": [
+    {
+      "slug": "architettura",
+      "titolo": "Marketing e Architettura",
+      "data": "2026-11-04",
+      "ora": "13:00",
+      "immagine": "/_assets/img/eventi/architettura.webp"
+    },
+    {
+      "slug": "implantologia-2027",
+      "titolo": "Più pazienti di implantologia nel tuo studio nel 2027",
+      "data": "2026-11-10",
+      "ora": "13:00",
+      "immagine": "/_assets/img/eventi/implantologia-2027.webp"
+    },
+    {
+      "slug": "riunioni-di-team",
+      "titolo": "Riunioni brevi, decisioni concrete",
+      "data": "2026-11-17",
+      "ora": "13:00",
+      "immagine": "/_assets/img/eventi/riunioni-di-team.webp"
+    },
+    {
+      "slug": "ai-gaia",
+      "titolo": "Ogni chiamata ha una risposta, anche quando lo studio è chiuso",
+      "data": "2026-11-24",
+      "ora": "13:00",
+      "immagine": "/_assets/img/eventi/ai-gaia.webp"
+    }
+  ]
+}
