@@ -2,6 +2,56 @@
   "_nota": "Webinar mostrati nel carosello 'Prossimi Eventi Gratuiti' di ideandum.com/marketing-odontoiatria/#eventi. Dopo ogni modifica: python3 scripts/genera_eventi_sito.py, poi commit e push. Ogni evento sparisce da solo dal carosello il giorno dopo la data. Immagine: grafica quadrata 'Chiaro' del webinar, 800x800 webp in _assets/img/eventi/<slug>.webp.",
   "eventi": [
     {
+      "titolo": "Trasformare i visitatori in telefonate reali: i segreti di un sito web che converte",
+      "data": "2026-05-19",
+      "immagine": "/_assets/img/eventi/2026-05-19-sito-che-converte.webp"
+    },
+    {
+      "titolo": "Sai chiedere correttamente le recensioni ai tuoi pazienti soddisfatti?",
+      "data": "2026-05-27",
+      "immagine": "/_assets/img/eventi/2026-05-27-recensioni.webp"
+    },
+    {
+      "titolo": "Il dentista del futuro: usare l'Intelligenza Artificiale per migliorare il flusso di lavoro",
+      "data": "2026-06-09",
+      "immagine": "/_assets/img/eventi/2026-06-09-dentista-del-futuro.webp"
+    },
+    {
+      "titolo": "I pazienti dal web ti chiedono solo \"Quanto costa?\"",
+      "data": "2026-06-16",
+      "immagine": "/_assets/img/eventi/2026-06-16-pazienti-web.webp"
+    },
+    {
+      "titolo": "Il tuo studio è sui social, ma non sai mai cosa pubblicare?",
+      "data": "2026-07-21",
+      "immagine": "/_assets/img/eventi/2026-07-21-social-cosa-pubblicare.webp"
+    },
+    {
+      "titolo": "Settembre è arrivato: richiamare i pazienti e far accettare il preventivo in sospeso",
+      "data": "2026-09-02",
+      "immagine": "/_assets/img/eventi/2026-09-02-richiamare-pazienti-settembre.webp"
+    },
+    {
+      "titolo": "Il Dentista Più Conosciuto",
+      "data": "2026-09-15",
+      "immagine": "/_assets/img/eventi/2026-09-15-dentista-piu-conosciuto.webp"
+    },
+    {
+      "titolo": "Percorso del Paziente: comunicazione, prenotazione e flussi gestionali",
+      "data": "2026-09-22",
+      "immagine": "/_assets/img/eventi/2026-09-22-percorso-del-paziente.webp"
+    },
+    {
+      "titolo": "Studio pieno, ma 0 margine",
+      "data": "2026-09-30",
+      "immagine": "/_assets/img/eventi/2026-09-30-numeri-margine.webp"
+    },
+    {
+      "titolo": "I social del tuo studio dentistico",
+      "data": "2026-10-13",
+      "immagine": "/_assets/img/eventi/2026-10-13-social-dentista.webp"
+    },
+    {
       "slug": "architettura",
       "titolo": "Marketing e Architettura",
       "data": "2026-11-04",

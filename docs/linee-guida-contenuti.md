@@ -69,7 +69,8 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - Il carosello è un widget HTML di Elementor (codice in `eventi-sito/widget-elementor.html`, incollato una volta da Luigi) che legge `https://formazione.ideandum.com/eventi-sito/prossimi-webinar.js`. Non si modifica più Elementor a ogni webinar.
 - A ogni nuovo webinar: esportare da Canva la grafica quadrata **a sfondo bianco (modello Chiaro)** del webinar, salvarla 800×800 webp in `_assets/img/eventi/<slug>.webp`, aggiungere l'evento in `data/eventi-sito.json`, lanciare `python3 scripts/genera_eventi_sito.py`, commit e push. Per il sito si usa sempre la grafica con sfondo bianco.
 - Ogni immagine porta alla landing con UTM `utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-prossimi-eventi` (aggiunti dallo script).
-- Gli eventi spariscono da soli dal carosello il giorno dopo la data. Anteprima: https://formazione.ideandum.com/eventi-sito/anteprima.html
+- Gli eventi spariscono da soli dal carosello il giorno dopo la data e passano al carosello "Eventi Passati" (widget `eventi-sito/widget-eventi-passati.html`, click verso /piattaforma/ con `utm_content=carosello-eventi-passati`). Anteprima: https://formazione.ideandum.com/eventi-sito/anteprima.html
+- La pagina https://formazione.ideandum.com/eventi-passati/ si genera da `data/eventi-passati.json` con `python3 scripts/genera_eventi_passati.py` (non modificare a mano `eventi-passati/index.html`).
 
 ### Parametri UTM degli annunci (dal 26/10/2026)
 Ogni annuncio Meta porta i parametri UTM (campo "Parametri URL" della creatività, `url_tags`), per capire in GA4 da dove arrivano le conversioni. Il link resta la landing pulita; i parametri si aggiungono a parte.

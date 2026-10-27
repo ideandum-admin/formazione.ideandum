@@ -1,0 +1,41 @@
+{
+  "_nota": "Eventi della pagina formazione.ideandum.com/eventi-passati/. Il più recente in alto. Dopo una modifica: python3 scripts/genera_eventi_passati.py, poi commit e push. 'slug' facoltativo = cartella della landing spostata in eventi-passati/<slug>/.",
+  "eventi": [
+    {
+      "data_iso": "2026-09-30",
+      "data": "30 Settembre 2026",
+      "titolo": "Studio pieno, ma 0 margine: conosci il costo e l'utile di ogni tua singola prestazione?",
+      "sottotitolo": "Scopri come calcolare il costo orario di poltrona e il margine effettivo di ogni trattamento."
+    },
+    {
+      "data_iso": "2026-09-15",
+      "data": "15 Settembre 2026",
+      "titolo": "Il passaparola ti ha costruito una buona reputazione. La prossima mossa è farti conoscere da tutti.",
+      "sottotitolo": "Diventare lo studio più conosciuto della tua zona significa essere presente nel posto giusto al momento giusto e fare in modo che quando un paziente pensa al dentista, il primo nome che gli viene in mente sia il tuo. Ti sveliamo come."
+    },
+    {
+      "data_iso": "2026-09-09",
+      "data": "9 Settembre 2026",
+      "titolo": "“Ci penso dopo l'estate.” Settembre è arrivato: ecco come richiamare quei pazienti e far accettare il preventivo",
+      "sottotitolo": "Non ti hanno detto no — ti hanno solo rimandato. In questo webinar ti diamo le parole giuste per richiamarli, il momento migliore per farlo e come ripresentare il preventivo in modo che questa volta dicano sì."
+    },
+    {
+      "data_iso": "2026-07-21",
+      "data": "21 Luglio 2026",
+      "titolo": "Contenuti Social: Come Pianificarli",
+      "sottotitolo": "Un metodo semplice per organizzare il piano editoriale dello studio."
+    },
+    {
+      "data_iso": "2026-07-07",
+      "data": "07 Luglio 2026",
+      "titolo": "Complicanze in medicina estetica",
+      "sottotitolo": "Un metodo semplice per organizzare il piano editoriale dello studio."
+    },
+    {
+      "data_iso": "2026-06-16",
+      "data": "16 Giugno 2026",
+      "titolo": "Pazienti Web: Quanto Costa?",
+      "sottotitolo": "Quanto investire in comunicazione per attrarre nuovi pazienti in studio."
+    }
+  ]
+}
