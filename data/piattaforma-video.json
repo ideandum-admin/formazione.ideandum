@@ -2,6 +2,20 @@
   "_nota": "Video della piattaforma formazione.ideandum.com/piattaforma/ (in ordine di visualizzazione; i nuovi webinar vanno in cima). categoria = uno dei filtri: 'Segreteria & Gestione', 'Marketing', 'Paziente', 'Management', 'Digitale & AI'. Dopo una modifica: python3 scripts/genera_piattaforma.py, poi commit e push.",
   "video": [
     {
+      "youtube_id": "rTHuyRlp3fg",
+      "categoria": "Management",
+      "etichetta": "Fiscale",
+      "titolo": "💼 Vuoi abbattere il carico fiscale dal 30% al 60%?",
+      "descrizione": "Con il dott. Fabio Russo di Soluzione Tasse: SRL odontoiatrica, STP e holding a confronto, e come costruire una pianificazione fiscale su misura per il tuo studio."
+    },
+    {
+      "youtube_id": "1ma-8JbqVSk",
+      "categoria": "Marketing",
+      "etichetta": "Pazienti dal web",
+      "titolo": "🌐 I pazienti dal web ti chiedono solo quanto costa? Stai intercettando quelli sbagliati",
+      "descrizione": "Chi sono davvero i pazienti che arrivano dal web, perché alcuni canali portano solo richieste di prezzo e come Google, la scheda dello studio e un sito curato portano pazienti che prenotano e accettano il preventivo."
+    },
+    {
       "youtube_id": "h6R072m_gZk",
       "categoria": "Segreteria & Gestione",
       "etichetta": "Segreteria",

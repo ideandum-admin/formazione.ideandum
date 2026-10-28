@@ -2,6 +2,18 @@
   "_nota": "Eventi della pagina formazione.ideandum.com/eventi-passati/. Il più recente in alto. Dopo una modifica: python3 scripts/genera_eventi_passati.py, poi commit e push. 'slug' facoltativo = cartella della landing spostata in eventi-passati/<slug>/.",
   "eventi": [
     {
+      "data_iso": "2026-10-27",
+      "data": "27 Ottobre 2026",
+      "titolo": "Vuoi abbattere il carico fiscale dal 30% al 60%?",
+      "sottotitolo": "Con il dott. Fabio Russo di Soluzione Tasse: SRL odontoiatrica, STP e holding a confronto, per costruire una pianificazione fiscale su misura per il tuo studio."
+    },
+    {
+      "data_iso": "2026-10-20",
+      "data": "20 Ottobre 2026",
+      "titolo": "I pazienti dal web ti chiedono solo quanto costa? Stai intercettando quelli sbagliati.",
+      "sottotitolo": "Chi sono davvero i pazienti che arrivano dal web, perché alcuni canali portano solo richieste di prezzo e come attirare pazienti che prenotano e accettano il preventivo."
+    },
+    {
       "data_iso": "2026-09-30",
       "data": "30 Settembre 2026",
       "titolo": "Studio pieno, ma 0 margine: conosci il costo e l'utile di ogni tua singola prestazione?",
