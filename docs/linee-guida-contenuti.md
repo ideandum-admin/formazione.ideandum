@@ -139,10 +139,11 @@ Preparati da Luigi. Ogni angolo A/B/C di un webinar usa un modello **diverso**; 
 ## 8. YouTube (registrazioni)
 
 - Titolo breve, pratico, diretto, ottimista.
-- Descrizione: intro → ⏱️ COSA TROVI IN QUESTO VIDEO → 🦷 A CHI È RIVOLTO → 🔗 RISORSE UTILI (sempre "🌐 Ideandum (marketing per studi dentistici): https://www.ideandum.com" più eventuali partner) → ⏱️ CAPITOLI con timestamp (dal file SRT) → hashtag di settore.
+- Descrizione: intro → ⏱️ COSA TROVI IN QUESTO VIDEO → 🦷 A CHI È RIVOLTO → 🔗 RISORSE UTILI (sempre "🌐 Ideandum (marketing per studi dentistici): https://www.ideandum.com" più eventuali partner) → ⏱️ CAPITOLI con timestamp (dal file SRT dei sottotitoli automatici di YouTube, pronti qualche ora dopo il caricamento: i capitoli si aggiungono alla descrizione in un secondo momento) → hashtag di settore.
 - File SRT da rinominare prima del caricamento per evitare confusione.
 - Caricamento sempre **non in elenco** (unlisted), categoria Istruzione (27), lingua italiano, miniatura = design Canva "Webinar - AAAA.MM.GG - <Nome> - YouTube". Tag fissi del canale: marketing odontoiatrico, web marketing, marketing, pubblicità, advertising, marketing per dentisti, marketing studi odontoiatrici, apertura studio dentistico, ideanum, consulenza marketing dentista (più 2-4 tag sul tema).
 - Dopo il caricamento il video va: nella piattaforma (`data/piattaforma-video.json`, in alto) e nel foglio "2026 - BDU" › WEBINAR YOUTUBE, con una riga subito sotto l'ultimo webinar (prima delle righe vuote e della sezione INTERVISTE): A vuota, B macro tema, C titolo, D link `https://youtu.be/<id>`, E data GG/MM/AAAA.
+- Procedura completa del giorno dopo il webinar: skill chiudi-webinar-ideandum (registrazione Zoom → YouTube non in elenco con copertina → link a Luigi → piattaforma → foglio WEBINAR YOUTUBE → landing in /eventi-passati/<slug>/ → bozza mail di ringraziamento → capitoli).
 
 ## 9. CTA per tipo di contenuto (social Ideandum)
 
