@@ -86,6 +86,20 @@ Ogni annuncio Meta porta i parametri UTM (campo "Parametri URL" della creativit�
 - Lo stesso contenuto nei due gruppi cambia solo `utm_medium`.
 - Il webinar si riconosce dalla pagina della landing (cartella), quindi non serve nell'UTM.
 
+### Mail agli iscritti (dal 3/11/2026)
+Chi si iscrive dalla landing entra nel gruppo MailerLite del webinar (consenso obbligatorio nel modulo) e riceve, oltre al WhatsApp:
+
+| Mail | Quando | Come |
+|---|---|---|
+| Conferma con link | subito | automazione MailerLite unica, con i campi webinar_titolo, webinar_data, webinar_ora, webinar_link scritti dallo Zap |
+| Promemoria | 2 giorni prima, ore 9 | campagna al gruppo del webinar |
+| Promemoria | giorno prima, ore 9 | campagna al gruppo del webinar |
+| Avviso | giorno stesso, ore 11 | campagna al gruppo del webinar |
+
+- Stile "mail personale" come le newsletter, firma Armida, un solo link: il link Zoom di iscrizione (colonna E della tabella, uguale per tutti).
+- Le bozze dei promemoria le crea Claude all'avvio del webinar; la programmazione la fa Luigi.
+- Perché campagne a data fissa e non un'automazione con ritardi: tempi esatti e nessun errore per chi è iscritto a più webinar.
+
 ### Grafiche (Canva)
 - Le grafiche si fanno **in Canva**, partendo dai design esistenti: mai ricrearle da zero fuori da Canva.
 - Ogni webinar ha un design "Webinar - AAAA.MM.GG - <Nome>" (anteprima sito, post, storia, copertina YouTube, creatività). Per gli annunci si crea una copia "Webinar - AAAA.MM.GG - <Nome> - ADS" con le pagine quadrato + storia, una coppia per angolo.
