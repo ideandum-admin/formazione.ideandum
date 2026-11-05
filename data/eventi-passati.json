@@ -2,6 +2,13 @@
   "_nota": "Eventi della pagina formazione.ideandum.com/eventi-passati/. Il più recente in alto. Dopo una modifica: python3 scripts/genera_eventi_passati.py, poi commit e push. 'slug' facoltativo = cartella della landing spostata in eventi-passati/<slug>/.",
   "eventi": [
     {
+      "data_iso": "2026-11-04",
+      "data": "4 Novembre 2026",
+      "titolo": "Marketing e Architettura: e se il design del tuo studio dicesse al paziente di non fidarsi di te?",
+      "sottotitolo": "Con Armida Parigi e l'architetto Mario Redaelli: la coerenza tra comunicazione esterna ed esperienza fisica per confermare il reale valore percepito dello studio.",
+      "slug": "architettura"
+    },
+    {
       "data_iso": "2026-10-27",
       "data": "27 Ottobre 2026",
       "titolo": "Vuoi abbattere il carico fiscale dal 30% al 60%?",
