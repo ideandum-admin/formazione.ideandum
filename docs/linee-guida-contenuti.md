@@ -88,6 +88,14 @@ Ogni annuncio Meta porta i parametri UTM (campo "Parametri URL" della creativit�
 - Lo stesso contenuto nei due gruppi cambia solo `utm_medium`.
 - Il webinar si riconosce anche da `utm_campaign` (slug), uguale in tutti i canali.
 
+### Attività programmate (dall'11/11/2026)
+Decisione di Luigi: tutto ciò che va fatto a una data precisa (tranne le newsletter, che programma lui in MailerLite) si fa con attività programmate di Claude (barra laterale "Scheduled" → "New task" → "Create with Claude"). Le attività girano ogni giorno e valgono per tutti i webinar, quindi non vanno ricreate a ogni avvio. Servono collegati: Meta Ads, Zapier (Google Sheets) e la pagina schede.
+
+1. **Pausa annunci webinar — ogni giorno alle 12:30.** Legge la tabella WEBINAR AUTOMAZIONE (file "2026 - BDU", foglio WEBINAR AUTOMAZIONE); se c'è un webinar con data di domani e stato "attivo", in Meta Ads (account 113096912423590) mette in pausa il gruppo di inserzioni e gli annunci il cui nome inizia con "Webinar AAAA.MM.GG" di quel webinar, verifica che risultino in pausa e manda un riepilogo a Luigi. Se non ci sono webinar il giorno dopo, non fa nulla.
+2. **Controllo tracciamento — ogni giorno alle 9.** Per ogni webinar avviato 2 giorni prima (campo `avviato_il` nella pagina schede) controlla in IDEHUB (RAW_CONTACTS) che le iscrizioni con quell'event_id abbiano nella colonna Note l'URL della landing con le UTM; se mancano, avvisa subito Luigi spiegando cosa manca.
+
+Nell'avvio di un webinar quindi non si programma più niente a mano: basta che l'event_id, la data e lo stato "attivo" siano in tabella e che `avviato_il` sia nella scheda.
+
 ### Mail agli iscritti (dal 3/11/2026)
 Chi si iscrive dalla landing entra nel gruppo MailerLite del webinar (consenso obbligatorio nel modulo) e riceve, oltre al WhatsApp:
 
