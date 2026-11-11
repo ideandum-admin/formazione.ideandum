@@ -3,6 +3,8 @@
 Regole raccolte dalle conversazioni del progetto. Valgono per landing, annunci Meta, newsletter, WhatsApp, video e YouTube.
 Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di marketing.
 
+**Precedenza:** queste linee guida sono la fonte aggiornata. Se una skill (prepara, avvia o chiudi webinar) dice una cosa diversa, vale quello che c'è scritto qui. Le regole nuove si aggiungono qui, non nelle skill.
+
 ## 1. Tono di voce Ideandum (vincolante)
 
 - **Diretto e concreto, ma ottimista.** Non allarma, non predica, non si mette sopra il lettore.
