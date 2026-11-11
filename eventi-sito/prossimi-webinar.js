@@ -111,6 +111,14 @@ window.IDEANDUM_PROSSIMI_WEBINAR = [
     "immagine": "https://formazione.ideandum.com/_assets/img/eventi/ai-gaia.webp",
     "link": "https://formazione.ideandum.com/ai-gaia/?utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-prossimi-eventi",
     "link_passato": "https://formazione.ideandum.com/piattaforma/?utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-eventi-passati"
+  },
+  {
+    "titolo": "Da padre in figlio: come custodire e far crescere il valore del tuo studio (e la fiducia dei pazienti)",
+    "data": "2026-12-01",
+    "ora": "13:00",
+    "immagine": "https://formazione.ideandum.com/_assets/img/eventi/passaggio-generazionale.webp",
+    "link": "https://formazione.ideandum.com/passaggio-generazionale/?utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-prossimi-eventi",
+    "link_passato": "https://formazione.ideandum.com/piattaforma/?utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-eventi-passati"
   }
 ];
 if (window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO) window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO();
