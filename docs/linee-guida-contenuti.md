@@ -73,19 +73,20 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - Gli eventi spariscono da soli dal carosello il giorno dopo la data e passano al carosello "Eventi Passati" (widget `eventi-sito/widget-eventi-passati.html`, click verso /piattaforma/ con `utm_content=carosello-eventi-passati`). Anteprima: https://formazione.ideandum.com/eventi-sito/anteprima.html
 - La pagina https://formazione.ideandum.com/eventi-passati/ si genera da `data/eventi-passati.json` con `python3 scripts/genera_eventi_passati.py` (non modificare a mano `eventi-passati/index.html`).
 
-### Parametri UTM degli annunci (dal 26/10/2026)
+### Parametri UTM degli annunci (aggiornati l'11/11/2026)
 Ogni annuncio Meta porta i parametri UTM (campo "Parametri URL" della creatività, `url_tags`), per capire in GA4 da dove arrivano le conversioni. Il link resta la landing pulita; i parametri si aggiungono a parte.
 
 | Parametro | Valore | Esempio |
 |---|---|---|
 | utm_source | piattaforma, compilata da Meta: `{{site_source_name}}` | fb, ig, msg, an |
 | utm_medium | pubblico del gruppo di inserzioni | `remarketing` (gruppi per webinar) · `freddo` (Webinar – Nuovo pubblico) |
-| utm_campaign | formato dell'annuncio | `immagine`, `video`, `carosello`, `post` |
+| utm_campaign | slug del webinar (come in newsletter e WhatsApp) | `passaggio-generazionale` |
 | utm_content | formato + descrizione breve, minuscole e trattini | `immagine-angolo-a`, `video-franco-pensieroso`, `carosello-percorso-paziente`, `post-carico-fiscale` |
+| utm_term | posizionamento, compilato da Meta: `{{placement}}` | Facebook_Mobile_Feed, Instagram_Stories… |
 
-- Stringa tipo: `utm_source={{site_source_name}}&utm_medium=remarketing&utm_campaign=video&utm_content=video-franco-pensieroso`
+- Stringa tipo: `utm_source={{site_source_name}}&utm_medium=remarketing&utm_campaign=<slug>&utm_content=immagine-angolo-a&utm_term={{placement}}` (decisa da Luigi l'11/11/2026, primo webinar: passaggio-generazionale)
 - Lo stesso contenuto nei due gruppi cambia solo `utm_medium`.
-- Il webinar si riconosce dalla pagina della landing (cartella), quindi non serve nell'UTM.
+- Il webinar si riconosce anche da `utm_campaign` (slug), uguale in tutti i canali.
 
 ### Mail agli iscritti (dal 3/11/2026)
 Chi si iscrive dalla landing entra nel gruppo MailerLite del webinar (consenso obbligatorio nel modulo) e riceve, oltre al WhatsApp:
@@ -104,7 +105,7 @@ Chi si iscrive dalla landing entra nel gruppo MailerLite del webinar (consenso o
 ### Grafiche (Canva)
 - Le grafiche si fanno **in Canva**, partendo dai design esistenti: mai ricrearle da zero fuori da Canva.
 - Ogni webinar ha un design "Webinar - AAAA.MM.GG - <Nome>" (anteprima sito, post, storia, copertina YouTube, creatività). Per gli annunci si crea una copia "Webinar - AAAA.MM.GG - <Nome> - ADS" con le pagine quadrato + storia, una coppia per angolo.
-- **Copertina YouTube**: si crea insieme alle grafiche per Meta, come design a parte "Webinar - AAAA.MM.GG - <Nome> - YouTube" (1280×720), copiando la copertina del webinar precedente (la prima è DAHZN2FONXc, GAIA 24/11/2026). Testo grande bianco = titolo della landing, riga sotto = nome breve o tema del webinar. Luigi la controlla insieme alle grafiche prima dell'"ok grafiche"; il link va nella scheda (`youtube_cover_link`) e dopo il webinar diventa la miniatura del video su YouTube.
+- **Copertina YouTube**: dall'11/11/2026 si crea come ultima pagina (1280×720) dello stesso design "– ADS" delle grafiche (decisione di Luigi), partendo dalla copertina del webinar precedente (la prima è DAHZN2FONXc, GAIA 24/11/2026). Testo grande bianco = titolo della landing, riga sotto = nome breve o tema del webinar. Luigi la controlla insieme alle grafiche prima dell'"ok grafiche"; il link va nella scheda (`youtube_cover_link`) e dopo il webinar diventa la miniatura del video su YouTube.
 - Se il design del webinar non esiste, si duplica quello del webinar precedente più simile (stesso stile, relatori simili) e si aggiornano testi, data e foto.
 - **Stile chiaro** (il più usato): sfondo bianco con fascia diagonale grigia #E9E9E9, relatore scontornato a destra/in basso, titolo nero corsivo con parole chiave in grassetto, sottotitolo con parole chiave in grassetto, etichetta nera della data "10 NOVEMBRE | 13.00" (testo bianco), simbolo onde + "FREE WEBINAR per dentisti", logo ideandum.
 - **Stile sfumato**: sfondo con aura viola/rosa/blu, relatori in bicromia, testo bianco grande, stessa etichetta nera per la data.
