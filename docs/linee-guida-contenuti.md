@@ -47,6 +47,7 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 
 ### Impostazione annunci per ogni webinar
 - **3 angoli diversi** per webinar (es. problema concreto, beneficio, curiosità/dato), sempre.
+- **L'angolo A usa sempre il titolo esatto del webinar** (titolo della landing) come titolo in grafica; B e C restano angolazioni diverse (deciso da Luigi l'11/11/2026).
 - **Testi diversi per gruppo**: Freddo più introduttivo (chi non ci conosce: contesto, chi siamo in mezza riga), Caldo più diretto (chi ci conosce già: data, tema, iscriviti).
 - Totale: 3 annunci nel Freddo + 3 nel Caldo, tutti in bozza.
 

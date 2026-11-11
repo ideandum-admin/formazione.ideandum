@@ -1,0 +1,25 @@
+{
+  "slug": "passaggio-generazionale",
+  "event_id": "Webinar - 2026.12.01 - Passaggio generazionale",
+  "event_name_extended": "Passaggio generazionale",
+  "titolo": "Da padre in figlio: come custodire e far crescere il valore del tuo studio (e la fiducia dei pazienti)",
+  "sottotitolo": "Come preparare pazienti, team e nuova generazione al passaggio, perché lo studio continui a crescere anche dopo",
+  "data": "2026-12-01",
+  "ora": "13:00",
+  "relatori": [
+    {"foto": "/_assets/img/Armida-Parigi.webp", "nome": "Armida Parigi"},
+    {"foto": "/_assets/img/chiara-tessarotto.jpg", "nome": "Chiara Tessarotto"}
+  ],
+  "testo": "Il passaggio generazionale non è una successione burocratica: è una rinegoziazione tacita della fiducia con ogni singolo paziente dello studio. Senza una strategia precisa, il rischio reale è perdere fino al 30% della base attiva nei primi 18 mesi per puro disorientamento emotivo. In questo webinar vedremo come mantenere il tasso di fidelizzazione oltre il 92%, azzerare l’obiezione \"vorrei farmi vedere dal dottore senior\" e preservare una marginalità operativa superiore al 25%. Meno teoria relazionale, più architettura del linguaggio e numeri concreti per trasformare il passaggio di consegne nel miglior investimento di reputazione del vostro studio.",
+  "argomenti": [
+    {"titolo": "«Si è sempre fatto così»: le abitudini che frenano lo studio", "descrizione": "Quali abitudini conviene tenere e quali stanno frenando la crescita, e come cambiarle senza mettere in discussione chi ha costruito lo studio."},
+    {"titolo": "Figli o collaboratori: chi decide cosa", "descrizione": "Come definire ruoli e autorità tra titolare, figli e collaboratori, così il team sa a chi rivolgersi e i rapporti in famiglia restano sereni."},
+    {"titolo": "La delega, un passo alla volta", "descrizione": "Come pianificare il passaggio di consegne con tempi e responsabilità chiare, senza perdere il controllo su clinica, team e conti."},
+    {"titolo": "Quando il paziente chiede del dottore senior", "descrizione": "Le parole e i momenti giusti per presentare il nuovo dottore ai pazienti storici, così la fiducia passa di mano insieme alle cure."}
+  ],
+  "motivi": [
+    "Stai pensando di passare lo studio a un figlio o a un collaboratore e vuoi farlo con un piano",
+    "Vuoi che i tuoi pazienti si affidino al nuovo dottore con la stessa fiducia",
+    "Vuoi delegare di più, senza perdere il controllo dello studio"
+  ]
+}
