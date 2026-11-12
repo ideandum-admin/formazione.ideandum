@@ -447,7 +447,12 @@ $("back2").onclick=()=>goStep(1);
 $("go2").onclick=()=>{ goStep(3); };
 $("back3").onclick=()=>goStep(2);
 
-const WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/2042357/CyjaIBmFbXbq4lSis/";
+// Transizione: ogni contatto va sia al Workflow (attuale) sia al nuovo Zap.
+// Quando lo Zap è acceso, lasciare solo il nuovo indirizzo e spegnere il Workflow.
+const WEBHOOK_URLS = [
+  "https://hooks.zapier.com/hooks/catch/2042357/CyjaIBmFbXbq4lSis/", // Workflow "Analisi potenziale studio – contatti"
+  "https://hooks.zapier.com/hooks/catch/2042357/454t4o7/"            // nuovo Zap
+];
 const GRAZIE_URL = "/grazie-analisi-potenziale/";
 $("lead").addEventListener("submit",e=>{
   e.preventDefault();
@@ -460,9 +465,7 @@ $("lead").addEventListener("submit",e=>{
   btn.disabled=true; btn.textContent="Invio in corso…";
   const r=calcola();
   const giorni = S.giorni===2.5 ? "meno di 3" : String(S.giorni).replace(".5"," e mezzo");
-  fetch(WEBHOOK_URL,{
-    method:"POST", mode:"no-cors", headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({
+  const payload = JSON.stringify({
       nome:$("f-nome").value.trim(),
       email:$("f-email").value.trim(),
       telefono:$("f-tel").value.trim(),
@@ -473,8 +476,8 @@ $("lead").addEventListener("submit",e=>{
       fatturato_non_espresso:r.gap,
       consenso_newsletter:"SI",
       pagina:window.location.href
-    })
-  })
+    });
+  Promise.all(WEBHOOK_URLS.map(u=>fetch(u,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:payload})))
   .then(()=>{ window.location.href=GRAZIE_URL; })
   .catch(()=>{ err.textContent="Invio non riuscito: controlla la connessione e riprova."; err.hidden=false; btn.disabled=false; btn.textContent="Richiedi il link"; });
 });
