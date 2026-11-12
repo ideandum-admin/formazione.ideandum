@@ -91,10 +91,11 @@ Ogni annuncio Meta porta i parametri UTM (campo "Parametri URL" della creativit�
 - Il webinar si riconosce anche da `utm_campaign` (slug), uguale in tutti i canali.
 
 ### Attività programmate (dall'11/11/2026)
-Decisione di Luigi: tutto ciò che va fatto a una data precisa (tranne le newsletter, che programma lui in MailerLite) si fa con attività programmate di Claude (barra laterale "Scheduled" → "New task" → "Create with Claude"). Le attività girano ogni giorno e valgono per tutti i webinar, quindi non vanno ricreate a ogni avvio. Servono collegati: Meta Ads, Zapier (Google Sheets) e la pagina schede.
+Decisione di Luigi: tutto ciò che va fatto a una data precisa (tranne le newsletter, che programma lui in MailerLite) si fa con attività programmate di Claude (barra laterale "Scheduled" → "New task" → "Create with Claude"). Le tre attività girano ogni giorno e valgono per tutti i webinar, quindi non vanno ricreate a ogni avvio. Servono collegati: Meta Ads, Zapier (Google Sheets) e la pagina schede.
 
 1. **Pausa annunci webinar — ogni giorno alle 12:30.** Legge la tabella WEBINAR AUTOMAZIONE (file "2026 - BDU", foglio WEBINAR AUTOMAZIONE); se c'è un webinar con data di domani e stato "attivo", in Meta Ads (account 113096912423590) mette in pausa il gruppo di inserzioni e gli annunci il cui nome inizia con "Webinar AAAA.MM.GG" di quel webinar, verifica che risultino in pausa e manda un riepilogo a Luigi. Se non ci sono webinar il giorno dopo, non fa nulla.
-2. **Controllo tracciamento — ogni giorno alle 9.** Per ogni webinar avviato 2 giorni prima (campo `avviato_il` nella pagina schede) controlla in IDEHUB (RAW_CONTACTS) che le iscrizioni con quell'event_id abbiano nella colonna Note l'URL della landing con le UTM; se mancano, avvisa subito Luigi spiegando cosa manca.
+2. **Controllo tracciamento — ogni giorno alle 9.** Per ogni webinar avviato 2 giorni prima (campo `avviato_il` nella pagina schede) controlla in IDEHUB (RAW_CONTACTS) che le iscrizioni con quell'event_id abbiano l'URL della landing con le UTM nella colonna UTM (AB) o, se vuota, in Note; se mancano, avvisa subito Luigi spiegando cosa manca.
+3. **Chiusura webinar — ogni giorno alle 10.** Per ogni webinar in WEBINAR AUTOMAZIONE con data passata e stato diverso da "concluso", esegue la chiusura (skill chiudi-webinar-ideandum): se la registrazione Zoom non è ancora pronta si ferma e riprova il giorno dopo; se il video è già su YouTube ma mancano i capitoli, aggiunge i capitoli. Manda a Luigi il link YouTube appena c'è.
 
 Nell'avvio di un webinar quindi non si programma più niente a mano: basta che l'event_id, la data e lo stato "attivo" siano in tabella e che `avviato_il` sia nella scheda.
 
@@ -138,14 +139,24 @@ Preparati da Luigi. Ogni angolo A/B/C di un webinar usa un modello **diverso**; 
 - Armida Parigi, Franco Valerio e Chiara sono relatori frequenti: **mai la stessa foto del webinar precedente**, e se possibile foto diverse tra gli angoli A, B, C dello stesso webinar. Preferire mezzo busto, sguardo in camera.
 - Le foto usate per ogni webinar si annotano nel file `docs/archivio-relatori.md` (relatore, foto, webinar).
 
-## 5. Newsletter (MailerLite)
+## 5. Newsletter (MailerLite): mail personale di Armida
 
-- Due invii per webinar: **Newsletter 1** (presentazione) e **Newsletter 2** (promemoria a 2 giorni), ciascuna con titolo, sottotitolo e testo.
-- Impaginazione: in testa alla mail l'etichetta con data e ora e, sotto, il titolo tra virgolette sono entrambi **centrati** (modello `_template/newsletter.html`).
-- Da quando l'efficacia è calata: meno vendita, più contenuto utile già nella mail, tono da collega a collega, seconda mail molto più corta, niente elenchi di situazioni.
-- Per i temi di marketing e investimento parlare al **titolare** (soldi investiti, valore del paziente nel tempo), non alla segreteria.
-- Chiusura tipo: "È gratuito e il link arriva su WhatsApp. 👉 Iscriviti qui".
-- Idee già proposte per il calo: mittente con nome di persona, seconda mail solo a chi ha aperto e non si è iscritto, segmentazione per ruolo.
+Obiettivo: la newsletter deve sembrare una mail scritta a mano da una persona, non da un'agenzia (finisce più facilmente nella scheda Principale di Gmail e invoglia a rispondere), ma deve far capire **subito** che è l'invito a un webinar.
+
+- **Due invii per webinar**: Newsletter 1 (invito, sempre in **test A/B sull'oggetto**) e Newsletter 2 (promemoria 2 giorni prima, più corta).
+- **Chi scrive**: Armida Parigi, in prima persona, anche quando i relatori sono altri ("Ne parlo insieme a…" se è relatrice; "Ne parla <relatore>…" se non lo è). Mittente "Armida Parigi – Ideandum", firma "A presto," + "Armida". Se Luigi indica un altro firmatario, usa quello.
+- **Apertura = invito, subito**: dopo "Ciao," una riga breve che invita, poi una riga in grassetto su un paragrafo a sé: `**WEBINAR · <titolo della landing> · <giorno della settimana> <giorno> <mese> alle <ora>, online**`. WEBINAR in maiuscolo è voluto.
+  - Newsletter 1: la riga d'apertura **cambia a ogni webinar**, legata al tema, con tono empatico e rassicurante (es. approvato: "affidare a un figlio lo studio che hai costruito è una delle scelte più belle e più delicate che ci siano, e ne parliamo in un webinar:"). Proponi 2-3 alternative se non è chiaro quale usare.
+  - Newsletter 2: "ti ricordo il webinar di <giorno della settimana>:".
+- **Corpo della Newsletter 1** (circa 120-180 parole): con chi e di cosa si parla (per un relatore esterno mezza frase presa **solo** dalla landing; Chiara Tessarotto = "la mia collega"); poi esperienza e beneficio concreto, con tono empatico e rassicurante (si può dire che "abbiamo accompagnato centinaia di studi"); chiusura "Dura un'ora, è gratuito e il link arriva su WhatsApp: [puoi iscriverti qui]." In grassetto 2-3 passaggi chiave brevi, oltre alla riga WEBINAR.
+- **Da non fare nel corpo**: elenchi di situazioni-tipo ("il paziente che…, il figlio che…, il titolare che…"), numeri e percentuali che suonano come gergo da consulente, frasi astratte. Luigi li ha tolti più volte.
+- **P.S. dopo la firma**: la richiesta di risposta, mirata a chi ha un interesse reale (es. "P.S. Se nel tuo studio il passaggio è già cominciato, o ci state pensando, rispondimi con la tua domanda: la porto al webinar.").
+- **Newsletter 2**: "Ciao," + "ti ricordo il webinar di <giorno>:" + stessa riga in grassetto + una frase con relatore, tema e beneficio + "È gratuito e il link arriva su WhatsApp: [puoi iscriverti qui]." + firma + P.S. breve.
+- **Oggetti**: frasi normali, senza emoji né maiuscole. Newsletter 1 sempre con **oggetto A e B** dalle angolazioni davvero diverse (es. A domanda personale al titolare "Chi prenderà il tuo posto in studio?", B situazione concreta "Lo studio passa al figlio: come prepararlo"); indica quale ti aspetti che vinca e perché. Newsletter 2 un solo oggetto semplice, es. "Martedì alle 13".
+- **Anteprima (preheader)**: data, ora e relatore, es. "Martedì 1 dicembre alle 13, online, con Chiara Tessarotto."
+- **Vietato**: emoji, altre parole in maiuscolo, "posti limitati" e ogni urgenza, pulsanti, immagini, liste, più di un link oltre a quello per annullare l'iscrizione.
+- **Revisione con Luigi**: mostragli sempre la mail **completa** come arriverà (oggetti, anteprima, mittente, testo con "Ciao,", firma e P.S.), mai solo i pezzi cambiati.
+- Impaginazione HTML e invio: vedi `docs/procedura-webinar.md`.
 
 ## 6. WhatsApp alla community
 
