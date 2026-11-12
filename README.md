@@ -33,5 +33,5 @@ Istruzioni per il primo setup: vedi `ISTRUZIONI-WEBMASTER.md`.
 
 - Tool: `analisi-potenziale/index.html` → `formazione.ideandum.com/analisi-potenziale/`
 - Pagina grazie: `grazie-analisi-potenziale/index.html` → `formazione.ideandum.com/grazie-analisi-potenziale/`
-- Il form invia al webhook `https://hooks.zapier.com/hooks/catch/2042357/CyjaIBmFbXbq4lSis/` (workflow Zapier "Analisi potenziale studio – contatti"), che salva il contatto nel foglio "Analisi potenziale studio – Contatti" (`14t30yguMlco6a9OSbG_R9Mb8jicXwoOQ1TJBWeQLTSs`) e lo iscrive al gruppo MailerLite "Analisi potenziale studio" (`203941933757761142`).
+- Il form invia al webhook `https://hooks.zapier.com/hooks/catch/2042357/454t4o7/` (Zap classico; il vecchio Workflow beta "Analisi potenziale studio – contatti" è spento), che salva il contatto nel foglio "Analisi potenziale studio – Contatti" (`14t30yguMlco6a9OSbG_R9Mb8jicXwoOQ1TJBWeQLTSs`) e lo iscrive al gruppo MailerLite "Analisi potenziale studio" (`203941933757761142`).
 - Benchmark del calcolo (250.000 € per riunito, pesi delle aree) in cima allo script della pagina.

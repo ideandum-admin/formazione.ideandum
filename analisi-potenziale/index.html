@@ -447,11 +447,8 @@ $("back2").onclick=()=>goStep(1);
 $("go2").onclick=()=>{ goStep(3); };
 $("back3").onclick=()=>goStep(2);
 
-// Transizione: ogni contatto va sia al Workflow (attuale) sia al nuovo Zap.
-// Quando lo Zap è acceso, lasciare solo il nuovo indirizzo e spegnere il Workflow.
 const WEBHOOK_URLS = [
-  "https://hooks.zapier.com/hooks/catch/2042357/CyjaIBmFbXbq4lSis/", // Workflow "Analisi potenziale studio – contatti"
-  "https://hooks.zapier.com/hooks/catch/2042357/454t4o7/"            // nuovo Zap
+  "https://hooks.zapier.com/hooks/catch/2042357/454t4o7/" // Zap "Analisi potenziale studio"
 ];
 const GRAZIE_URL = "/grazie-analisi-potenziale/";
 $("lead").addEventListener("submit",e=>{
