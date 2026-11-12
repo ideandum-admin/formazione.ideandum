@@ -28,3 +28,10 @@ Ogni landing invia al webhook Zapier, oltre ai dati del form, `event_id` e `cons
 Lo Zap cerca `event_id` nel foglio **WEBINAR AUTOMAZIONE** del file "2026 - BDU" e ne prende titolo, data, ora, link Zoom e gruppo MailerLite.
 
 Istruzioni per il primo setup: vedi `ISTRUZIONI-WEBMASTER.md`.
+
+## Analisi del potenziale dello studio
+
+- Tool: `analisi-potenziale/index.html` → `formazione.ideandum.com/analisi-potenziale/`
+- Pagina grazie: `grazie-analisi-potenziale/index.html` → `formazione.ideandum.com/grazie-analisi-potenziale/`
+- Il form invia al webhook `https://hooks.zapier.com/hooks/catch/2042357/CyjaIBmFbXbq4lSis/` (workflow Zapier "Analisi potenziale studio – contatti"), che salva il contatto nel foglio "Analisi potenziale studio – Contatti" (`14t30yguMlco6a9OSbG_R9Mb8jicXwoOQ1TJBWeQLTSs`) e lo iscrive al gruppo MailerLite "Analisi potenziale studio" (`203941933757761142`).
+- Benchmark del calcolo (250.000 € per riunito, pesi delle aree) in cima allo script della pagina.
