@@ -2,6 +2,13 @@
   "_nota": "Eventi della pagina formazione.ideandum.com/eventi-passati/. Il più recente in alto. Dopo una modifica: python3 scripts/genera_eventi_passati.py, poi commit e push. 'slug' facoltativo = cartella della landing spostata in eventi-passati/<slug>/.",
   "eventi": [
     {
+      "data_iso": "2026-11-10",
+      "data": "10 Novembre 2026",
+      "titolo": "Più pazienti di implantologia nel tuo studio nel 2027: come trovarli online, presentare il preventivo e gestire la prima visita.",
+      "sottotitolo": "Un webinar pratico per portare nel tuo studio più pazienti di implantologia: come farti trovare online da chi sta già cercando un impianto, come trasformare la richiesta in una prima visita e come accompagnarlo fino all'inizio della cura.",
+      "slug": "implantologia-2027"
+    },
+    {
       "data_iso": "2026-11-04",
       "data": "4 Novembre 2026",
       "titolo": "Marketing e Architettura: e se il design del tuo studio dicesse al paziente di non fidarsi di te?",

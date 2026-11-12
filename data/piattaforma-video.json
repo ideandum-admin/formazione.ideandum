@@ -2,6 +2,13 @@
   "_nota": "Video della piattaforma formazione.ideandum.com/piattaforma/ (in ordine di visualizzazione; i nuovi webinar vanno in cima). categoria = uno dei filtri: 'Segreteria & Gestione', 'Marketing', 'Paziente', 'Management', 'Digitale & AI'. Dopo una modifica: python3 scripts/genera_piattaforma.py, poi commit e push.",
   "video": [
     {
+      "youtube_id": "KfL6qlW97lA",
+      "categoria": "Marketing",
+      "etichetta": "Implantologia",
+      "titolo": "🦷 Più pazienti di implantologia nel tuo studio nel 2027",
+      "descrizione": "Con Armida Parigi e Franco Valerio: come farti trovare online da chi cerca un impianto, trasformare la richiesta in prima visita e presentare il preventivo perché il paziente inizi la cura."
+    },
+    {
       "youtube_id": "dl0IlOBqTSo",
       "categoria": "Management",
       "etichetta": "Architettura",
