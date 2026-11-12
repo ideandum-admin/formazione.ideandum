@@ -475,7 +475,9 @@ $("lead").addEventListener("submit",e=>{
       saturazione:r.pct+"%",
       fatturato_non_espresso:r.gap,
       consenso_newsletter:"SI",
-      pagina:window.location.href
+      pagina:window.location.href,
+      data:new Date().toLocaleDateString("it-IT"),
+      ora:new Date().toLocaleTimeString("it-IT",{hour:"2-digit",minute:"2-digit"})
     });
   Promise.all(WEBHOOK_URLS.map(u=>fetch(u,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:payload})))
   .then(()=>{ window.location.href=GRAZIE_URL; })
