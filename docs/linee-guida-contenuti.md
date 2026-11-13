@@ -75,20 +75,22 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - Gli eventi spariscono da soli dal carosello il giorno dopo la data e passano al carosello "Eventi Passati" (widget `eventi-sito/widget-eventi-passati.html`, click verso /piattaforma/ con `utm_content=carosello-eventi-passati`). Anteprima: https://formazione.ideandum.com/eventi-sito/anteprima.html
 - La pagina https://formazione.ideandum.com/eventi-passati/ si genera da `data/eventi-passati.json` con `python3 scripts/genera_eventi_passati.py` (non modificare a mano `eventi-passati/index.html`).
 
-### Parametri UTM degli annunci (aggiornati l'11/11/2026)
-Ogni annuncio Meta porta i parametri UTM (campo "Parametri URL" della creatività, `url_tags`), per capire in GA4 da dove arrivano le conversioni. Il link resta la landing pulita; i parametri si aggiungono a parte.
+### Parametri UTM (aggiornati il 12/11/2026)
+Solo i cinque parametri classici, che Luigi può scrivere anche a mano ovunque. Il link resta la landing pulita; negli annunci Meta i parametri vanno nel campo "Parametri URL" della creatività (`url_tags`).
 
 | Parametro | Valore | Esempio |
 |---|---|---|
-| utm_source | piattaforma, compilata da Meta: `{{site_source_name}}` | fb, ig, msg, an |
-| utm_medium | pubblico del gruppo di inserzioni | `remarketing` (gruppi per webinar) · `freddo` (Webinar – Nuovo pubblico) |
-| utm_campaign | slug del webinar (come in newsletter e WhatsApp) | `passaggio-generazionale` |
-| utm_content | formato + descrizione breve, minuscole e trattini | `immagine-angolo-a`, `video-franco-pensieroso`, `carosello-percorso-paziente`, `post-carico-fiscale` |
-| utm_term | posizionamento, compilato da Meta: `{{placement}}` | Facebook_Mobile_Feed, Instagram_Stories… |
+| utm_source | piattaforma; negli annunci Meta la compila Meta: `{{site_source_name}}` | fb, ig (annunci) · instagram, facebook, linkedin (organico) · newsletter · whatsapp |
+| utm_medium | `paid` per tutti gli annunci a pagamento, `organic` per i post social organici | `paid`, `organic`, `email` (newsletter), `community` (WhatsApp), `partner` |
+| utm_campaign | slug del webinar, uguale in tutti i canali | `passaggio-generazionale` |
+| utm_content | negli annunci: **pubblico-formato-descrizione**, minuscole e trattini; nei post organici: tipo-descrizione | `remarketing-immagine-angolo-a`, `freddo-immagine-angolo-a`, `remarketing-video-franco-pensieroso` · `storia-promemoria` |
+| utm_term | solo negli annunci: posizionamento, compilato da Meta: `{{placement}}` | Facebook_Mobile_Feed, Instagram_Stories… |
 
-- Stringa tipo: `utm_source={{site_source_name}}&utm_medium=remarketing&utm_campaign=<slug>&utm_content=immagine-angolo-a&utm_term={{placement}}` (decisa da Luigi l'11/11/2026, primo webinar: passaggio-generazionale)
-- Lo stesso contenuto nei due gruppi cambia solo `utm_medium`.
-- Il webinar si riconosce anche da `utm_campaign` (slug), uguale in tutti i canali.
+- Pubblico in `utm_content`: `remarketing` nei gruppi per webinar, `freddo` nel gruppo "Webinar – Nuovo pubblico".
+- Stringa tipo per un annuncio: `utm_source={{site_source_name}}&utm_medium=paid&utm_campaign=<slug>&utm_content=remarketing-immagine-angolo-a&utm_term={{placement}}` (decisa da Luigi il 12/11/2026).
+- Post organico scritto a mano: `utm_source=instagram&utm_medium=organic&utm_campaign=<slug>&utm_content=storia-promemoria`.
+- Lo stesso annuncio in due gruppi cambia solo il pubblico all'inizio di `utm_content`.
+- Annunci creati prima del 12/11/2026: `utm_medium` = `remarketing` o `freddo` (fino all'11/11 anche `utm_campaign` = formato). Il report li legge ancora.
 
 ### Attività programmate (dall'11/11/2026)
 Decisione di Luigi: tutto ciò che va fatto a una data precisa (tranne le newsletter, che programma lui in MailerLite) si fa con attività programmate di Claude (barra laterale "Scheduled" → "New task" → "Create with Claude"). Le tre attività girano ogni giorno e valgono per tutti i webinar, quindi non vanno ricreate a ogni avvio. Servono collegati: Meta Ads, Zapier (Google Sheets) e la pagina schede.
