@@ -2,6 +2,13 @@
   "_nota": "Eventi della pagina formazione.ideandum.com/eventi-passati/. Il più recente in alto. Dopo una modifica: python3 scripts/genera_eventi_passati.py, poi commit e push. 'slug' facoltativo = cartella della landing spostata in eventi-passati/<slug>/.",
   "eventi": [
     {
+      "data_iso": "2026-11-17",
+      "data": "17 Novembre 2026",
+      "titolo": "Tanto le riunioni non servono a niente.",
+      "sottotitolo": "Perché le riunioni in studio sembrano tempo perso (e cosa cambia quando si fanno con metodo).",
+      "slug": "riunioni-di-team"
+    },
+    {
       "data_iso": "2026-11-10",
       "data": "10 Novembre 2026",
       "titolo": "Più pazienti di implantologia nel tuo studio nel 2027: come trovarli online, presentare il preventivo e gestire la prima visita.",
