@@ -119,6 +119,14 @@ window.IDEANDUM_PROSSIMI_WEBINAR = [
     "immagine": "https://formazione.ideandum.com/_assets/img/eventi/passaggio-generazionale.webp",
     "link": "https://formazione.ideandum.com/passaggio-generazionale/?utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-prossimi-eventi",
     "link_passato": "https://formazione.ideandum.com/piattaforma/?utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-eventi-passati"
+  },
+  {
+    "titolo": "Vuoi acquistare uno studio dentistico? Gli errori da evitare, passo dopo passo.",
+    "data": "2026-12-10",
+    "ora": "13:00",
+    "immagine": "https://formazione.ideandum.com/_assets/img/eventi/acquisto-studio.webp",
+    "link": "https://formazione.ideandum.com/acquisto-studio/?utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-prossimi-eventi",
+    "link_passato": "https://formazione.ideandum.com/piattaforma/?utm_source=sito-ideandum&utm_medium=sito&utm_campaign=carosello&utm_content=carosello-eventi-passati"
   }
 ];
 if (window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO) window.IDEANDUM_PROSSIMI_WEBINAR_PRONTO();

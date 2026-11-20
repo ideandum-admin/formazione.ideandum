@@ -85,6 +85,13 @@
       "data": "2026-12-01",
       "ora": "13:00",
       "immagine": "/_assets/img/eventi/passaggio-generazionale.webp"
+    },
+    {
+      "slug": "acquisto-studio",
+      "titolo": "Vuoi acquistare uno studio dentistico? Gli errori da evitare, passo dopo passo.",
+      "data": "2026-12-10",
+      "ora": "13:00",
+      "immagine": "/_assets/img/eventi/acquisto-studio.webp"
     }
   ]
 }
