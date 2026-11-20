@@ -54,20 +54,12 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 - **Testi diversi per gruppo**: Freddo più introduttivo (chi non ci conosce: contesto, chi siamo in mezza riga), Caldo più diretto (chi ci conosce già: data, tema, iscriviti).
 - Totale: 3 annunci nel Freddo + 3 nel Caldo, tutti in bozza.
 
-### Struttura della campagna e budget (dal 21/10/2026)
-- Campagna CBO "Webinar - 2026 - Budget per webinar (CBO)" (ID 52600961859122), 80 €/giorno (70 € fino al 21/10, 100 € fino al 26/10), sempre spesi tutti.
-- **Un gruppo per ogni webinar** ("Webinar AAAA.MM.GG – <Nome breve>"): pubblico = interessi dentisti **+ chi ci conosce** (interazioni pagina FB e IG, visualizzazioni video), nessuna esclusione salvo gli iscritti degli ultimi 7 giorni. Obiettivo: iscritti a basso costo (riferimento 5–10 €).
-- **Un gruppo "Webinar – Nuovo pubblico"** unico: solo persone che non ci conoscono (lookalike + interessi dentisti, esclude chi ci conosce), con gli annunci migliori del momento. Quota fissa ~30% (minimo 27%, tetto 30% del budget: con 80 € minimo 21,60 €, tetto 24 €; Meta richiede minimo ≤ 90% del tetto). Si valuta su persone nuove raggiunte, CTR e costo per click, non sul costo per iscritto.
-- Spese minime dei gruppi per webinar (in % del budget della campagna):
-
-| Webinar attivi | Più vicino | Secondo | Terzo |
-|---|---|---|---|
-| 1 | 70% | – | – |
-| 2 | 40% | 20% | – |
-| 3 | 30% | 15% | 10% |
-
-- Il giorno prima di ogni webinar (12:30) si mette in pausa il suo gruppo (e i suoi annunci nel Nuovo pubblico) e si ricalcolano i minimi.
-- Perché: con il pubblico "freddo" che escludeva chi ci conosce (15–21/10) il costo per iscritto era salito a 19–28 €, contro i 5–7 € dei gruppi per webinar con pubblico misto.
+### Struttura della campagna e budget (dal 20/11/2026)
+- Campagna **"Webinar - 2026"** (ID 52607304109722), con budget sui gruppi (non sulla campagna).
+- **Un gruppo per ogni webinar** ("Webinar AAAA.MM.GG – <Nome breve>") con **budget fisso di 20 €/giorno** e **nessun limite**: niente spesa minima né tetto di spesa (decisione di Luigi del 20/11/2026). Si copia dal gruppo del webinar precedente: pubblico = interessi dentisti **+ chi ci conosce** (interazioni pagina FB e IG, visualizzazioni video, lista MailerLite, iscritti webinar 180 gg), esclusi gli iscritti degli ultimi 7 giorni; ottimizzazione su conversioni, evento pixel "Webinar"; Advantage+ pubblico e posizionamenti attivi. Obiettivo: iscritti a basso costo (riferimento 5–10 €).
+- Il giorno prima di ogni webinar (12:30) l'attività programmata mette in pausa il suo gruppo.
+- Gruppo "Webinar – Nuovo pubblico" (52602074974122): non si tocca a ogni avvio; eventuali annunci lì solo su richiesta di Luigi.
+- Storico: dal 21/10 al 19/11/2026 si usava la campagna CBO "Webinar - 2026 - Budget per webinar (CBO)" (52600961859122, 80 €/giorno) con spese minime per gruppo; superata. Perché il pubblico misto: con il pubblico "freddo" che escludeva chi ci conosce (15–21/10) il costo per iscritto era salito a 19–28 €, contro i 5–7 € dei gruppi con pubblico misto.
 
 ### Carosello "Prossimi Eventi Gratuiti" sul sito (ideandum.com/marketing-odontoiatria/#eventi)
 - Il carosello è un widget HTML di Elementor (codice in `eventi-sito/widget-elementor.html`, incollato una volta da Luigi) che legge `https://formazione.ideandum.com/eventi-sito/prossimi-webinar.js`. Non si modifica più Elementor a ogni webinar.
