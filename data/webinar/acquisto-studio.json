@@ -1,0 +1,56 @@
+{
+  "slug": "acquisto-studio",
+  "event_id": "Webinar - 2026.12.10 - Acquisto studio dentistico",
+  "event_name_extended": "Acquisto studio dentistico",
+  "titolo": "Vuoi acquistare uno studio dentistico? Gli errori da evitare, passo dopo passo.",
+  "sottotitolo": "Segui un caso concreto e scopri gli errori più frequenti in ogni fase dell’acquisto.",
+  "data": "2026-12-10",
+  "ora": "13:00",
+  "relatori": [
+    {
+      "foto": "/_assets/img/Armida-Parigi.webp",
+      "nome": "Armida Parigi"
+    },
+    {
+      "foto": "/_assets/img/nicola-sgarallino.webp",
+      "nome": "Avv. Nicola Sgarallino"
+    }
+  ],
+  "testo": "Stai valutando uno studio o hai già iniziato una trattativa? Un webinar pratico di 60 minuti per affrontare l’acquisto **con metodo, dalla prima trattativa ai primi 90 giorni di gestione**.\n\nQuali informazioni chiedere prima di fare un’offerta? Come capire cosa comprende il prezzo? Cosa verificare prima di firmare e come preparare il passaggio di gestione? Insieme all’Avv. Nicola Sgarallino ripercorriamo l’acquisto fase per fase, con gli errori e le omissioni da conoscere in ciascuna.\n\nAl termine avrai **una traccia per la tua prossima trattativa**: le informazioni che servono a valutare lo studio, il prezzo collegato alle condizioni concrete dell’acquisto, i punti da concordare già nella lettera di intenti, le verifiche usate per decidere come procedere, il trasferimento e i primi mesi di gestione preparati per tempo.",
+  "argomenti": [
+    {
+      "descrizione": "Quali informazioni raccogliere dopo l’accordo di riservatezza per capire cosa stai comprando e da cosa dipendono fatturato e margine.",
+      "titolo": "NDA e discovery iniziale"
+    },
+    {
+      "descrizione": "Come chiarire perimetro, prezzo, modalità di pagamento, affiancamento del titolare e disponibilità dei locali prima che le aspettative delle parti divergano.",
+      "titolo": "Lettera di intenti — LOI"
+    },
+    {
+      "descrizione": "Come impostare e coordinare le verifiche legali, fiscali, contabili e di compliance, trasformando i risultati in decisioni sull’acquisto.",
+      "titolo": "Due diligence"
+    },
+    {
+      "descrizione": "Quali punti rischiano di rimanere indefiniti quando si vuole chiudere in fretta e come tradurre gli accordi raggiunti in impegni concreti.",
+      "titolo": "Contratto di compravendita"
+    },
+    {
+      "descrizione": "Come organizzare attività, responsabili, documenti e scadenze per arrivare pronti al trasferimento.",
+      "titolo": "Closing agenda"
+    },
+    {
+      "descrizione": "Quali controlli finali effettuare su documenti, importi e pagamenti prima di completare l’operazione.",
+      "titolo": "Closing"
+    },
+    {
+      "descrizione": "Come preparare il primo giorno di gestione e affrontare i primi 90 giorni, dal coordinamento del team al passaggio dei pazienti.",
+      "titolo": "Post-closing"
+    }
+  ],
+  "motivi": [
+    "Vuoi acquistare il tuo primo studio",
+    "Vuoi rilevare l’attività di un collega o crescere con una nuova acquisizione",
+    "Hai già ricevuto una proposta e vuoi sapere quali domande affrontare prima del prossimo incontro con il venditore"
+  ],
+  "titolo_argomenti": "Di cosa parleremo nel webinar: 7 fasi, gli errori da conoscere per ciascuna"
+}
