@@ -9,6 +9,8 @@ Regole: per Armida Parigi, Franco Valerio e Chiara mai la stessa foto del webina
 
 | Webinar | Angolo | Modello | Relatori e foto (pagina archivio / descrizione) |
 |---|---|---|---|
+| 2026.12.10 Acquisto studio dentistico | A | Chiaro | Armida Parigi — archivio p.119 (giacca verde, mani a cornice), scontornata con remove-background |
+| 2026.12.10 Acquisto studio dentistico | B | Rosa | Avv. Nicola Sgarallino — foto fornita da Luigi (giacca beige, braccia incrociate), caricata in Canva e scontornata, a colori; non è nell'archivio |
 | 2026.12.01 Passaggio generazionale | A | Rosa | Armida Parigi — archivio p.123 (giacca verde, pensierosa, mano al mento), scontornata con remove-background; foto a colori |
 | 2026.12.01 Passaggio generazionale | B | Aura | Chiara Tessarotto — foto della scheda (giacca blu), caricata in Canva e scontornata, a colori; stessa foto base del 17/11 (unica disponibile) |
 | 2026.12.01 Passaggio generazionale | C | Chiaro | Armida Parigi — archivio p.117 (giacca verde, indica il testo), scontornata con remove-background |
