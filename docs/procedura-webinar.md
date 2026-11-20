@@ -245,7 +245,7 @@ Obiettivo: capire quante persone si sono iscritte e hanno partecipato, da quale 
   - `RAW_CONTACTS` (riga 4): Email (A), Role (E), Submission Date (N), Event ID (R), Submission DateTime (W), Note (Y), **UTM (AB) = URL della landing con le UTM**. La colonna UTM esiste dal 9/11/2026 e Luigi ci ha spostato anche gli URL di Implantologia 2027; per i webinar precedenti (es. Marketing e Architettura) l'URL è in Note. Leggi prima UTM e, se è vuota, Note. Se l'intestazione non è più in AB, cercala per nome nella riga 4 (lo script di IDEHUB copia per posizione, quindi le colonne nuove vanno sempre in fondo).
   - `CONTACTS` (riga 4): Email (A), Create Date (N), Lifecycle Stage (V: Lead, Opportunity, Customer, Ex Customer).
   - Scarica i fogli interi con get_values (es. `EVENTS!A4:AD5000`): il risultato viene salvato su file; elaboralo in Python, mai a mano.
-- **Meta**: account `113096912423590`, campagna `52607304109722` (fino al 19/11/2026 `52600961859122`). Livello annuncio, filtra per nome del webinar (data o nome breve), `date_preset` maximum: spesa e risultati (evento pixel "Webinar") per annuncio e gruppo. Gruppo del webinar = remarketing; gruppo `52602074974122` "Webinar – Nuovo pubblico" = pubblico freddo; "Webinar – Caldo (condiviso)" se presente.
+- **Meta**: account `113096912423590`, campagna `52607304109722` (per i webinar precedenti può essere `52600961859122`). Livello annuncio, filtra per nome del webinar (data o nome breve), `date_preset` maximum: spesa e risultati (evento pixel "Webinar") per annuncio e gruppo. Gruppo del webinar = remarketing; gruppo `52602074974122` "Webinar – Nuovo pubblico" = pubblico freddo; "Webinar – Caldo (condiviso)" se presente.
 
 #### Calcoli
 
