@@ -34,6 +34,7 @@ Pubblico: titolari di studio dentistico e il loro team. Non sono esperti di mark
 
 ## 3. Landing webinar
 
+- Nessuna scritta "Registrazione non disponibile" nelle landing (Luigi, 20/11/2026).
 - Struttura fissa: badge data/ora "In diretta ONLINE" → titolo → sottotitolo → relatori con foto → testo descrittivo (2–3 paragrafi) → "Di cosa parleremo nel webinar" (3–4 argomenti, titolo + descrizione) → info (circa 60 minuti, online, link dopo l'iscrizione) → form → "Non puoi perderla se" (3 motivi brevi) → chi è Ideandum → Parlano di noi → footer.
 - Titoli lunghi e parlati vanno bene ("Se i pazienti dal web ti chiedono solo 'Quanto costa?'…"); sottotitolo che spiega cosa si porta a casa.
 - Contestualizzare il tema nel periodo dell'anno quando ha senso (es. settembre = ripartenza, preventivi rimandati).

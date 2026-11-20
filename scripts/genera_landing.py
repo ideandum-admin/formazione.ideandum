@@ -119,8 +119,8 @@ def genera(scheda_path: Path) -> Path:
         "SOTTOTITOLO": testo(d["sottotitolo"]),
         "RELATORI": relatori(d["relatori"]),
         "TESTO": paragrafi(d["testo"]),
-        # facoltativo: "registrazione_disponibile": true toglie la scritta "Registrazione non disponibile"
-        "BADGE_REGISTRAZIONE": ("" if d.get("registrazione_disponibile") else BADGE_REGISTRAZIONE),
+        # la scritta "Registrazione non disponibile" non si mostra più (Luigi, 20/11/2026)
+        "BADGE_REGISTRAZIONE": "",
         "TITOLO_ARGOMENTI": testo(d.get("titolo_argomenti") or "Di cosa parleremo nel webinar:"),
         "ARGOMENTI": argomenti(d["argomenti"]),
         "MOTIVI": motivi(d["motivi"]),
