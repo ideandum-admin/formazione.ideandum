@@ -12,7 +12,7 @@
       "nome": "Armida Parigi"
     },
     {
-      "foto": "/_assets/img/nicola-sgarallino.webp",
+      "foto": "/_assets/img/nicola-sgarallino.jpg",
       "nome": "Avv. Nicola Sgarallino"
     }
   ],
@@ -52,5 +52,6 @@
     "Vuoi rilevare l’attività di un collega o crescere con una nuova acquisizione",
     "Hai già ricevuto una proposta e vuoi sapere quali domande affrontare prima del prossimo incontro con il venditore"
   ],
-  "titolo_argomenti": "Di cosa parleremo nel webinar: 7 fasi, gli errori da conoscere per ciascuna"
+  "titolo_argomenti": "Di cosa parleremo nel webinar: 7 fasi, gli errori da conoscere per ciascuna",
+  "registrazione_disponibile": true
 }

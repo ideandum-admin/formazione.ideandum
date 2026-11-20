@@ -64,6 +64,13 @@ def motivi(lista):
     return "\n".join(f'      <div class="nope-item">{testo(m)}</div>' for m in lista)
 
 
+BADGE_REGISTRAZIONE = (
+    '      <div class="form-badge-unavail">\n'
+    '        <i class="fab fa-youtube"></i>\n'
+    '        <span>Registrazione non disponibile</span>\n'
+    '      </div>\n'
+)
+
 WEBHOOK_UNICO = "https://hooks.zapier.com/hooks/catch/2042357/41itfwa/"
 MESI = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio",
         "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]
@@ -112,6 +119,8 @@ def genera(scheda_path: Path) -> Path:
         "SOTTOTITOLO": testo(d["sottotitolo"]),
         "RELATORI": relatori(d["relatori"]),
         "TESTO": paragrafi(d["testo"]),
+        # facoltativo: "registrazione_disponibile": true toglie la scritta "Registrazione non disponibile"
+        "BADGE_REGISTRAZIONE": ("" if d.get("registrazione_disponibile") else BADGE_REGISTRAZIONE),
         "TITOLO_ARGOMENTI": testo(d.get("titolo_argomenti") or "Di cosa parleremo nel webinar:"),
         "ARGOMENTI": argomenti(d["argomenti"]),
         "MOTIVI": motivi(d["motivi"]),
